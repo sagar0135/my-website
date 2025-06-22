@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MANVUE</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+
+<body>
+  <!-- TOP PROMO BANNER -->
+  <div class="promo-banner">
+    <span class="promo-text">FREE SHIPPING ON ORDERS $49+ ⚡ NEW DROPS EVERY WEEK</span>
+    <span class="promo-countdown" id="countdown">FLASH SALE ENDS IN: 23:59:59</span>
+  </div>
+
+  <!-- MAIN HEADER -->
+  <header class="main-header">
+    <div class="logo">MANVUE</div>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Search for items, brands..." />
+      <button><i class="fas fa-search"></i></button>
+    </div>
+
+    <div class="header-icons">
+      <span><i class="fas fa-user"></i></span>
+      <span><i class="fas fa-heart"></i></span>
+      <span class="cart-icon"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></span>
+    </div>
+  </header>
+
+  <!-- NAVIGATION MENU -->
+  <nav class="nav-bar">
+    <ul>
+      <li>NEW IN</li>
+      <li class="dropdown">
+        CLOTHING
+        <div class="dropdown-content">
+          <a href="#">T-Shirts</a>
+          <a href="#">Shirts</a>
+          <a href="#">Pants</a>
+          <a href="#">Jackets</a>
+        </div>
+      </li>
+      <li>SHOES</li>
+      <li>ACCESSORIES</li>
+      <li>SALE</li>
+      <li class="trending">TRENDING</li>
+    </ul>
+  </nav>
+
+  <!-- HERO BANNER -->
+  <div class="hero-banner">
+    <div class="slideshow">
+      <div class="slideshow-item active" style="background-image: url('https://images.unsplash.com/photo-1503341504253-dff4815485f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')"></div>
+      <div class="slideshow-item" style="background-image: url('https://images.unsplash.com/photo-1536766820879-059fec98ec0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')"></div>
+      <div class="slideshow-item" style="background-image: url('https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')"></div>
+      <div class="slideshow-item" style="background-image: url('https://images.unsplash.com/photo-1550246140-29f40b909e5a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')"></div>
+    </div>
+    <div class="hero-content">
+      <h1>SUMMER COLLECTION</h1>
+      <p>Elevate your style with our exclusive summer pieces</p>
+      <button class="shop-now-btn">Shop Now</button>
+    </div>
+  </div>
+
+  <!-- CATEGORIES GRID -->
+  <div class="category-grid">
+    <div class="category-card">
+      <img src="https://via.placeholder.com/300x400" alt="T-Shirts">
+      <h3>T-SHIRTS</h3>
+    </div>
+    <div class="category-card">
+      <img src="https://via.placeholder.com/300x400" alt="Pants">
+      <h3>PANTS</h3>
+    </div>
+    <div class="category-card">
+      <img src="https://via.placeholder.com/300x400" alt="Accessories">
+      <h3>ACCESSORIES</h3>
+    </div>
+    <div class="category-card">
+      <img src="https://via.placeholder.com/300x400" alt="Shoes">
+      <h3>SHOES</h3>
+    </div>
+  </div>
+
+  <!-- PRODUCT SECTION -->
+  <section class="trending-products">
+    <h2>TRENDING NOW</h2>
+    <div class="product-grid" id="product-list">
+      <!-- Products will load here dynamically -->
+    </div>
+    <button class="load-more">LOAD MORE</button>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="modern-footer">
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h3>HELP & INFORMATION</h3>
+        <ul>
+          <li>Help</li>
+          <li>Track Order</li>
+          <li>Delivery & Returns</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>ABOUT STAG&STONE</h3>
+        <ul>
+          <li>About Us</li>
+          <li>Careers</li>
+          <li>Corporate Responsibility</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>CONNECT WITH US</h3>
+        <div class="social-icons">
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-tiktok"></i>
+          <i class="fab fa-facebook"></i>
+          <i class="fab fa-twitter"></i>
+        </div>
+        <div class="newsletter">
+          <input type="email" placeholder="Email Address">
+          <button>SUBSCRIBE</button>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>© 2025 Stag&Stone. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</nav>

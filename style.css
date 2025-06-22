@@ -99,53 +99,125 @@ body {
 /* Navigation Bar */
 .nav-bar {
   background: white;
-  padding: 15px 2rem;
   border-bottom: 1px solid #eee;
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-.nav-bar ul {
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.main-nav {
   list-style: none;
   display: flex;
-  gap: 2rem;
   padding: 0;
   margin: 0;
-  justify-content: center;
+  justify-content: space-between;
 }
 
-.nav-bar li {
+.nav-item {
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 600;
   position: relative;
-  padding: 5px 0;
+  padding: 20px 15px;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  transition: all 0.3s;
 }
 
-.nav-bar li:hover {
+.nav-item:hover {
   color: #ff3e6c;
 }
 
-.trending {
+.nav-item.sale {
   color: #ff3e6c;
 }
 
-.dropdown-content {
+.nav-item.sale:hover {
+  background-color: #ff3e6c;
+  color: white;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
   display: none;
   position: absolute;
+  top: 100%;
+  left: 0;
   background: white;
-  min-width: 160px;
+  min-width: 220px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-  z-index: 1;
-  padding: 10px 0;
+  z-index: 100;
+  border-radius: 4px;
+  overflow: hidden;
 }
 
-.dropdown-content a {
+.dropdown:hover .dropdown-menu {
   display: block;
-  padding: 8px 15px;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 12px 20px;
+  color: #333;
   text-decoration: none;
-  color: black;
+  font-weight: 500;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #f5f5f5;
+  transition: all 0.2s;
 }
 
-.dropdown:hover .dropdown-content {
-  display: block;
+.dropdown-menu a:hover {
+  background-color: #f9f9f9;
+  color: #ff3e6c;
+  padding-left: 25px;
+}
+
+/* Responsive navigation */
+@media (max-width: 992px) {
+  .main-nav {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .nav-item {
+    padding: 15px 10px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 0;
+  }
+  
+  .main-nav {
+    flex-direction: column;
+  }
+  
+  .nav-item {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .dropdown-menu {
+    position: static;
+    display: none;
+    box-shadow: none;
+    border-radius: 0;
+    background: #f9f9f9;
+  }
+  
+  .dropdown.active .dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown-menu a {
+    padding: 10px 30px;
+  }
 }
 
 /* Hero Banner with Slideshow */

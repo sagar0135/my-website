@@ -1,6 +1,28 @@
-// Slideshow functionality for hero banner
+// Mobile navigation handling
 document.addEventListener('DOMContentLoaded', function() {
-  // Hero banner slideshow
+  // Mobile navigation toggle
+  const navItems = document.querySelectorAll('.nav-item.dropdown');
+  
+  if (window.innerWidth <= 768) {
+    navItems.forEach(item => {
+      item.addEventListener('click', function(e) {
+        // Prevent immediate closing when clicking dropdown items
+        if (e.target === this || e.target === this.querySelector('span')) {
+          e.preventDefault();
+          this.classList.toggle('active');
+          
+          // Close other open dropdowns
+          navItems.forEach(otherItem => {
+            if (otherItem !== this && otherItem.classList.contains('active')) {
+              otherItem.classList.remove('active');
+            }
+          });
+        }
+      });
+    });
+  }
+  
+  // Slideshow functionality for hero banner
   const slideshowItems = document.querySelectorAll('.slideshow-item');
   let currentSlide = 0;
   

@@ -3,16 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MANVUE</title>
+  <meta name="description" content="MANVUE - Premium men's fashion and apparel" />
+  <title>MANVUE | Premium Men's Fashion</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <!-- TOP PROMO BANNER -->
   <div class="promo-banner">
     <span class="promo-text">FREE SHIPPING ON ORDERS GBP49+ ⚡ NEW DROPS EVERY WEEK</span>
-    <span class="promo-countdown" id="countdown">FLASH SALE ENDS IN: 23:59:59</span>
+    <span class="promo-countdown" id="countdown">FLASH SALE ENDS IN: <span id="timer">23:59:59</span></span>
   </div>
 
   <!-- MAIN HEADER -->
@@ -20,88 +24,109 @@
     <div class="logo">MANVUE</div>
 
     <div class="search-bar">
-      <input type="text" placeholder="Search for items, brands..." />
-      <button><i class="fas fa-search"></i></button>
+      <input type="text" placeholder="Search for items, brands..." aria-label="Search" />
+      <button aria-label="Search"><i class="fas fa-search"></i></button>
     </div>
 
     <div class="header-icons">
-      <span><i class="fas fa-user"></i></span>
-      <span><i class="fas fa-heart"></i></span>
-      <span class="cart-icon"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></span>
+      <span title="Account"><i class="fas fa-user"></i></span>
+      <span title="Wishlist"><i class="fas fa-heart"></i><span class="wishlist-count">0</span></span>
+      <span class="cart-icon" title="Cart"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></span>
     </div>
   </header>
 
   <!-- NAVIGATION MENU -->
-  <nav class="nav-bar">
+  <nav class="nav-bar" aria-label="Main Navigation">
     <div class="nav-container">
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
       <ul class="main-nav">
         <!-- CORE COLLECTIONS -->
         <li class="nav-item dropdown">
-          <span>CORE COLLECTIONS</span>
+          <span tabindex="0">CORE COLLECTIONS</span>
           <div class="dropdown-menu">
-            <a href="FreshDrops.html">Fresh Drops 🔥
+            <a href="FreshDrops.html">Fresh Drops <i class="fas fa-fire"></i>
+              <span class="sub-description">New arrivals this week</span>
             </a>
-            <a href="#">Crowd Favorites ⭐
+            <a href="CrowdFavorites.html">Crowd Favorites <i class="fas fa-star"></i>
+              <span class="sub-description">Best-selling items</span>
             </a>
-            <a href="#">Extended Fits 
+            <a href="ExtendedFits.html">Extended Fits <i class="fas fa-ruler"></i>
+              <span class="sub-description">Inclusive sizing options</span>
             </a>
           </div>
         </li>
         
         <!-- SMART GROUPINGS -->
         <li class="nav-item dropdown">
-          <span>SMART GROUPINGS</span>
+          <span tabindex="0">SMART GROUPINGS</span>
           <div class="dropdown-menu">
-            <a href="#">The Fundamentals 
+            <a href="TheFundamentals.html">The Fundamentals <i class="fas fa-check"></i>
+              <span class="sub-description">Essential wardrobe pieces</span>
             </a>
-            <a href="#">Power Moves 
+            <a href="PowerMoves.html">Power Moves <i class="fas fa-bolt"></i>
+              <span class="sub-description">Statement pieces</span>
             </a>
-            <a href="#">Street Style 
+            <a href="StreetStyle.html">Street Style <i class="fas fa-street-view"></i>
+              <span class="sub-description">Urban-inspired looks</span>
             </a>
-            <a href="#">Weekend Warrior 
+            <a href="WeekendWarrior.html">Weekend Warrior <i class="fas fa-mountain"></i>
+              <span class="sub-description">Casual weekend attire</span>
             </a>
-            <a href="#">Layer Game 
+            <a href="LayerGame.html">Layer Game <i class="fas fa-layer-group"></i>
+              <span class="sub-description">Versatile layering pieces</span>
             </a>
           </div>
         </li>
         
         <!-- LIFESTYLE -->
         <li class="nav-item dropdown">
-          <span>LIFESTYLE</span>
+          <span tabindex="0">LIFESTYLE</span>
           <div class="dropdown-menu">
-            <a href="#">Boardroom Ready 
+            <a href="BoardroomReady.html">Boardroom Ready <i class="fas fa-briefcase"></i>
+              <span class="sub-description">Professional attire</span>
             </a>
-            <a href="#">Gym to Street 
+            <a href="GymToStreet.html">Gym to Street <i class="fas fa-dumbbell"></i>
+              <span class="sub-description">Activewear & athleisure</span>
             </a>
-            <a href="#">Date Night
+            <a href="DateNight.html">Date Night <i class="fas fa-heart"></i>
+              <span class="sub-description">Smart casual looks</span>
             </a>
-            <a href="#">Vacation Mode 
+            <a href="VacationMode.html">Vacation Mode <i class="fas fa-umbrella-beach"></i>
+              <span class="sub-description">Resort & summer wear</span>
             </a>
-            <a href="#">Work From Home 
+            <a href="WorkFromHome.html">Work From Home <i class="fas fa-home"></i>
+              <span class="sub-description">Comfortable yet presentable</span>
             </a>
           </div>
         </li>
         
         <!-- INTERACTIVE FEATURES -->
         <li class="nav-item dropdown">
-          <span>FEATURES</span>
+          <span tabindex="0">FEATURES</span>
           <div class="dropdown-menu">
-            <a href="#">Style Quiz 
+            <a href="StyleQuiz.html">Style Quiz <i class="fas fa-question-circle"></i>
+              <span class="sub-description">Find your personal style</span>
             </a>
-            <a href="#">Occasion Builder 
+            <a href="OccasionBuilder.html">Occasion Builder <i class="fas fa-calendar-alt"></i>
+              <span class="sub-description">Outfits for any event</span>
             </a>
-            <a href="#">Your Size, Your Style 
+            <a href="YourSizeYourStyle.html">Your Size, Your Style <i class="fas fa-ruler-combined"></i>
+              <span class="sub-description">Size-specific recommendations</span>
             </a>
-            <a href="#">Staff Picks 
+            <a href="StaffPicks.html">Staff Picks <i class="fas fa-thumbs-up"></i>
+              <span class="sub-description">Curated by our stylists</span>
             </a>
-            <a href="#">Complete the Look
+            <a href="CompleteTheLook.html">Complete the Look <i class="fas fa-tshirt"></i>
+              <span class="sub-description">Outfit coordination</span>
             </a>
           </div>
         </li>
         
         <!-- SALE -->
         <li class="nav-item sale">
-          <span>SALE</span>
+          <span tabindex="0">SALE</span>
         </li>
       </ul>
     </div>
@@ -120,19 +145,207 @@
       <p>Elevate your style with our exclusive summer pieces</p>
       <button class="shop-now-btn">Shop Now</button>
     </div>
+    <div class="slideshow-controls">
+      <button class="prev-slide" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
+      <div class="slide-indicators">
+        <span class="indicator active"></span>
+        <span class="indicator"></span>
+        <span class="indicator"></span>
+        <span class="indicator"></span>
+      </div>
+      <button class="next-slide" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
+    </div>
   </div>
 
-
-
-  
-
-  <!-- PRODUCT SECTION -->
-  <section class="trending-products">
-    <h2>TRENDING NOW</h2>
-    <div class="product-grid" id="product-list">
-      <!-- Products will load here dynamically -->
+  <!-- CATEGORY SHORTCUTS -->
+  <section class="category-shortcuts">
+    <div class="container">
+      <div class="shortcut-grid">
+        <!-- T-shirts -->
+        <a href="#" class="shortcut-item">
+          <div class="shortcut-image">
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="T-shirts">
+          </div>
+          <div class="shortcut-label">T-SHIRTS</div>
+        </a>
+        
+        <!-- Shirts -->
+        <a href="#" class="shortcut-item">
+          <div class="shortcut-image">
+            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Shirts">
+          </div>
+          <div class="shortcut-label">SHIRTS</div>
+        </a>
+        
+        <!-- Bottoms -->
+        <a href="#" class="shortcut-item">
+          <div class="shortcut-image">
+            <img src="https://images.unsplash.com/photo-1552331704-0c6e30a62f9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Bottoms">
+          </div>
+          <div class="shortcut-label">BOTTOMS</div>
+        </a>
+        
+        <!-- Jackets -->
+        <a href="#" class="shortcut-item">
+          <div class="shortcut-image">
+            <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Jackets">
+          </div>
+          <div class="shortcut-label">JACKETS</div>
+        </a>
+        
+        <!-- Jeans & Cargo -->
+        <a href="#" class="shortcut-item">
+          <div class="shortcut-image">
+            <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Jeans & Cargo">
+          </div>
+          <div class="shortcut-label">JEANS & CARGO</div>
+        </a>
+        
+        <!-- Deals -->
+        <a href="#" class="shortcut-item deals">
+          <div class="shortcut-image">
+            <div class="deals-text">EVERYTHING UNDER</div>
+            <div class="deals-price">₹699</div>
+          </div>
+          <div class="shortcut-label">SUPER DEALS</div>
+        </a>
+      </div>
     </div>
-    <button class="load-more">LOAD MORE</button>
+  </section>
+
+  <!-- TRENDING PRODUCTS -->
+  <section class="trending-products">
+    <div class="container">
+      <h2 class="section-title">TRENDING NOW</h2>
+      <div class="product-grid" id="product-list">
+        <!-- Products will load here dynamically -->
+        <div class="product-card">
+          <div class="product-badge">NEW</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Product">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Premium Cotton Tee</h3>
+            <div class="product-price">
+              <span class="current-price">£24.99</span>
+              <span class="original-price">£29.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(42)</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-badge bestseller">BESTSELLER</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Product">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Oxford Button-Down Shirt</h3>
+            <div class="product-price">
+              <span class="current-price">£39.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(87)</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-badge sale">-30%</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Product">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Lightweight Bomber Jacket</h3>
+            <div class="product-price">
+              <span class="current-price">£59.99</span>
+              <span class="original-price">£84.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(36)</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Product">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Slim Fit Chino Trousers</h3>
+            <div class="product-price">
+              <span class="current-price">£34.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(52)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="load-more">LOAD MORE</button>
+    </div>
+  </section>
+
+  <!-- APP BANNER -->
+  <section class="app-banner">
+    <div class="container">
+      <div class="app-content">
+        <div class="app-text">
+          <h3>Unlock <span>EXCLUSIVE</span></h3>
+          <h2>OFFERS!</h2>
+          <p>DOWNLOAD THE MANVUE APP!</p>
+          <div class="app-buttons">
+            <a href="#" class="app-button"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store"></a>
+            <a href="#" class="app-button"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play"></a>
+          </div>
+        </div>
+        <div class="app-image">
+          <img src="https://i.imgur.com/JR5iUQQ.png" alt="Mobile App">
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- CATEGORY SHOWCASE -->
@@ -210,45 +423,165 @@
     </div>
   </section>
 
+  <!-- NEW DEALS SECTION -->
+  <section class="new-deals">
+    <div class="container">
+      <h2 class="section-title">New Deals, New Trends</h2>
+      
+      <div class="deals-grid">
+        <!-- Deal 1 -->
+        <div class="deal-card">
+          <img src="https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Budget Deals">
+          <div class="deal-overlay">
+            <div class="deal-tag">EVERYTHING UNDER</div>
+            <div class="deal-price">₹699</div>
+            <a href="#" class="shop-now">SHOP NOW</a>
+          </div>
+        </div>
+        
+        <!-- Deal 2 -->
+        <div class="deal-card">
+          <img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Summer Collection">
+          <div class="deal-overlay">
+            <div class="deal-tag">HELLO</div>
+            <div class="deal-title">SUMMER</div>
+            <div class="deal-subtitle">REFRESH YOUR WARDROBE</div>
+            <a href="#" class="shop-now">SHOP NOW</a>
+          </div>
+        </div>
+        
+        <!-- Deal 3 -->
+        <div class="deal-card">
+          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Curated Experts">
+          <div class="deal-overlay">
+            <div class="deal-tag">CURATED</div>
+            <div class="deal-title">EXPERTEES</div>
+            <div class="deal-subtitle">STAFF PICKS FOR YOU</div>
+            <a href="#" class="shop-now">SHOP NOW</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED COLLECTION -->
+  <section class="featured-collection">
+    <div class="container">
+      <div class="featured-content">
+        <div class="featured-text">
+          <h3>Put Your Best</h3>
+          <h2>Bottom <span>FORWARD</span></h2>
+          <p>MIX IT. MATCH IT. These bottoms bring the whole fit together.</p>
+          <a href="#" class="shop-now-btn">SHOP NOW</a>
+        </div>
+        <div class="featured-image">
+          <img src="https://images.unsplash.com/photo-1552331704-0c6e30a62f9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Featured Bottoms">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE FEATURES -->
+  <section class="interactive-features">
+    <div class="container">
+      <h2 class="section-title">Discover Your Style</h2>
+      
+      <div class="features-grid">
+        <a href="StyleQuiz.html" class="feature-card">
+          <div class="feature-image">
+            <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Style Quiz">
+            <div class="feature-overlay">
+              <h3>STYLE QUIZ</h3>
+              <p>Get personalized recommendations</p>
+            </div>
+          </div>
+        </a>
+        
+        <a href="OccasionBuilder.html" class="feature-card">
+          <div class="feature-image">
+            <img src="https://images.unsplash.com/photo-1496345875659-11f7dd282d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Occasion Builder">
+            <div class="feature-overlay">
+              <h3>OCCASION BUILDER</h3>
+              <p>Shop by event or situation</p>
+            </div>
+          </div>
+        </a>
+        
+        <a href="YourSizeYourStyle.html" class="feature-card">
+          <div class="feature-image">
+            <img src="https://images.unsplash.com/photo-1550246140-29f40b909e5a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Your Size, Your Style">
+            <div class="feature-overlay">
+              <h3>YOUR SIZE, YOUR STYLE</h3>
+              <p>Size-specific trending items</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter-content">
+        <div class="newsletter-text">
+          <h2>JOIN THE CLUB</h2>
+          <p>Subscribe to our newsletter for exclusive offers, style tips, and early access to new drops.</p>
+        </div>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email address" required aria-label="Email address">
+          <button type="submit">SUBSCRIBE</button>
+        </form>
+      </div>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer class="modern-footer">
-    <div class="footer-columns">
-      <div class="footer-column">
-        <h3>HELP & INFORMATION</h3>
-        <ul>
-          <li>Help</li>
-          <li>Track Order</li>
-          <li>Delivery & Returns</li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h3>ABOUT STAG&STONE</h3>
-        <ul>
-          <li>About Us</li>
-          <li>Careers</li>
-          <li>Corporate Responsibility</li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h3>CONNECT WITH US</h3>
-        <div class="social-icons">
-          <i class="fab fa-instagram"></i>
-          <i class="fab fa-tiktok"></i>
-          <i class="fab fa-facebook"></i>
-          <i class="fab fa-twitter"></i>
+    <div class="container">
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h3>HELP & INFORMATION</h3>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Track Order</a></li>
+            <li><a href="#">Delivery & Returns</a></li>
+            <li><a href="#">Size Guide</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
         </div>
-        <div class="newsletter">
-          <input type="email" placeholder="Email Address">
-          <button>SUBSCRIBE</button>
+        <div class="footer-column">
+          <h3>ABOUT MANVUE</h3>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Corporate Responsibility</a></li>
+            <li><a href="#">Investors</a></li>
+            <li><a href="#">Sustainability</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>CONNECT WITH US</h3>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+          <div class="newsletter">
+            <input type="email" placeholder="Email Address" aria-label="Email for newsletter">
+            <button aria-label="Subscribe">SUBSCRIBE</button>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="copyright">
-      <p>© 2025 MANVUE. All Rights Reserved.</p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</nav>
+      <div class="footer-bottom">
+        <div class="payment-methods">
+          <img src="https://i.imgur.com/SHCoT7I.png" alt="Payment methods">
+        </div>
+        <div class="copyright">
+          <p>© 2025 MANVUE. All Rights Reserved.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+          

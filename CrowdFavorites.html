@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="MANVUE - Crowd Favorites - Most popular men's fashion items" />
+  <title>MANVUE | Crowd Favorites</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- TOP PROMO BANNER -->
+  <div class="promo-banner">
+    <span class="promo-text">FREE SHIPPING ON ORDERS GBP49+ ⚡ NEW DROPS EVERY WEEK</span>
+    <span class="promo-countdown" id="countdown">FLASH SALE ENDS IN: <span id="timer">23:59:59</span></span>
+  </div>
+
+  <!-- MAIN HEADER -->
+  <header class="main-header">
+    <div class="logo">MANVUE</div>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Search for items, brands..." aria-label="Search" />
+      <button aria-label="Search"><i class="fas fa-search"></i></button>
+    </div>
+
+    <div class="header-icons">
+      <span title="Account"><i class="fas fa-user"></i></span>
+      <span title="Wishlist"><i class="fas fa-heart"></i><span class="wishlist-count">0</span></span>
+      <span class="cart-icon" title="Cart"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></span>
+    </div>
+  </header>
+
+  <!-- NAVIGATION MENU -->
+  <nav class="nav-bar" aria-label="Main Navigation">
+    <div class="nav-container">
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="main-nav">
+        <!-- CORE COLLECTIONS -->
+        <li class="nav-item dropdown">
+          <span tabindex="0">CORE COLLECTIONS</span>
+          <div class="dropdown-menu">
+            <a href="FreshDrops.html">Fresh Drops</a>
+            <a href="CrowdFavorites.html">Crowd Favorites</a>
+            <a href="ExtendedFits.html">Extended Fits</a>
+          </div>
+        </li>
+        
+        <!-- SMART GROUPINGS -->
+        <li class="nav-item dropdown">
+          <span tabindex="0">SMART GROUPINGS</span>
+          <div class="dropdown-menu">
+            <a href="TheFundamentals.html">The Fundamentals  </a>
+            <a href="PowerMoves.html">Power Moves 
+            </a>
+            <a href="StreetStyle.html">Street Style 
+            </a>
+            <a href="WeekendWarrior.html">Weekend Warrior 
+            </a>
+            <a href="LayerGame.html">Layer Game 
+            </a>
+          </div>
+        </li>
+        
+        <!-- LIFESTYLE -->
+        <li class="nav-item dropdown">
+          <span tabindex="0">LIFESTYLE</span>
+          <div class="dropdown-menu">
+            <a href="BoardroomReady.html">Boardroom Ready 
+            </a>
+            <a href="GymToStreet.html">Gym to Street 
+            </a>
+            <a href="DateNight.html">Date Night 
+            </a>
+            <a href="VacationMode.html">Vacation Mode 
+            </a>
+            <a href="WorkFromHome.html">Work From Home 
+            </a>
+          </div>
+        </li>
+        
+        <!-- INTERACTIVE FEATURES -->
+        <li class="nav-item dropdown">
+          <span tabindex="0">FEATURES</span>
+          <div class="dropdown-menu">
+            <a href="StyleQuiz.html">Style Quiz 
+            </a>
+            <a href="OccasionBuilder.html">Occasion Builder 
+            </a>
+            <a href="YourSizeYourStyle.html">Your Size, Your Style 
+            </a>
+            <a href="StaffPicks.html">Staff Picks 
+            </a>
+            <a href="CompleteTheLook.html">Complete the Look <i class="fas fa-tshirt"></i>
+              <span class="sub-description">Outfit coordination</span>
+            </a>
+          </div>
+        </li>
+        
+        <!-- SALE -->
+        <li class="nav-item sale">
+          <span tabindex="0">SALE</span>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- CATEGORY BANNER -->
+  <div class="category-banner crowd-favorites-banner">
+    <div class="category-banner-content">
+      <h1>CROWD FAVORITES</h1>
+      <p>Our most popular and highly-rated items</p>
+    </div>
+  </div>
+
+  <!-- BEST SELLERS SECTION -->
+  <section class="best-sellers">
+    <div class="container">
+      <h2 class="section-title">TOP RATED ITEMS</h2>
+      <div class="product-grid">
+        <!-- Classic Oxford Shirt -->
+        <div class="product-card">
+          <div class="product-badge bestseller">BESTSELLER</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Classic Oxford Shirt">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Classic Oxford Shirt</h3>
+            <div class="product-price">
+              <span class="current-price">£49.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span class="rating-count">(423)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slim Fit Chinos -->
+        <div class="product-card">
+          <div class="product-badge bestseller">BESTSELLER</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Slim Fit Chinos">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Slim Fit Chinos</h3>
+            <div class="product-price">
+              <span class="current-price">£39.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span class="rating-count">(512)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Premium Leather Jacket -->
+        <div class="product-card">
+          <div class="product-badge bestseller">BESTSELLER</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Premium Leather Jacket">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Premium Leather Jacket</h3>
+            <div class="product-price">
+              <span class="current-price">£199.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span class="rating-count">(387)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Classic Canvas Sneakers -->
+        <div class="product-card">
+          <div class="product-badge bestseller">BESTSELLER</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Classic Canvas Sneakers">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Classic Canvas Sneakers</h3>
+            <div class="product-price">
+              <span class="current-price">£49.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span class="rating-count">(456)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Minimalist Chronograph Watch -->
+        <div class="product-card">
+          <div class="product-badge bestseller">BESTSELLER</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Minimalist Chronograph Watch">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Minimalist Chronograph Watch</h3>
+            <div class="product-price">
+              <span class="current-price">£129.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span class="rating-count">(329)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Slim Fit Denim Jeans -->
+        <div class="product-card">
+          <div class="product-badge bestseller">BESTSELLER</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Slim Fit Denim Jeans">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Slim Fit Denim Jeans</h3>
+            <div class="product-price">
+              <span class="current-price">£59.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span class="rating-count">(412)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUSTOMER FAVORITES SECTION -->
+  <section class="customer-favorites">
+    <div class="container">
+      <h2 class="section-title">CUSTOMER FAVORITES</h2>
+      <div class="product-grid">
+        <!-- Essential White Tee -->
+        <div class="product-card">
+          <div class="product-badge">TOP RATED</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Essential White Tee">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Essential White Tee</h3>
+            <div class="product-price">
+              <span class="current-price">£19.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span class="rating-count">(298)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Wool Blend Overcoat -->
+        <div class="product-card">
+          <div class="product-badge">TOP RATED</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1539533018447-63fcce2678e3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Wool Blend Overcoat">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Wool Blend Overcoat</h3>
+            <div class="product-price">
+              <span class="current-price">£149.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span class="rating-count">(187)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Leather Chelsea Boots -->
+        <div class="product-card">
+          <div class="product-badge">TOP RATED</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1638247025967-b4e38f787b76?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Leather Chelsea Boots">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Leather Chelsea Boots</h3>
+            <div class="product-price">
+              <span class="current-price">£89.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span class="rating-count">(256)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Merino Wool Sweater -->
+        <div class="product-card">
+          <div class="product-badge">TOP RATED</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1712514045813-c9b8512fef9a?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Merino Wool Sweater">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Merino Wool Sweater</h3>
+            <div class="product-price">
+              <span class="current-price">£69.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span class="rating-count">(178)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Leather Belt -->
+        <div class="product-card">
+          <div class="product-badge">TOP RATED</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Leather Belt">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Premium Leather Belt</h3>
+            <div class="product-price">
+              <span class="current-price">£29.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span class="rating-count">(203)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Aviator Sunglasses -->
+        <div class="product-card">
+          <div class="product-badge">TOP RATED</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1577803645773-f96470509666?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Aviator Sunglasses">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Classic Aviator Sunglasses</h3>
+            <div class="product-price">
+              <span class="current-price">£59.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span class="rating-count">(167)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter-content">
+        <div class="newsletter-text">
+          <h2>BE THE FIRST TO KNOW</h2>
+          <p>Subscribe to our newsletter for exclusive early access to new drops and trends.</p>
+        </div>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email address" required aria-label="Email address">
+          <button type="submit">SUBSCRIBE</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="modern-footer">
+    <div class="container">
+      <!-- Footer content (same as other pages) -->
+      <div class="footer-help-section">
+        <h3>HELP & INFORMATION</h3>
+        <div class="help-grid">
+          <div class="help-category">
+            <h4>Customer Service</h4>
+            <ul>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Track Order</a></li>
+              <li><a href="#">Delivery & Returns</a></li>
+              <li><a href="#">Size Guide</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+          <!-- Other help categories -->
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="payment-methods">
+          <img src="https://i.imgur.com/SHCoT7I.png" alt="Payment methods">
+        </div>
+        <div class="copyright">
+          <p>© 2025 MANVUE. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>

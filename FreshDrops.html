@@ -1,9 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="MANVUE - Fresh Drops - Latest trending men's fashion" />
+  <title>MANVUE | Fresh Drops</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
 
-<div class="product-grid">
-  <div class="product-card">
-    <img src="your-image-url" alt="Product Name">
-    <h3>Basic White Tee</h3>
-    <p>£19.99</p>
+<body>
+  <!-- TOP PROMO BANNER -->
+  <div class="promo-banner">
+    <span class="promo-text">FREE SHIPPING ON ORDERS GBP49+ ⚡ NEW DROPS EVERY WEEK</span>
+    <span class="promo-countdown" id="countdown">FLASH SALE ENDS IN: <span id="timer">23:59:59</span></span>
   </div>
-  <!-- Add more product cards -->
-</div>
+
+  <!-- MAIN HEADER -->
+  <header class="main-header">
+    <div class="logo">MANVUE</div>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Search for items, brands..." aria-label="Search" />
+      <button aria-label="Search"><i class="fas fa-search"></i></button>
+    </div>
+
+    <div class="header-icons">
+      <span title="Account"><i class="fas fa-user"></i></span>
+      <span title="Wishlist"><i class="fas fa-heart"></i><span class="wishlist-count">0</span></span>
+      <span class="cart-icon" title="Cart"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></span>
+    </div>
+  </header>
+
+  <!-- NAVIGATION MENU -->
+  <nav class="nav-bar" aria-label="Main Navigation">
+    <div class="nav-container">
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="main-nav">
+        <li class="nav-item"><a href="index.html">HOME</a></li>
+        <li class="nav-item"><a href="t-shirts.html">T-SHIRTS</a></li>
+        <li class="nav-item"><a href="shirts.html">SHIRTS</a></li>
+        <li class="nav-item"><a href="jackets.html">JACKETS</a></li>
+        <li class="nav-item"><a href="bottomwear.html">BOTTOMWEAR</a></li>
+        <li class="nav-item"><a href="footwear.html">FOOTWEAR</a></li>
+        <li class="nav-item"><a href="accessories.html">ACCESSORIES</a></li>
+        <li class="nav-item sale"><a href="sale.html">SALE</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- CATEGORY BANNER -->
+  <div class="category-banner fresh-drops-banner">
+    <div class="category-banner-content">
+      <h1>FRESH DROPS</h1>
+      <p>The latest trending styles just landed</p>
+    </div>
+  </div>
+
+  <!-- TRENDING NOW SECTION -->
+  <section class="trending-now">
+    <div class="container">
+      <h2 class="section-title">TRENDING THIS WEEK</h2>
+      <div class="product-grid">
+        <!-- Oversized Tee - trending in streetwear -->
+        <div class="product-card">
+          <div class="product-badge">NEW</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Oversized Graphic Tee">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Oversized Graphic Tee</h3>
+            <div class="product-price">
+              <span class="current-price">£29.99</span>
+            </div>
+            <div class="product-colors">
+              <span class="color-dot" style="background-color: #000000;" title="Black"></span>
+              <span class="color-dot" style="background-color: #FFFFFF; border: 1px solid #ddd;" title="White"></span>
+              <span class="color-dot" style="background-color: #7B9EA8;" title="Blue"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cargo Pants - trending in menswear -->
+        <div class="product-card">
+          <div class="product-badge">NEW</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1552331704-0c6e30a62f9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Utility Cargo Pants">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Utility Cargo Pants</h3>
+            <div class="product-price">
+              <span class="current-price">£49.99</span>
+            </div>
+            <div class="product-colors">
+              <span class="color-dot" style="background-color: #4A5559;" title="Charcoal"></span>
+              <span class="color-dot" style="background-color: #8C7D70;" title="Khaki"></span>
+              <span class="color-dot" style="background-color: #000000;" title="Black"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Varsity Jacket - trending in outerwear -->
+        <div class="product-card">
+          <div class="product-badge">NEW</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Varsity Bomber Jacket">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Varsity Bomber Jacket</h3>
+            <div class="product-price">
+              <span class="current-price">£89.99</span>
+            </div>
+            <div class="product-colors">
+              <span class="color-dot" style="background-color: #000000;" title="Black"></span>
+              <span class="color-dot" style="background-color: #192841;" title="Navy"></span>
+              <span class="color-dot" style="background-color: #8C1C13;" title="Burgundy"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chunky Sneakers - trending in footwear -->
+        <div class="product-card">
+          <div class="product-badge">NEW</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Chunky Platform Sneakers">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Chunky Platform Sneakers</h3>
+            <div class="product-price">
+              <span class="current-price">£69.99</span>
+            </div>
+            <div class="product-colors">
+              <span class="color-dot" style="background-color: #FFFFFF; border: 1px solid #ddd;" title="White"></span>
+              <span class="color-dot" style="background-color: #000000;" title="Black"></span>
+              <span class="color-dot" style="background-color: #ECEBE9;" title="Off-White"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRENDING CATEGORIES -->
+  <section class="trending-categories">
+    <div class="container">
+      <h2 class="section-title">TRENDING CATEGORIES</h2>
+      <div class="category-grid">
+        <!-- Y2K Revival -->
+        <div class="category-card">
+          <div class="category-image">
+            <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Y2K Revival">
+          </div>
+          <div class="category-label">
+            <h3>Y2K REVIVAL</h3>
+            <p>Nostalgic styles from the 2000s</p>
+            <a href="#" class="view-category">SHOP NOW</a>
+          </div>
+        </div>
+
+        <!-- Sustainable Fashion -->
+        <div class="category-card">
+          <div class="category-image">
+            <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Sustainable Fashion">
+          </div>
+          <div class="category-label">
+            <h3>ECO-CONSCIOUS</h3>
+            <p>Sustainable and ethical fashion</p>
+            <a href="#" class="view-category">SHOP NOW</a>
+          </div>
+        </div>
+
+        <!-- Athleisure -->
+        <div class="category-card">
+          <div class="category-image">
+            <img src="https://images.unsplash.com/photo-1483721310020-03333e577078?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Athleisure">
+          </div>
+          <div class="category-label">
+            <h3>ATHLEISURE</h3>
+            <p>Performance meets style</p>
+            <a href="#" class="view-category">SHOP NOW</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRENDING COLLECTIONS -->
+  <section class="trending-collections">
+    <div class="container">
+      <h2 class="section-title">TRENDING COLLECTIONS</h2>
+      <div class="product-grid">
+        <!-- Minimalist Essentials -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1516826957135-700dedea698c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Minimalist Tee">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Minimalist Pocket Tee</h3>
+            <div class="product-price">
+              <span class="current-price">£24.99</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Workwear Inspired -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1548883354-94bcfe321cbb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Workwear Overshirt">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Workwear Utility Overshirt</h3>
+            <div class="product-price">
+              <span class="current-price">£59.99</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Retro Sportswear -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1565128939502-e6d5e4710dd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Retro Track Jacket">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Retro Track Jacket</h3>
+            <div class="product-price">
+              <span class="current-price">£54.99</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sustainable Denim -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Recycled Denim Jeans">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Recycled Denim Straight Jeans</h3>
+            <div class="product-price">
+              <span class="current-price">£64.99</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter-content">
+        <div class="newsletter-text">
+          <h2>BE THE FIRST TO KNOW</h2>
+          <p>Subscribe to our newsletter for exclusive early access to new drops and trends.</p>
+        </div>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email address" required aria-label="Email address">
+          <button type="submit">SUBSCRIBE</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="modern-footer">
+    <div class="container">
+      <!-- Footer content (same as other pages) -->
+      <div class="footer-help-section">
+        <h3>HELP & INFORMATION</h3>
+        <div class="help-grid">
+          <div class="help-category">
+            <h4>Customer Service</h4>
+            <ul>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Track Order</a></li>
+              <li><a href="#">Delivery & Returns</a></li>
+              <li><a href="#">Size Guide</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+          <!-- Other help categories -->
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="payment-methods">
+          <img src="https://i.imgur.com/SHCoT7I.png" alt="Payment methods">
+        </div>
+        <div class="copyright">
+          <p>© 2025 MANVUE. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

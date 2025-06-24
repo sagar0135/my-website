@@ -27,16 +27,16 @@ document.addEventListener('DOMContentLoaded', function() {
   
   dropdownLinks.forEach(link => {
     link.addEventListener('click', function(e) {
-      e.preventDefault();
+      // Remove the preventDefault to allow normal navigation
+      // e.preventDefault();
       
-      // Get the category name
-      const category = this.textContent.split(' ')[0] + ' ' + this.textContent.split(' ')[1];
+      // Get the href attribute
+      const href = this.getAttribute('href');
       
-      // Redirect to a category page (you would create these pages)
-      // window.location.href = category.toLowerCase().replace(/\s+/g, '-') + '.html';
-      
-      // For demonstration, we'll just alert
-      alert('Navigating to: ' + category + ' page');
+      // Navigate to the page
+      if (href) {
+        window.location.href = href;
+      }
     });
   });
 });

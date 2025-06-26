@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="MANVUE - Street Style Collection - Urban-inspired looks" />
+  <title>Street Style | MANVUE</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+</style>
+ </head>
+<body>
+  <!-- TOP PROMO BANNER -->
+  <div class="promo-banner">
+    <span class="promo-text">FREE SHIPPING ON ORDERS GBP49+ ⚡ NEW DROPS EVERY WEEK</span>
+    <span class="promo-countdown" id="countdown">FLASH SALE ENDS IN: <span id="timer">23:59:59</span></span>
+  </div>
+
+  <!-- MAIN HEADER -->
+  <header class="main-header">
+    <div class="logo"><a href="index.html">MANVUE</a></div>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Search for items, brands..." aria-label="Search" />
+      <button aria-label="Search"><i class="fas fa-search"></i></button>
+    </div>
+
+    <div class="header-icons">
+      <span title="Account"><i class="fas fa-user"></i></span>
+      <span title="Wishlist"><i class="fas fa-heart"></i><span class="wishlist-count">0</span></span>
+      <span class="cart-icon" title="Cart"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></span>
+    </div>
+  </header>
+
+  <!-- NAVIGATION MENU -->
+  <nav class="nav-bar" aria-label="Main Navigation">
+    <div class="nav-container">
+      <ul class="main-nav">
+        <!-- CORE COLLECTIONS -->
+        <li class="nav-item dropdown">
+          <span tabindex="0">CORE COLLECTIONS</span>
+          <div class="dropdown-menu">
+            <a href="FreshDrops.html">Fresh Drops</a>
+            <a href="CrowdFavorites.html">Crowd Favorites</a>
+            <a href="ExtendedFits.html">Extended Fits</a>
+          </div>
+        </li>
+        
+        <!-- SMART GROUPINGS -->
+        <li class="nav-item dropdown">
+          <span tabindex="0">SMART GROUPINGS</span>
+          <div class="dropdown-menu">
+            <a href="TheFundamentals.html">The Fundamentals</a>
+            <a href="PowerMoves.html">Power Moves</a>
+            <a href="StreetStyle.html">Street Style</a>
+            <a href="WeekendWarrior.html">Weekend Warrior</a>
+            <a href="LayerGame.html">Layer Game</a>
+          </div>
+        </li>
+        
+        <!-- LIFESTYLE -->
+        <li class="nav-item dropdown">
+          <span tabindex="0">LIFESTYLE</span>
+          <div class="dropdown-menu">
+            <a href="BoardroomReady.html">Boardroom Ready</a>
+            <a href="GymToStreet.html">Gym to Street</a>
+            <a href="DateNight.html">Date Night</a>
+            <a href="VacationMode.html">Vacation Mode</a>
+            <a href="WorkFromHome.html">Work From Home</a>
+          </div>
+        </li>
+        
+        <!-- INTERACTIVE FEATURES -->
+        <li class="nav-item dropdown">
+          <span tabindex="0">FEATURES</span>
+          <div class="dropdown-menu">
+            <a href="StyleQuiz.html">Style Quiz</a>
+            <a href="OccasionBuilder.html">Occasion Builder</a>
+            <a href="YourSizeYourStyle.html">Your Size, Your Style</a>
+            <a href="StaffPicks.html">Staff Picks</a>
+            <a href="CompleteTheLook.html">Complete the Look</a>
+          </div>
+        </li>
+        
+        <!-- SALE -->
+        <li class="nav-item sale">
+          <span tabindex="0">SALE</span>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- STREET STYLE BANNER -->
+  <div class="category-banner street-style-banner">
+    <div class="category-banner-content">
+      <h1>STREET STYLE</h1>
+      <p>Urban-inspired looks for the modern man</p>
+    </div>
+  </div>
+
+  <!-- STREET STYLE INTRO -->
+  <section class="street-style-intro">
+    <div class="container">
+      <div class="intro-content">
+        <h2>URBAN EDGE, EVERYDAY COMFORT</h2>
+        <p>Our Street Style collection brings together urban aesthetics with practical comfort. Each outfit is carefully curated to help you express your individuality while navigating city life with confidence.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTFIT COLLECTIONS -->
+  <section class="outfit-collections">
+    <div class="container">
+      <h2 class="section-title">COMPLETE OUTFITS</h2>
+      <p class="section-subtitle">Ready-to-wear combinations for effortless style</p>
+      
+      <div class="outfit-grid">
+        <!-- Outfit 1: Urban Explorer -->
+        <div class="outfit-card" id="outfit-1">
+          <div class="outfit-image">
+            <img src="https://images.unsplash.com/photo-1536766820879-059fec98ec0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Urban Explorer Outfit">
+            <div class="outfit-overlay">
+              <h3>URBAN EXPLORER</h3>
+              <button class="view-outfit-btn">View Outfit</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Outfit 2: Street Essentials -->
+        <div class="outfit-card" id="outfit-2">
+          <div class="outfit-image">
+            <img src="https://images.unsplash.com/photo-1550246140-29f40b909e5a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Street Essentials Outfit">
+            <div class="outfit-overlay">
+              <h3>STREET ESSENTIALS</h3>
+              <button class="view-outfit-btn">View Outfit</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Outfit 3: Urban Minimalist -->
+        <div class="outfit-card" id="outfit-3">
+          <div class="outfit-image">
+            <img src="https://images.unsplash.com/photo-1516826957135-700dedea698c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Urban Minimalist Outfit">
+            <div class="outfit-overlay">
+              <h3>URBAN MINIMALIST</h3>
+              <button class="view-outfit-btn">View Outfit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED OUTFIT DETAIL (Initially hidden, shown when outfit is clicked) -->
+  <section class="outfit-detail" id="outfit-detail">
+    <div class="container">
+      <div class="outfit-detail-header">
+        <h2 id="outfit-detail-title">URBAN EXPLORER</h2>
+        <p id="outfit-detail-description">A versatile street-ready look that combines comfort with urban edge. Perfect for city exploration and casual hangouts.</p>
+      </div>
+      
+      <div class="outfit-showcase">
+        <div class="outfit-main-image">
+          <img id="outfit-main-image" src="https://images.unsplash.com/photo-1536766820879-059fec98ec0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Urban Explorer Outfit">
+        </div>
+        
+        <div class="outfit-features">
+          <h3>OUTFIT FEATURES</h3>
+          <ul id="outfit-features-list">
+            <li><i class="fas fa-check"></i> Layered urban aesthetic</li>
+            <li><i class="fas fa-check"></i> Weather-adaptable pieces</li>
+            <li><i class="fas fa-check"></i> Comfortable for all-day wear</li>
+            <li><i class="fas fa-check"></i> Versatile for various occasions</li>
+            <li><i class="fas fa-check"></i> Easy to mix and match</li>
+          </ul>
+          
+          <div class="outfit-price">
+            <span class="outfit-total-label">Complete Outfit:</span>
+            <span class="outfit-total-price" id="outfit-total-price">£219.97</span>
+            <span class="outfit-discount">Save 15% when bought together</span>
+          </div>
+          
+          <button class="add-outfit-to-cart">Add Complete Outfit to Cart</button>
+        </div>
+      </div>
+      
+      <!-- Individual Products in the Outfit -->
+      <div class="outfit-products">
+        <h3>OUTFIT COMPONENTS</h3>
+        <div class="product-grid" id="outfit-products-grid">
+          <!-- Outfit Component 1 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Oversized Streetwear Hoodie">
+              <div class="product-actions">
+                <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+                <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+                <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Oversized Streetwear Hoodie</h3>
+              <div class="product-price">
+                <span class="current-price">£59.99</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Outfit Component 2 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Distressed Slim Jeans">
+              <div class="product-actions">
+                <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+                <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+                <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Distressed Slim Jeans</h3>
+              <div class="product-price">
+                <span class="current-price">£69.99</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Outfit Component 3 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Street Classic Sneakers">
+              <div class="product-actions">
+                <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+                <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+                <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Street Classic Sneakers</h3>
+              <div class="product-price">
+                <span class="current-price">£89.99</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDIVIDUAL PRODUCTS SECTION -->
+  <section class="street-style-products">
+    <div class="container">
+      <h2 class="section-title">STREET STYLE ESSENTIALS</h2>
+      <p class="section-subtitle">Build your own urban-inspired look</p>
+      
+      <!-- Product Filters -->
+      <div class="product-filters">
+        <button class="filter-btn active" data-filter="all">All Products</button>
+        <button class="filter-btn" data-filter="hoodies">Hoodies</button>
+        <button class="filter-btn" data-filter="denim">Denim</button>
+        <button class="filter-btn" data-filter="sneakers">Sneakers</button>
+        <button class="filter-btn" data-filter="accessories">Accessories</button>
+      </div>
+      
+      <div class="product-grid" id="street-style-products">
+        <!-- Hoodie 1 -->
+        <div class="product-card" data-category="hoodies">
+          <div class="product-badge bestseller">BESTSELLER</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Oversized Streetwear Hoodie">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Oversized Streetwear Hoodie</h3>
+            <div class="product-price">
+              <span class="current-price">£59.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span class="rating-count">(142)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Hoodie 2 -->
+        <div class="product-card" data-category="hoodies">
+          <div class="product-badge">NEW</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1578681994506-b8f463449011?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Urban Graphic Hoodie">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Urban Graphic Hoodie</h3>
+            <div class="product-price">
+              <span class="current-price">£54.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span class="rating-count">(87)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Denim 1 -->
+        <div class="product-card" data-category="denim">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Distressed Slim Jeans">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Distressed Slim Jeans</h3>
+            <div class="product-price">
+              <span class="current-price">£69.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span class="rating-count">(118)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Denim 2 -->
+        <div class="product-card" data-category="denim">
+          <div class="product-badge bestseller">BESTSELLER</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Cargo Joggers">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Urban Cargo Joggers</h3>
+            <div class="product-price">
+              <span class="current-price">£64.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span class="rating-count">(156)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Sneakers 1 -->
+        <div class="product-card" data-category="sneakers">
+          <div class="product-badge">NEW</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Urban Sneakers">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Street Classic Sneakers</h3>
+            <div class="product-price">
+              <span class="current-price">£89.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span class="rating-count">(203)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Accessories 1 -->
+        <div class="product-card" data-category="accessories">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1556306535-0f09a537f0a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Urban Backpack">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Urban Utility Backpack</h3>
+            <div class="product-price">
+              <span class="current-price">£49.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span class="rating-count">(78)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUSTOMER REVIEWS -->
+  <section class="customer-reviews">
+    <div class="container">
+      <h2 class="section-title">WHAT OUR CUSTOMERS SAY</h2>
+      
+      <div class="reviews-slider">
+        <!-- Review 1 -->
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer Avatar">
+              </div>
+              <div class="reviewer-name">
+                <h4>James Wilson</h4>
+                <div class="review-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <div class="review-date">2 weeks ago</div>
+          </div>
+          <div class="review-content">
+            <p>"The Urban Explorer outfit is exactly what I was looking for. The quality of each piece is exceptional, and they work perfectly together. I've received so many compliments!"</p>
+          </div>
+          <div class="review-product">
+            <img src="https://images.unsplash.com/photo-1536766820879-059fec98ec0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Urban Explorer Outfit">
+            <span>Urban Explorer Outfit</span>
+          </div>
+        </div>
+        
+        <!-- Review 2 -->
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">
+                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Customer Avatar">
+              </div>
+              <div class="reviewer-name">
+                <h4>Michael Chen</h4>
+                <div class="review-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+              </div>
+            </div>
+            <div class="review-date">1 month ago</div>
+          </div>
+          <div class="review-content">
+            <p>"The Oversized Streetwear Hoodie is now my go-to for casual days. The fit is perfect and the material is super comfortable. Definitely worth the price!"</p>
+          </div>
+          <div class="review-product">
+            <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Oversized Streetwear Hoodie">
+            <span>Oversized Streetwear Hoodie</span>
+          </div>
+        </div>
+        
+        <!-- Review 3 -->
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">
+                <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Customer Avatar">
+              </div>
+              <div class="reviewer-name">
+                <h4>David Thompson</h4>
+                <div class="review-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <div class="review-date">3 weeks ago</div>
+          </div>
+          <div class="review-content">
+            <p>"The Street Classic Sneakers are incredibly comfortable and versatile. I can wear them all day without any discomfort, and they go with practically everything in my wardrobe."</p>
+          </div>
+          <div class="review-product">
+            <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Street Classic Sneakers">
+            <span>Street Classic Sneakers</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="reviews-navigation">
+        <button class="review-nav prev"><i class="fas fa-chevron-left"></i></button>
+        <div class="review-dots">
+          <span class="review-dot active"></span>
+          <span class="review-dot"></span>
+          <span class="review-dot"></span>
+        </div>
+        <button class="review-nav next"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIMILAR PRODUCTS -->
+  <section class="similar-products">
+    <div class="container">
+      <h2 class="section-title">YOU MAY ALSO LIKE</h2>
+      
+      <div class="product-grid">
+        <!-- Similar Product 1 -->
+        <div class="product-card">
+          <div class="product-badge">NEW</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Bomber Jacket">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Urban Bomber Jacket</h3>
+            <div class="product-price">
+              <span class="current-price">£89.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span class="rating-count">(64)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Similar Product 2 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1521369909029-2afed882baee?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Graphic T-shirt">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Urban Graphic T-shirt</h3>
+            <div class="product-price">
+              <span class="current-price">£29.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span class="rating-count">(92)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Similar Product 3 -->
+        <div class="product-card">
+          <div class="product-badge sale">-20%</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1523779105320-d1cd346ff52b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Beanie">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Urban Beanie</h3>
+            <div class="product-price">
+              <span class="current-price">£15.99</span>
+              <span class="original-price">£19.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span class="rating-count">(47)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Similar Product 4 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Crossbody Bag">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Urban Crossbody Bag</h3>
+            <div class="product-price">
+              <span class="current-price">£49.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span class="rating-count">(12)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter-content">
+        <div class="newsletter-text">
+          <h2>JOIN THE CLUB</h2>
+          <p>Subscribe to our newsletter for exclusive offers, style tips, and early access to new drops.</p>
+        </div>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email address" required aria-label="Email address">
+          <button type="submit">SUBSCRIBE</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="modern-footer">
+    <div class="container">
+      <!-- Help & Information Section -->
+      <div class="footer-help-section">
+        <h3>HELP & INFORMATION</h3>
+        <div class="help-grid">
+          <div class="help-category">
+            <h4>Customer Service</h4>
+            <ul>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Track Order</a></li>
+              <li><a href="#">Delivery & Returns</a></li>
+              <li><a href="#">Size Guide</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="help-category">
+            <h4>Shopping</h4>
+            <ul>
+              <li><a href="#">How to Shop</a></li>
+              <li><a href="#">Payment Methods</a></li>
+              <li><a href="#">Gift Cards</a></li>
+              <li><a href="#">Student Discount</a></li>
+              <li><a href="#">Refer a Friend</a></li>
+            </ul>
+          </div>
+          <div class="help-category">
+            <h4>About MANVUE</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Corporate Responsibility</a></li>
+              <li><a href="#">Investors</a></li>
+              <li><a href="#">Sustainability</a></li>
+            </ul>
+          </div>
+          <div class="help-category">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Cookie Policy</a></li>
+              <li><a href="#">Accessibility</a></li>
+              <li><a href="#">Modern Slavery Statement</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Main Footer Columns -->
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h3>ABOUT US</h3>
+          <p>MANVUE is a premium men's fashion brand dedicated to providing high-quality, stylish clothing for the modern man. Our mission is to help you express your unique style with confidence.</p>
+        </div>
+        <div class="footer-column">
+          <h3>STORE LOCATOR</h3>
+          <p>Find your nearest MANVUE store with our interactive store locator. We have over 50 stores across the UK.</p>
+          <a href="#" class="btn-link">Find a Store</a>
+        </div>
+        <div class="footer-column">
+          <h3>CONNECT WITH US</h3>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+          <h3>NEWSLETTER</h3>
+          <p>Subscribe for exclusive offers and updates</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Email Address" aria-label="Email for newsletter" required>
+            <button type="submit" aria-label="Subscribe">SUBSCRIBE</button>
+          </form>
+        </div>
+      </div>
+      
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="payment-methods">
+          <img src="https://i.imgur.com/SHCoT7I.png" alt="Payment methods">
+        </div>
+        <div class="copyright">
+          <p>© 2025 MANVUE. All Rights Reserved.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Accessibility</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
+

@@ -3,19 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="MANVUE - Premium men's jackets collection" />
-  <title>Men's Jackets & Hoodies | MANVUE</title>
+  <meta name="description" content="MANVUE - Summer Collection for Men" />
+  <title>Summer Collection | MANVUE</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <!-- TOP PROMO BANNER -->
   <div class="promo-banner">
     <span class="promo-text">FREE SHIPPING ON ORDERS GBP49+ ⚡ NEW DROPS EVERY WEEK</span>
-    <span class="promo-countdown" id="countdown">FLASH SALE ENDS IN: <span id="timer">23:59:59</span></span>
+    <span class="promo-countdown" id="countdown">SUMMER SALE ENDS IN: <span id="timer">23:59:59</span></span>
   </div>
 
   <!-- MAIN HEADER -->
@@ -37,25 +38,66 @@
   <!-- NAVIGATION MENU -->
   <nav class="nav-bar" aria-label="Main Navigation">
     <div class="nav-container">
-     <ul class="main-nav">
-        <!-- Navigation items here -->
-        <li class="nav-item"><a href="index.html">HOME</a></li>
-        <li class="nav-item"><a href="t-shirts.html">T-SHIRTS</a></li>
-        <li class="nav-item"><a href="shirts.html">SHIRTS</a></li>
-        <li class="nav-item active"><a href="jackets.html">JACKETS</a></li>
-        <li class="nav-item"><a href="bottomwear.html">BOTTOMWEAR</a></li>
-        <li class="nav-item"><a href="footwear.html">FOOTWEAR</a></li>
-        <li class="nav-item"><a href="accessories.html">ACCESSORIES</a></li>
-        <li class="nav-item sale"><a href="sale.html">SALE</a></li>
+      <ul class="main-nav">
+        <!-- CORE COLLECTIONS -->
+        <li class="nav-item dropdown">
+          <span tabindex="0">CORE COLLECTIONS</span>
+          <div class="dropdown-menu">
+            <a href="FreshDrops.html">Fresh Drops</a>
+            <a href="CrowdFavorites.html">Crowd Favorites</a>
+            <a href="ExtendedFits.html">Extended Fits</a>
+          </div>
+        </li>
+        
+        <!-- SMART GROUPINGS -->
+        <li class="nav-item dropdown">
+          <span tabindex="0">SMART GROUPINGS</span>
+          <div class="dropdown-menu">
+            <a href="TheFundamentals.html">The Fundamentals</a>
+            <a href="PowerMoves.html">Power Moves</a>
+            <a href="StreetStyle.html">Street Style</a>
+            <a href="WeekendWarrior.html">Weekend Warrior</a>
+            <a href="LayerGame.html">Layer Game</a>
+          </div>
+        </li>
+        
+        <!-- LIFESTYLE -->
+        <li class="nav-item dropdown">
+          <span tabindex="0">LIFESTYLE</span>
+          <div class="dropdown-menu">
+            <a href="BoardroomReady.html">Boardroom Ready</a>
+            <a href="GymToStreet.html">Gym to Street</a>
+            <a href="DateNight.html">Date Night</a>
+            <a href="VacationMode.html">Vacation Mode</a>
+            <a href="WorkFromHome.html">Work From Home</a>
+          </div>
+        </li>
+        
+        <!-- INTERACTIVE FEATURES -->
+        <li class="nav-item dropdown">
+          <span tabindex="0">FEATURES</span>
+          <div class="dropdown-menu">
+            <a href="StyleQuiz.html">Style Quiz</a>
+            <a href="OccasionBuilder.html">Occasion Builder</a>
+            <a href="YourSizeYourStyle.html">Your Size, Your Style</a>
+            <a href="StaffPicks.html">Staff Picks</a>
+            <a href="CompleteTheLook.html">Complete the Look</a>
+          </div>
+        </li>
+        
+        <!-- SALE -->
+        <li class="nav-item sale">
+          <span tabindex="0">SALE</span>
+        </li>
       </ul>
     </div>
   </nav>
 
-  <!-- CATEGORY BANNER -->
-  <div class="category-banner">
+  <!-- SUMMER COLLECTION BANNER -->
+  <div class="category-banner summer-collection-banner">
     <div class="category-banner-content">
-      <h1>MEN'S JACKETS & HOODIES</h1>
-      <p>Premium outerwear for every season and occasion</p>
+      <h1>SUMMER COLLECTION 2025</h1>
+      <p>Beat the heat with our exclusive summer styles</p>
     </div>
   </div>
 
@@ -74,22 +116,18 @@
               <option value="price-low">Price: Low to High</option>
               <option value="price-high">Price: High to Low</option>
               <option value="bestselling">Bestselling</option>
-              <option value="rating">Top Rated</option>
             </select>
           </div>
           
           <div class="filter-group">
             <label for="filter-category">Category:</label>
             <select id="filter-category" class="filter-select">
-              <option value="all">All Jackets & Hoodies</option>
-              <option value="leather">Leather Jackets</option>
-              <option value="denim">Denim Jackets</option>
-              <option value="bomber">Bomber Jackets</option>
-              <option value="puffer">Puffer Jackets</option>
-              <option value="blazer">Blazers</option>
-              <option value="windbreaker">Windbreakers</option>
-              <option value="hoodies">Hoodies</option>
-              <option value="sweatshirts">Sweatshirts</option>
+              <option value="all">All Categories</option>
+              <option value="tshirts">T-Shirts</option>
+              <option value="shirts">Shirts</option>
+              <option value="shorts">Shorts</option>
+              <option value="swimwear">Swimwear</option>
+              <option value="accessories">Accessories</option>
             </select>
           </div>
           
@@ -107,41 +145,30 @@
           <div class="filter-group">
             <label>Color:</label>
             <div class="color-options">
+              <label class="color-option" title="White">
+                <input type="checkbox" name="color" value="white">
+                <span class="color-swatch" style="background-color: #fff; border: 1px solid #ddd;"></span>
+              </label>
               <label class="color-option" title="Black">
                 <input type="checkbox" name="color" value="black">
                 <span class="color-swatch" style="background-color: #000;"></span>
               </label>
-              <label class="color-option" title="Brown">
-                <input type="checkbox" name="color" value="brown">
-                <span class="color-swatch" style="background-color: #964B00;"></span>
-              </label>
-              <label class="color-option" title="Navy">
-                <input type="checkbox" name="color" value="navy">
-                <span class="color-swatch" style="background-color: #000080;"></span>
+              <label class="color-option" title="Blue">
+                <input type="checkbox" name="color" value="blue">
+                <span class="color-swatch" style="background-color: #1e73be;"></span>
               </label>
               <label class="color-option" title="Green">
                 <input type="checkbox" name="color" value="green">
                 <span class="color-swatch" style="background-color: #2ecc71;"></span>
               </label>
-              <label class="color-option" title="Beige">
-                <input type="checkbox" name="color" value="beige">
-                <span class="color-swatch" style="background-color: #F5F5DC;"></span>
+              <label class="color-option" title="Yellow">
+                <input type="checkbox" name="color" value="yellow">
+                <span class="color-swatch" style="background-color: #f1c40f;"></span>
               </label>
-              <label class="color-option" title="Grey">
-                <input type="checkbox" name="color" value="grey">
-                <span class="color-swatch" style="background-color: #808080;"></span>
+              <label class="color-option" title="Red">
+                <input type="checkbox" name="color" value="red">
+                <span class="color-swatch" style="background-color: #e74c3c;"></span>
               </label>
-            </div>
-          </div>
-          
-          <div class="filter-group">
-            <label>Price Range:</label>
-            <div class="price-range">
-              <div class="price-inputs">
-                <input type="number" id="min-price" placeholder="Min" min="0" max="500">
-                <span>to</span>
-                <input type="number" id="max-price" placeholder="Max" min="0" max="500">
-              </div>
             </div>
           </div>
           
@@ -154,46 +181,119 @@
     </div>
   </section>
 
-  <!-- CATEGORY PRODUCTS -->
-  <section class="category-products">
+  <script>
+    // Filter functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      // Toggle filter options on mobile
+      const filterToggleBtn = document.getElementById('filter-toggle-btn');
+      const filterOptions = document.querySelector('.filter-options');
+      
+      if (filterToggleBtn) {
+        filterToggleBtn.addEventListener('click', function() {
+          filterOptions.classList.toggle('show');
+        });
+      }
+      
+      // Apply filters button
+      const applyBtn = document.getElementById('apply-filters');
+      if (applyBtn) {
+        applyBtn.addEventListener('click', function() {
+          applyFilters();
+        });
+      }
+      
+      // Reset filters button
+      const resetBtn = document.getElementById('reset-filters');
+      if (resetBtn) {
+        resetBtn.addEventListener('click', function() {
+          resetFilters();
+        });
+      }
+      
+      function applyFilters() {
+        const products = document.querySelectorAll('.product-card');
+        const sortBy = document.getElementById('sort-by').value;
+        const category = document.getElementById('filter-category').value;
+        const selectedSizes = Array.from(document.querySelectorAll('input[name="size"]:checked')).map(el => el.value);
+        const selectedColors = Array.from(document.querySelectorAll('input[name="color"]:checked')).map(el => el.value);
+        
+        // Show all products initially
+        products.forEach(product => {
+          product.style.display = 'block';
+        });
+        
+        // Filter by category
+        if (category !== 'all') {
+          products.forEach(product => {
+            const productName = product.querySelector('h3').textContent.toLowerCase();
+            if (!productName.includes(category.slice(0, -1).toLowerCase())) {
+              product.style.display = 'none';
+            }
+          });
+        }
+        
+        // Filter by size (this is simulated since we don't have actual size data)
+        if (selectedSizes.length > 0) {
+          // In a real implementation, you would check product sizes
+          // This is just a simulation
+          const filteredProducts = Array.from(products).filter((_, index) => index % 2 === 0);
+          products.forEach(product => {
+            if (!filteredProducts.includes(product)) {
+              product.style.display = 'none';
+            }
+          });
+        }
+        
+        // Filter by color (this is simulated since we don't have actual color data)
+        if (selectedColors.length > 0) {
+          // In a real implementation, you would check product colors
+          // This is just a simulation
+          const filteredProducts = Array.from(products).filter((_, index) => index % 3 === 0);
+          products.forEach(product => {
+            if (!filteredProducts.includes(product) && product.style.display !== 'none') {
+              product.style.display = 'none';
+            }
+          });
+        }
+        
+        // Show message if no products match filters
+        const visibleProducts = document.querySelectorAll('.product-card[style="display: block"]');
+        if (visibleProducts.length === 0) {
+          alert('No products match your selected filters. Try different criteria.');
+          resetFilters();
+        }
+      }
+      
+      function resetFilters() {
+        // Reset all form elements
+        document.getElementById('sort-by').value = 'newest';
+        document.getElementById('filter-category').value = 'all';
+        
+        // Uncheck all checkboxes
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+          checkbox.checked = false;
+        });
+        
+        // Show all products
+        document.querySelectorAll('.product-card').forEach(product => {
+          product.style.display = 'block';
+        });
+      }
+    });
+  </script>
+
+  <!-- SUMMER ESSENTIALS -->
+  <section class="summer-essentials">
     <div class="container">
-      <h2 class="section-title">MEN'S JACKETS COLLECTION</h2>
-      
-      
+      <h2 class="section-title">SUMMER ESSENTIALS</h2>
+      <p class="section-subtitle">Must-have pieces for the season</p>
       
       <div class="product-grid">
-        <!-- Product 1 -->
-        <div class="product-card">
-          <div class="product-badge">NEW</div>
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1520975954732-35dd22299614?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Leather Jacket">
-            <div class="product-actions">
-              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
-              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
-              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
-            </div>
-          </div>
-          <div class="product-info">
-            <h3>Men's Vintage Leather Jacket</h3>
-            <div class="product-price">
-              <span class="current-price">£159.99</span>
-            </div>
-            <div class="product-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-              <span>(87)</span>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Product 2 -->
+        <!-- Product 1: Linen Shirt -->
         <div class="product-card">
           <div class="product-badge bestseller">BESTSELLER</div>
           <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Denim Jacket">
+            <img src="https://images.unsplash.com/photo-1598961942613-ba897716405b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Linen Shirt">
             <div class="product-actions">
               <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
               <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
@@ -201,114 +301,7 @@
             </div>
           </div>
           <div class="product-info">
-            <h3>Men's Distressed Denim Jacket</h3>
-            <div class="product-price">
-              <span class="current-price">£64.99</span>
-            </div>
-            <div class="product-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <span>(156)</span>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Product 3 -->
-        <div class="product-card">
-          <div class="product-badge sale">-25%</div>
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1592878904946-b3cd8ae243d0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Bomber Jacket">
-            <div class="product-actions">
-              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
-              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
-              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
-            </div>
-          </div>
-          <div class="product-info">
-            <h3>Men's Military Bomber Jacket</h3>
-            <div class="product-price">
-              <span class="current-price">£74.99</span>
-              <span class="original-price">£99.99</span>
-            </div>
-            <div class="product-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-              <span>(92)</span>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Product 4 -->
-        <div class="product-card">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Puffer Jacket">
-            <div class="product-actions">
-              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
-              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
-              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
-            </div>
-          </div>
-          <div class="product-info">
-            <h3>Men's Quilted Puffer Jacket</h3>
-            <div class="product-price">
-              <span class="current-price">£84.99</span>
-            </div>
-            <div class="product-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-              <span>(78)</span>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Product 5 -->
-        <div class="product-card">
-          <div class="product-badge">NEW</div>
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1559551409-dadc959f76b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Blazer">
-            <div class="product-actions">
-              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
-              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
-              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
-            </div>
-          </div>
-          <div class="product-info">
-            <h3>Men's Slim Fit Blazer</h3>
-            <div class="product-price">
-              <span class="current-price">£119.99</span>
-            </div>
-            <div class="product-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-              <span>(64)</span>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Product 6 -->
-        <div class="product-card">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1548883354-94bcfe321cbb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Windbreaker">
-            <div class="product-actions">
-              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
-              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
-              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
-            </div>
-          </div>
-          <div class="product-info">
-            <h3>Men's Lightweight Windbreaker</h3>
+            <h3>Premium Linen Shirt</h3>
             <div class="product-price">
               <span class="current-price">£49.99</span>
             </div>
@@ -316,18 +309,18 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
               <i class="fas fa-star-half-alt"></i>
-              <i class="far fa-star"></i>
-              <span>(53)</span>
+              <span>(128)</span>
             </div>
           </div>
         </div>
         
-        <!-- Product 7 -->
+        <!-- Product 2: Printed T-Shirt -->
         <div class="product-card">
-          <div class="product-badge sale">-20%</div>
+          <div class="product-badge">NEW</div>
           <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Trucker Jacket">
+            <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Printed T-Shirt">
             <div class="product-actions">
               <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
               <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
@@ -335,10 +328,9 @@
             </div>
           </div>
           <div class="product-info">
-            <h3>Men's Denim Trucker Jacket</h3>
+            <h3>Tropical Print T-Shirt</h3>
             <div class="product-price">
-              <span class="current-price">£55.99</span>
-              <span class="original-price">£69.99</span>
+              <span class="current-price">£29.99</span>
             </div>
             <div class="product-rating">
               <i class="fas fa-star"></i>
@@ -346,16 +338,15 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="far fa-star"></i>
-              <span>(71)</span>
+              <span>(86)</span>
             </div>
           </div>
         </div>
         
-        <!-- Product 8 -->
+        <!-- Product 3: Chino Shorts -->
         <div class="product-card">
-          <div class="product-badge bestseller">BESTSELLER</div>
           <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1544022613-e87ca75a784a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Varsity Jacket">
+            <img src="https://images.unsplash.com/photo-1552331704-0c6e30a62f9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Chino Shorts">
             <div class="product-actions">
               <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
               <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
@@ -363,9 +354,9 @@
             </div>
           </div>
           <div class="product-info">
-            <h3>Men's Varsity Jacket</h3>
+            <h3>Stretch Chino Shorts</h3>
             <div class="product-price">
-              <span class="current-price">£79.99</span>
+              <span class="current-price">£39.99</span>
             </div>
             <div class="product-rating">
               <i class="fas fa-star"></i>
@@ -378,10 +369,10 @@
           </div>
         </div>
         
-        <!-- Product 9 -->
+        <!-- Product 4: Swim Shorts -->
         <div class="product-card">
           <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1548126032-079a0fb0099d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Parka">
+            <img src="https://images.unsplash.com/photo-1565128939502-e6d5e4910583?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Swim Shorts">
             <div class="product-actions">
               <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
               <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
@@ -389,26 +380,35 @@
             </div>
           </div>
           <div class="product-info">
-            <h3>Men's Winter Parka</h3>
+            <h3>Quick-Dry Swim Shorts</h3>
             <div class="product-price">
-              <span class="current-price">£129.99</span>
+              <span class="current-price">£34.99</span>
             </div>
             <div class="product-rating">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-              <span>(89)</span>
+              <i class="far fa-star"></i>
+              <span>(94)</span>
             </div>
           </div>
         </div>
-        
-        <!-- Product 10 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- SUMMER COLLECTION MAIN -->
+  <section class="summer-collection">
+    <div class="container">
+      <h2 class="section-title">SUMMER COLLECTION</h2>
+      <p class="section-subtitle">Explore our full range of summer styles</p>
+      
+      <div class="product-grid">
+        <!-- Product 5: Linen Blend Shirt -->
         <div class="product-card">
-          <div class="product-badge sale">-15%</div>
           <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1611312449408-fcece27cdbb7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Harrington Jacket">
+            <img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Linen Blend Shirt">
             <div class="product-actions">
               <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
               <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
@@ -416,10 +416,9 @@
             </div>
           </div>
           <div class="product-info">
-            <h3>Men's Classic Harrington Jacket</h3>
+            <h3>Linen Blend Shirt - Blue</h3>
             <div class="product-price">
-              <span class="current-price">£67.99</span>
-              <span class="original-price">£79.99</span>
+              <span class="current-price">£45.99</span>
             </div>
             <div class="product-rating">
               <i class="fas fa-star"></i>
@@ -432,11 +431,10 @@
           </div>
         </div>
         
-        <!-- Hoodie 1 -->
-        <div class="product-card" data-product-id="h001" data-category="hoodies">
-          <div class="product-badge bestseller">BESTSELLER</div>
+        <!-- Product 6: Striped T-Shirt -->
+        <div class="product-card">
           <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Pullover Hoodie">
+            <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Striped T-Shirt">
             <div class="product-actions">
               <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
               <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
@@ -444,7 +442,86 @@
             </div>
           </div>
           <div class="product-info">
-            <h3>Essential Pullover Hoodie</h3>
+            <h3>Striped Cotton T-Shirt</h3>
+            <div class="product-price">
+              <span class="current-price">£24.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <i class="far fa-star"></i>
+              <span>(58)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 7: Cargo Shorts -->
+        <div class="product-card">
+          <div class="product-badge">NEW</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1591195853828-11db59a44f6b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Cargo Shorts">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Lightweight Cargo Shorts</h3>
+            <div class="product-price">
+              <span class="current-price">£42.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(42)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 8: Polo Shirt -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Polo Shirt">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Piqué Polo Shirt</h3>
+            <div class="product-price">
+              <span class="current-price">£32.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(89)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 9: Linen Trousers -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Linen Trousers">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Relaxed Linen Trousers</h3>
             <div class="product-price">
               <span class="current-price">£49.99</span>
             </div>
@@ -453,17 +530,17 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <span>(142)</span>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(67)</span>
             </div>
           </div>
         </div>
         
-        <!-- Hoodie 2 -->
-        <div class="product-card" data-product-id="h002" data-category="hoodies">
+        <!-- Product 10: Printed Shirt -->
+        <div class="product-card">
           <div class="product-badge">NEW</div>
           <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Zip-Up Hoodie">
+            <img src="https://images.unsplash.com/photo-1517191297489-48c463380e8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Printed Shirt">
             <div class="product-actions">
               <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
               <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
@@ -471,115 +548,7 @@
             </div>
           </div>
           <div class="product-info">
-            <h3>Premium Zip-Up Hoodie</h3>
-            <div class="product-price">
-              <span class="current-price">£59.99</span>
-            </div>
-            <div class="product-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-              <span>(78)</span>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Hoodie 3 -->
-        <div class="product-card" data-product-id="h003" data-category="hoodies">
-          <div class="product-badge sale">-30%</div>
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1578681994506-b8f463449011?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Oversized Hoodie">
-            <div class="product-actions">
-              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
-              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
-              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
-            </div>
-          </div>
-          <div class="product-info">
-            <h3>Oversized Streetwear Hoodie</h3>
-            <div class="product-price">
-              <span class="current-price">£41.99</span>
-              <span class="original-price">£59.99</span>
-            </div>
-            <div class="product-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-              <span>(63)</span>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Hoodie 4 -->
-        <div class="product-card" data-product-id="h004" data-category="hoodies">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1509942774463-acf339cf87d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Tech Fleece Hoodie">
-            <div class="product-actions">
-              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
-              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
-              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
-            </div>
-          </div>
-          <div class="product-info">
-            <h3>Tech Fleece Performance Hoodie</h3>
-            <div class="product-price">
-              <span class="current-price">£69.99</span>
-            </div>
-            <div class="product-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <span>(94)</span>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Hoodie 5 -->
-        <div class="product-card" data-product-id="h005" data-category="hoodies">
-          <div class="product-badge bestseller">BESTSELLER</div>
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1564557287817-3785e38ec1f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Graphic Hoodie">
-            <div class="product-actions">
-              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
-              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
-              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
-            </div>
-          </div>
-          <div class="product-info">
-            <h3>Urban Graphic Print Hoodie</h3>
-            <div class="product-price">
-              <span class="current-price">£54.99</span>
-            </div>
-            <div class="product-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-              <span>(118)</span>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Sweatshirt 1 -->
-        <div class="product-card" data-product-id="s001" data-category="sweatshirts">
-          <div class="product-badge">NEW</div>
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1572495641004-28421ae29ed4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Crewneck Sweatshirt">
-            <div class="product-actions">
-              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
-              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
-              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
-            </div>
-          </div>
-          <div class="product-info">
-            <h3>Classic Crewneck Sweatshirt</h3>
+            <h3>Tropical Print Resort Shirt</h3>
             <div class="product-price">
               <span class="current-price">£44.99</span>
             </div>
@@ -593,6 +562,183 @@
             </div>
           </div>
         </div>
+        
+        <!-- Product 11: Canvas Sneakers -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Canvas Sneakers">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Lightweight Canvas Sneakers</h3>
+            <div class="product-price">
+              <span class="current-price">£54.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(104)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 12: Straw Hat -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1556306535-0f09a537f0a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Straw Hat">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Classic Straw Panama Hat</h3>
+            <div class="product-price">
+              <span class="current-price">£29.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(78)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 13: Sunglasses -->
+        <div class="product-card">
+          <div class="product-badge bestseller">BESTSELLER</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Sunglasses">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Classic Aviator Sunglasses</h3>
+            <div class="product-price">
+              <span class="current-price">£59.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(136)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 14: Espadrilles -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1560343090-f0409e92791a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Espadrilles">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Canvas Espadrilles</h3>
+            <div class="product-price">
+              <span class="current-price">£39.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(64)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 15: Linen Blazer -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Linen Blazer">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Lightweight Linen Blazer</h3>
+            <div class="product-price">
+              <span class="current-price">£89.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(48)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 16: Beach Towel -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1549298240-0d8e60513026?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Beach Towel">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Premium Beach Towel</h3>
+            <div class="product-price">
+              <span class="current-price">£24.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(42)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <a href="#" class="view-all-btn">VIEW ALL SUMMER ITEMS</a>
+    </div>
+  </section>
+
+  
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter-content">
+        <div class="newsletter-text">
+          <h2>JOIN THE CLUB</h2>
+          <p>Subscribe to our newsletter for exclusive offers, style tips, and early access to new drops.</p>
+        </div>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email address" required aria-label="Email address">
+          <button type="submit">SUBSCRIBE</button>
+        </form>
       </div>
     </div>
   </section>

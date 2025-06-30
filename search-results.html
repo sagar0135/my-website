@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="MANVUE - Search Results" />
+  <title>Search Results | MANVUE</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- TOP PROMO BANNER -->
+  <div class="promo-banner">
+    <span class="promo-text">FREE SHIPPING ON ORDERS GBP49+ ⚡ NEW DROPS EVERY WEEK</span>
+    <span class="promo-countdown" id="countdown">FLASH SALE ENDS IN: <span id="timer">23:59:59</span></span>
+  </div>
+
+  <!-- MAIN HEADER -->
+  <header class="main-header">
+    <div class="logo"><a href="index.html">MANVUE</a></div>
+
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Search for items, brands..." aria-label="Search" />
+      <button id="search-button" aria-label="Search"><i class="fas fa-search"></i></button>
+      <div class="search-results" id="search-results">
+        <!-- Search results will appear here -->
+      </div>
+    </div>
+
+    <div class="header-icons">
+      <span title="Account"><i class="fas fa-user"></i></span>
+      <span title="Wishlist"><i class="fas fa-heart"></i><span class="wishlist-count">0</span></span>
+      <span class="cart-icon" title="Cart"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></span>
+    </div>
+  </header>
+
+  <!-- NAVIGATION MENU -->
+  <nav class="nav-bar" aria-label="Main Navigation">
+    <div class="nav-container">
+      <ul class="main-nav">
+        <!-- CORE COLLECTIONS -->
+        <li class="nav-item dropdown">
+          <span tabindex="0">CORE COLLECTIONS</span>
+          <div class="dropdown-menu">
+            <a href="FreshDrops.html">Fresh Drops</a>
+            <a href="CrowdFavorites.html">Crowd Favorites</a>
+            <a href="ExtendedFits.html">Extended Fits</a>
+          </div>
+        </li>
+        
+        <!-- SMART GROUPINGS -->
+        <li class="nav-item dropdown">
+          <span tabindex="0">SMART GROUPINGS</span>
+          <div class="dropdown-menu">
+            <a href="TheFundamentals.html">The Fundamentals</a>
+            <a href="PowerMoves.html">Power Moves</a>
+            <a href="StreetStyle.html">Street Style</a>
+            <a href="WeekendWarrior.html">Weekend Warrior</a>
+            <a href="LayerGame.html">Layer Game</a>
+          </div>
+        </li>
+        
+        <!-- LIFESTYLE -->
+        <li class="nav-item dropdown">
+          <span tabindex="0">LIFESTYLE</span>
+          <div class="dropdown-menu">
+            <a href="BoardroomReady.html">Boardroom Ready</a>
+            <a href="GymToStreet.html">Gym to Street</a>
+            <a href="DateNight.html">Date Night</a>
+            <a href="VacationMode.html">Vacation Mode</a>
+            <a href="WorkFromHome.html">Work From Home</a>
+          </div>
+        </li>
+        
+        <!-- INTERACTIVE FEATURES -->
+        <li class="nav-item dropdown">
+          <span tabindex="0">FEATURES</span>
+          <div class="dropdown-menu">
+            <a href="StyleQuiz.html">Style Quiz</a>
+            <a href="OccasionBuilder.html">Occasion Builder</a>
+            <a href="YourSizeYourStyle.html">Your Size, Your Style</a>
+            <a href="StaffPicks.html">Staff Picks</a>
+            <a href="CompleteTheLook.html">Complete the Look</a>
+          </div>
+        </li>
+        
+        <!-- SALE -->
+        <li class="nav-item sale">
+          <span tabindex="0">SALE</span>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <!-- SEARCH RESULTS SECTION -->
+    <section class="search-results-section">
+      <div class="container">
+        <h1 class="search-title">Search Results for "<span id="search-query"></span>"</h1>
+        
+        <div class="search-filters">
+          <div class="filter-group">
+            <label for="sort-by">Sort by:</label>
+            <select id="sort-by" class="filter-select">
+              <option value="relevance">Relevance</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="newest">Newest First</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label for="filter-category">Category:</label>
+            <select id="filter-category" class="filter-select">
+              <option value="all">All Categories</option>
+              <option value="t-shirts">T-shirts</option>
+              <option value="shirts">Shirts</option>
+              <option value="bottomwear">Bottomwear</option>
+              <option value="jackets">Jackets</option>
+              <option value="hoodies">Hoodies</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="product-grid" id="search-results-grid">
+          <!-- Search results will be populated here -->
+          <div class="loading-indicator">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Loading results...</p>
+          </div>
+        </div>
+        
+        <div class="no-results-message" id="no-results" style="display: none;">
+          <h2>No results found</h2>
+          <p>We couldn't find any products matching your search. Try different keywords or browse our categories.</p>
+          <div class="suggestion-links">
+            <a href="t-shirts.html" class="suggestion-link">T-shirts</a>
+            <a href="shirts.html" class="suggestion-link">Shirts</a>
+            <a href="bottomwear.html" class="suggestion-link">Bottomwear</a>
+            <a href="jackets.html" class="suggestion-link">Jackets</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="modern-footer">
+    <div class="container">
+      <!-- Help & Information Section -->
+      <div class="footer-help-section">
+        <h3>HELP & INFORMATION</h3>
+        <div class="help-grid">
+          <div class="help-category">
+            <h4>Customer Service</h4>
+            <ul>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Track Order</a></li>
+              <li><a href="#">Delivery & Returns</a></li>
+              <li><a href="#">Size Guide</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="help-category">
+            <h4>Shopping</h4>
+            <ul>
+              <li><a href="#">How to Shop</a></li>
+              <li><a href="#">Payment Methods</a></li>
+              <li><a href="#">Gift Cards</a></li>
+              <li><a href="#">Student Discount</a></li>
+              <li><a href="#">Refer a Friend</a></li>
+            </ul>
+          </div>
+          <div class="help-category">
+            <h4>About MANVUE</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Corporate Responsibility</a></li>
+              <li><a href="#">Investors</a></li>
+              <li><a href="#">Sustainability</a></li>
+            </ul>
+          </div>
+          <div class="help-category">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Cookie Policy</a></li>
+              <li><a href="#">Accessibility</a></li>
+              <li><a href="#">Modern Slavery Statement</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Main Footer Columns -->
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h3>ABOUT US</h3>
+          <p>MANVUE is a premium men's fashion brand dedicated to providing high-quality, stylish clothing for the modern man. Our mission is to help you express your unique style with confidence.</p>
+        </div>
+        <div class="footer-column">
+          <h3>STORE LOCATOR</h3>
+          <p>Find your nearest MANVUE store with our interactive store locator. We have over 50 stores across the UK.</p>
+          <a href="#" class="btn-link">Find a Store</a>
+        </div>
+        <div class="footer-column">
+          <h3>CONNECT WITH US</h3>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="payment-methods">
+          <img src="https://i.imgur.com/SHCoT7I.png" alt="Payment methods">
+        </div>
+        <div class="copyright">
+          <p>© 2025 MANVUE. All Rights Reserved.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Accessibility</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="search.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get search query from URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const searchQuery = urlParams.get('q') || '';
+      
+      // Display search query
+      document.getElementById('search-query').textContent = searchQuery;
+      document.getElementById('search-input').value = searchQuery;
+      
+      // Populate search results
+      const searchResultsGrid = document.getElementById('search-results-grid');
+      
+      // Filter products based on search query
+      const filteredProducts = window.MANVUE.search.loadMoreProducts()
+        .then(products => {
+          const filtered = products.filter(product => {
+            const searchTerms = searchQuery.toLowerCase().trim().split(' ');
+            const productName = product.name.toLowerCase();
+            const productCategory = product.category.toLowerCase();
+            
+            return searchTerms.some(term => 
+              productName.includes(term) || productCategory.includes(term)
+            );
+          });
+          
+          // Remove loading indicator
+          searchResultsGrid.innerHTML = '';
+          
+          if (filtered.length === 0) {
+            // Show no results message
+            document.getElementById('no-results').style.display = 'block';
+            return;
+          }
+          
+          // Display products
+          filtered.forEach(product => {
+            const productCard = document.createElement('div');
+            productCard.className = 'product-card';
+            productCard.dataset.category = product.category.toLowerCase().replace(' ', '-');
+            productCard.innerHTML = `
+              <div class="product-image">
+                <img src="${product.image}" alt="${product.name}">
+                <div class="product-actions">
+                  <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+                  <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+                  <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+                </div>
+              </div>
+              <div class="product-info">
+                <h3>${product.name}</h3>
+                <div class="product-price">
+                  <span class="current-price">£${product.price.toFixed(2)}</span>
+                </div>
+                <div class="product-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                  <span>(24)</span>
+                </div>
+              </div>
+            `;
+            searchResultsGrid.appendChild(productCard);
+          });
+          
+          // Add sorting and filtering functionality
+          const sortBySelect = document.getElementById('sort-by');
+          sortBySelect.addEventListener('change', function() {
+            sortProducts(this.value);
+          });
+          
+          const filterCategorySelect = document.getElementById('filter-category');
+          filterCategorySelect.addEventListener('change', function() {
+            filterProductsByCategory(this.value);
+          });
+          
+          function sortProducts(sortBy) {
+            const products = Array.from(searchResultsGrid.querySelectorAll('.product-card'));
+            
+            products.sort((a, b) => {
+              const priceA = parseFloat(a.querySelector('.current-price').textContent.replace('£', ''));
+              const priceB = parseFloat(b.querySelector('.current-price').textContent.replace('£', ''));
+              
+              if (sortBy === 'price-low') {
+                return priceA - priceB;
+              } else if (sortBy === 'price-high') {
+                return priceB - priceA;
+              }
+              
+              // Default to relevance (original order)
+              return 0;
+            });
+            
+            // Re-append sorted products
+            products.forEach(product => {
+              searchResultsGrid.appendChild(product);
+            });
+          }
+          
+          function filterProductsByCategory(category) {
+            const products = searchResultsGrid.querySelectorAll('.product-card');
+            
+            products.forEach(product => {
+              if (category === 'all' || product.dataset.category.includes(category)) {
+                product.style.display = 'block';
+              } else {
+                product.style.display = 'none';
+              }
+            });
+            
+            // Show no results message if all products are hidden
+            const visibleProducts = searchResultsGrid.querySelectorAll('.product-card[style="display: block"]');
+            if (visibleProducts.length === 0) {
+              document.getElementById('no-results').style.display = 'block';
+            } else {
+              document.getElementById('no-results').style.display = 'none';
+            }
+          }
+        });
+    });
+  </script>
+</body>
+</html>

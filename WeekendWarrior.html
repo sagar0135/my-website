@@ -3,49 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="MANVUE - Weekend Warrior Collection - Casual wear, Co-ords, and Swimwear" />
-  <title>Weekend Warrior | MANVUE</title>
+  <meta name="description" content="MANVUE - Street Style Collection - Urban-inspired looks" />
+  <title>Street Style | MANVUE</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="weekend-warrior.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-</head>
-
+  <style>
+</style>
+ </head>
 <body>
   <!-- TOP PROMO BANNER -->
   <div class="promo-banner">
     <span class="promo-text">FREE SHIPPING ON ORDERS GBP49+ ⚡ NEW DROPS EVERY WEEK</span>
     <span class="promo-countdown" id="countdown">FLASH SALE ENDS IN: <span id="timer">23:59:59</span></span>
   </div>
-  
-  <!-- NAVIGATION -->
-  <nav class="main-navigation">
+
+  <!-- MAIN HEADER -->
+  <header class="main-header">
+    <div class="logo"><a href="index.html">MANVUE</a></div>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Search for items, brands..." aria-label="Search" />
+      <button aria-label="Search"><i class="fas fa-search"></i></button>
+    </div>
+
+    <div class="header-icons">
+      <span title="Account"><i class="fas fa-user"></i></span>
+      <span title="Wishlist"><i class="fas fa-heart"></i><span class="wishlist-count">0</span></span>
+      <span class="cart-icon" title="Cart"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></span>
+    </div>
+  </header>
+
+      
+      <!-- NAVIGATION MENU -->
+  <nav class="nav-bar" aria-label="Main Navigation">
     <div class="nav-container">
-      <div class="nav-left">
-        <div class="hamburger-menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="search-icon">
-          <i class="fas fa-search"></i>
-        </div>
-      </div>
-      
-      <div class="logo">
-        <a href="index.html">MANVUE</a>
-      </div>
-      
-      <div class="nav-right">
-        <div class="nav-icons">
-          <a href="account.html" class="icon-link"><i class="far fa-user"></i></a>
-          <a href="wishlist.html" class="icon-link"><i class="far fa-heart"></i></a>
-          <a href="cart.html" class="icon-link cart-icon"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></a>
-        </div>
-      </div>
-      
       <ul class="main-nav">
         <!-- CORE COLLECTIONS -->
         <li class="nav-item dropdown">
@@ -105,7 +99,7 @@
   <div class="category-banner weekend-warrior-banner">
     <div class="category-banner-content">
       <h1>WEEKEND WARRIOR</h1>
-      <p>Versatile styles for your off-duty adventures</p>
+      <p>Versatile men's styles for your off-duty adventures</p>
     </div>
   </div>
 
@@ -158,6 +152,39 @@
             </div>
           </div>
         </div>
+        
+        <!-- Outfit 4: Outdoor Adventure -->
+        <div class="outfit-card" id="outfit-4">
+          <div class="outfit-image">
+            <img src="https://images.unsplash.com/photo-1539185441755-769473a23570?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Outdoor Adventure Outfit">
+            <div class="outfit-overlay">
+              <h3>OUTDOOR ADVENTURE</h3>
+              <button class="view-outfit-btn">View Outfit</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Outfit 5: City Explorer -->
+        <div class="outfit-card" id="outfit-5">
+          <div class="outfit-image">
+            <img src="https://images.unsplash.com/photo-1550246140-29f40b909e5a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="City Explorer Outfit">
+            <div class="outfit-overlay">
+              <h3>CITY EXPLORER</h3>
+              <button class="view-outfit-btn">View Outfit</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Outfit 6: Lounge Day -->
+        <div class="outfit-card" id="outfit-6">
+          <div class="outfit-image">
+            <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Lounge Day Outfit">
+            <div class="outfit-overlay">
+              <h3>LOUNGE DAY</h3>
+              <button class="view-outfit-btn">View Outfit</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -202,7 +229,7 @@
           <!-- Outfit Component 1 -->
           <div class="product-card">
             <div class="product-image">
-              <img src="https://images.unsplash.com/photo-1565462905097-5e701c31dcdb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Linen Beach Shirt">
+              <img src="https://images.unsplash.com/photo-1565462905097-5e701c31dcdb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Linen Beach Shirt">
               <div class="product-actions">
                 <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
                 <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
@@ -210,7 +237,7 @@
               </div>
             </div>
             <div class="product-info">
-              <h3>Linen Beach Shirt</h3>
+              <h3>Men's Linen Beach Shirt</h3>
               <div class="product-price">
                 <span class="current-price">£59.99</span>
               </div>
@@ -220,7 +247,7 @@
           <!-- Outfit Component 2 -->
           <div class="product-card">
             <div class="product-image">
-              <img src="https://images.unsplash.com/photo-1565128939502-e6d5e4710dd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Quick-Dry Swim Shorts">
+              <img src="https://images.unsplash.com/photo-1565128939502-e6d5e4710dd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Quick-Dry Swim Shorts">
               <div class="product-actions">
                 <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
                 <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
@@ -228,7 +255,7 @@
               </div>
             </div>
             <div class="product-info">
-              <h3>Quick-Dry Swim Shorts</h3>
+              <h3>Men's Quick-Dry Swim Shorts</h3>
               <div class="product-price">
                 <span class="current-price">£49.99</span>
               </div>
@@ -238,7 +265,7 @@
           <!-- Outfit Component 3 -->
           <div class="product-card">
             <div class="product-image">
-              <img src="https://images.unsplash.com/photo-1575428652377-a2d80e2277fc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Waterproof Sandals">
+              <img src="https://images.unsplash.com/photo-1575428652377-a2d80e2277fc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Waterproof Sandals">
               <div class="product-actions">
                 <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
                 <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
@@ -246,7 +273,7 @@
               </div>
             </div>
             <div class="product-info">
-              <h3>Waterproof Sandals</h3>
+              <h3>Men's Waterproof Sandals</h3>
               <div class="product-price">
                 <span class="current-price">£79.99</span>
               </div>
@@ -260,7 +287,7 @@
   <!-- WEEKEND ESSENTIALS SECTION -->
   <section class="weekend-essentials">
     <div class="container">
-      <h2 class="section-title">WEEKEND ESSENTIALS</h2>
+      <h2 class="section-title">MEN'S WEEKEND ESSENTIALS</h2>
       <p class="section-subtitle">Build your perfect weekend wardrobe</p>
       
       <!-- Product Filters -->
@@ -277,7 +304,7 @@
         <div class="product-card" data-category="casual">
           <div class="product-badge bestseller">BESTSELLER</div>
           <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Relaxed Fit Tee">
+            <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Relaxed Fit Tee">
             <div class="product-actions">
               <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
               <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
@@ -285,7 +312,7 @@
             </div>
           </div>
           <div class="product-info">
-            <h3>Relaxed Fit Tee</h3>
+            <h3>Men's Relaxed Fit Tee</h3>
             <div class="product-price">
               <span class="current-price">£29.99</span>
             </div>
@@ -295,7 +322,7 @@
         <!-- Casual Wear 2 -->
         <div class="product-card" data-category="casual">
           <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1604006852748-903fccbc4019?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Comfort Chino Shorts">
+            <img src="https://images.unsplash.com/photo-1604006852748-903fccbc4019?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Comfort Chino Shorts">
             <div class="product-actions">
               <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
               <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
@@ -303,7 +330,7 @@
             </div>
           </div>
           <div class="product-info">
-            <h3>Comfort Chino Shorts</h3>
+            <h3>Men's Comfort Chino Shorts</h3>
             <div class="product-price">
               <span class="current-price">£39.99</span>
             </div>
@@ -314,7 +341,7 @@
         <div class="product-card" data-category="coords">
           <div class="product-badge">NEW</div>
           <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Linen Co-ord Set">
+            <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Linen Co-ord Set">
             <div class="product-actions">
               <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
               <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
@@ -322,7 +349,7 @@
             </div>
           </div>
           <div class="product-info">
-            <h3>Linen Co-ord Set</h3>
+            <h3>Men's Linen Co-ord Set</h3>
             <div class="product-price">
               <span class="current-price">£89.99</span>
             </div>
@@ -332,7 +359,7 @@
         <!-- Co-ords 2 -->
         <div class="product-card" data-category="coords">
           <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Terry Toweling Co-ord">
+            <img src="https://images.unsplash.com/photo-1550246140-29f40b909e5a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Terry Cloth Co-ord">
             <div class="product-actions">
               <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
               <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
@@ -340,7 +367,7 @@
             </div>
           </div>
           <div class="product-info">
-            <h3>Terry Toweling Co-ord</h3>
+            <h3>Men's Terry Cloth Co-ord</h3>
             <div class="product-price">
               <span class="current-price">£79.99</span>
             </div>
@@ -350,7 +377,7 @@
         <!-- Swimwear 1 -->
         <div class="product-card" data-category="swim">
           <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1565128939502-e6d5e4710dd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Quick-Dry Swim Shorts">
+            <img src="https://images.unsplash.com/photo-1565128939502-e6d5e4710dd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Quick-Dry Swim Shorts">
             <div class="product-actions">
               <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
               <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
@@ -358,7 +385,7 @@
             </div>
           </div>
           <div class="product-info">
-            <h3>Quick-Dry Swim Shorts</h3>
+            <h3>Men's Quick-Dry Swim Shorts</h3>
             <div class="product-price">
               <span class="current-price">£49.99</span>
             </div>
@@ -369,7 +396,7 @@
         <div class="product-card" data-category="swim">
           <div class="product-badge">NEW</div>
           <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1590400516695-36708d3f964a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Printed Swim Shorts">
+            <img src="https://images.unsplash.com/photo-1571689936114-b16146c9570a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Printed Swim Shorts">
             <div class="product-actions">
               <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
               <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
@@ -377,17 +404,18 @@
             </div>
           </div>
           <div class="product-info">
-            <h3>Printed Swim Shorts</h3>
+            <h3>Men's Printed Swim Shorts</h3>
             <div class="product-price">
-              <span class="current-price">£44.99</span>
+              <span class="current-price">£54.99</span>
             </div>
           </div>
         </div>
         
         <!-- Accessories 1 -->
         <div class="product-card" data-category="accessories">
+          <div class="product-badge bestseller">BESTSELLER</div>
           <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1556306535-0f09a537f0a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Weekend Duffle Bag">
+            <img src="https://images.unsplash.com/photo-1556306535-0f09a537f0a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Weekend Duffle Bag">
             <div class="product-actions">
               <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
               <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
@@ -395,9 +423,9 @@
             </div>
           </div>
           <div class="product-info">
-            <h3>Weekend Duffle Bag</h3>
+            <h3>Men's Weekend Duffle Bag</h3>
             <div class="product-price">
-              <span class="current-price">£69.99</span>
+              <span class="current-price">£89.99</span>
             </div>
           </div>
         </div>
@@ -405,7 +433,7 @@
         <!-- Accessories 2 -->
         <div class="product-card" data-category="accessories">
           <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1559070169-a3077159ee16?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Polarized Sunglasses">
+            <img src="https://images.unsplash.com/photo-1523779105320-d1cd346ff52b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Weekend Cap">
             <div class="product-actions">
               <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
               <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
@@ -413,7 +441,25 @@
             </div>
           </div>
           <div class="product-info">
-            <h3>Polarized Sunglasses</h3>
+            <h3>Men's Weekend Cap</h3>
+            <div class="product-price">
+              <span class="current-price">£24.99</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Accessories 3 -->
+        <div class="product-card" data-category="accessories">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1511389026070-a14ae610a1be?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Polarized Sunglasses">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Men's Polarized Sunglasses</h3>
             <div class="product-price">
               <span class="current-price">£59.99</span>
             </div>
@@ -450,12 +496,12 @@
             <div class="review-date">2 weeks ago</div>
           </div>
           <div class="review-content">
-            <p>The linen co-ord set is perfect for my weekend getaways. Comfortable, stylish, and versatile enough to wear from beach to dinner. Highly recommend!</p>
+            <p>The men's linen co-ord set is perfect for my weekend getaways. Comfortable, stylish, and versatile enough to wear from beach to dinner. Highly recommend!</p>
           </div>
           <div class="review-product">
-            <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Linen Co-ord Set">
+            <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Men's Linen Co-ord Set">
             <div>
-              <h5>Linen Co-ord Set</h5>
+              <h5>Men's Linen Co-ord Set</h5>
               <div class="review-rating">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -488,14 +534,13 @@
             <div class="review-date">1 month ago</div>
           </div>
           <div class="review-content">
-            <p>These swim shorts are a game-changer. Quick-drying and the perfect length. I've worn them for swimming and then straight to lunch without feeling uncomfortable.</p>
+            <p>These men's swim shorts are a game-changer. Quick-drying and the perfect length. I've worn them for swimming and then straight to lunch without feeling uncomfortable.</p>
           </div>
           <div class="review-product">
-            <img src="https://images.unsplash.com/photo-1565128939502-e6d5e4710dd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Quick-Dry Swim Shorts">
+            <img src="https://images.unsplash.com/photo-1565128939502-e6d5e4710dd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Men's Quick-Dry Swim Shorts">
             <div>
-              <h5>Quick-Dry Swim Shorts</h5>
+              <h5>Men's Quick-Dry Swim Shorts</h5>
               <div class="review-rating">
-                <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -510,7 +555,7 @@
           <div class="review-header">
             <div class="reviewer-info">
               <div class="reviewer-avatar">
-                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="David R.">
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="David R.">
               </div>
               <div class="reviewer-name">
                 <h4>David R.</h4>
@@ -526,12 +571,12 @@
             <div class="review-date">3 weeks ago</div>
           </div>
           <div class="review-content">
-            <p>The weekend duffle bag is exactly what I needed for short trips. Plenty of space, durable material, and looks stylish. The separate compartment for shoes is a brilliant touch!</p>
+            <p>The weekend duffle bag is exactly what I needed for short trips. Plenty of space, durable material, and looks stylish. The separate compartment for shoes is a great touch.</p>
           </div>
           <div class="review-product">
-            <img src="https://images.unsplash.com/photo-1556306535-0f09a537f0a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Weekend Duffle Bag">
+            <img src="https://images.unsplash.com/photo-1556306535-0f09a537f0a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Men's Weekend Duffle Bag">
             <div>
-              <h5>Weekend Duffle Bag</h5>
+              <h5>Men's Weekend Duffle Bag</h5>
               <div class="review-rating">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -542,39 +587,72 @@
             </div>
           </div>
         </div>
+        
+        <!-- Review 4 -->
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Alex K.">
+              </div>
+              <div class="reviewer-name">
+                <h4>Alex K.</h4>
+                <div class="review-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <div class="review-date">1 month ago</div>
+          </div>
+          <div class="review-content">
+            <p>The terry cloth co-ord is super comfortable for lounging around. Material is soft and washes well. Only reason for 4 stars is that it runs slightly small - consider sizing up.</p>
+          </div>
+          <div class="review-product">
+            <img src="https://images.unsplash.com/photo-1550246140-29f40b909e5a?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Men's Terry Cloth Co-ord">
+            <div>
+              <h5>Men's Terry Cloth Co-ord</h5>
+              <div class="review-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       
+      <!-- Review Navigation -->
       <div class="reviews-navigation">
-        <div class="review-nav prev-review">
-          <i class="fas fa-chevron-left"></i>
-        </div>
+        <button class="prev-review"><i class="fas fa-chevron-left"></i></button>
         <div class="review-dots">
-          <div class="review-dot active"></div>
-          <div class="review-dot"></div>
-          <div class="review-dot"></div>
+          <span class="review-dot active"></span>
+          <span class="review-dot"></span>
+          <span class="review-dot"></span>
+          <span class="review-dot"></span>
         </div>
-        <div class="review-nav next-review">
-          <i class="fas fa-chevron-right"></i>
-        </div>
+        <button class="next-review"><i class="fas fa-chevron-right"></i></button>
       </div>
     </div>
   </section>
 
-  <!-- SIMILAR PRODUCTS -->
+  <!-- SIMILAR PRODUCTS SECTION -->
   <section class="similar-products">
     <div class="container">
       <h2 class="section-title">YOU MIGHT ALSO LIKE</h2>
+      <p class="section-subtitle">Explore more weekend-ready styles</p>
       
       <div class="product-grid">
-
-
-
-        
         <!-- Similar Product 1 -->
         <div class="product-card">
           <div class="product-badge">NEW</div>
           <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1550246140-5119ae4790b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Vacation Shirt">
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Lightweight Bomber Jacket">
             <div class="product-actions">
               <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
               <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
@@ -582,9 +660,9 @@
             </div>
           </div>
           <div class="product-info">
-            <h3>Vacation Shirt</h3>
+            <h3>Men's Lightweight Bomber Jacket</h3>
             <div class="product-price">
-              <span class="current-price">£54.99</span>
+              <span class="current-price">£79.99</span>
             </div>
           </div>
         </div>
@@ -592,7 +670,7 @@
         <!-- Similar Product 2 -->
         <div class="product-card">
           <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1543076447-215ad9ba6923?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Comfort Slides">
+            <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Slim Fit Joggers">
             <div class="product-actions">
               <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
               <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
@@ -600,9 +678,9 @@
             </div>
           </div>
           <div class="product-info">
-            <h3>Comfort Slides</h3>
+            <h3>Men's Slim Fit Joggers</h3>
             <div class="product-price">
-              <span class="current-price">£39.99</span>
+              <span class="current-price">£44.99</span>
             </div>
           </div>
         </div>
@@ -611,7 +689,7 @@
         <div class="product-card">
           <div class="product-badge bestseller">BESTSELLER</div>
           <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Relaxed Joggers">
+            <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Canvas Slip-On Shoes">
             <div class="product-actions">
               <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
               <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
@@ -619,9 +697,9 @@
             </div>
           </div>
           <div class="product-info">
-            <h3>Relaxed Joggers</h3>
+            <h3>Men's Canvas Slip-On Shoes</h3>
             <div class="product-price">
-              <span class="current-price">£44.99</span>
+              <span class="current-price">£39.99</span>
             </div>
           </div>
         </div>
@@ -629,7 +707,7 @@
         <!-- Similar Product 4 -->
         <div class="product-card">
           <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1523779105320-d1cd346ff52b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Weekend Cap">
+            <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Comfort Lounge Set">
             <div class="product-actions">
               <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
               <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
@@ -637,9 +715,9 @@
             </div>
           </div>
           <div class="product-info">
-            <h3>Weekend Cap</h3>
+            <h3>Men's Comfort Lounge Set</h3>
             <div class="product-price">
-              <span class="current-price">£24.99</span>
+              <span class="current-price">£69.99</span>
             </div>
           </div>
         </div>
@@ -647,13 +725,15 @@
     </div>
   </section>
 
+
+
   <!-- NEWSLETTER -->
   <section class="newsletter">
     <div class="container">
       <div class="newsletter-content">
         <div class="newsletter-text">
-          <h2>JOIN THE WEEKEND CLUB</h2>
-          <p>Subscribe to our newsletter for exclusive weekend style tips, early access to new drops, and special offers.</p>
+          <h2>JOIN THE CLUB</h2>
+          <p>Subscribe to our newsletter for exclusive offers, style tips, and early access to new weekend warrior drops.</p>
         </div>
         <form class="newsletter-form">
           <input type="email" placeholder="Your email address" required aria-label="Email address">
@@ -664,58 +744,80 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="main-footer">
+  <footer class="modern-footer">
     <div class="container">
-      <div class="footer-content">
-        <div class="footer-column">
-          <h3>SHOP</h3>
-          <ul>
-            <li><a href="FreshDrops.html">Fresh Drops</a></li>
-            <li><a href="CrowdFavorites.html">Crowd Favorites</a></li>
-            <li><a href="ExtendedFits.html">Extended Fits</a></li>
-            <li><a href="WeekendWarrior.html">Weekend Warrior</a></li>
-            <li><a href="sale.html">Sale</a></li>
-          </ul>
+      <!-- Help & Information Section -->
+      <div class="footer-help-section">
+        <h3>HELP & INFORMATION</h3>
+        <div class="help-grid">
+          <div class="help-category">
+            <h4>Customer Service</h4>
+            <ul>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Track Order</a></li>
+              <li><a href="#">Delivery & Returns</a></li>
+              <li><a href="#">Size Guide</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="help-category">
+            <h4>Shopping</h4>
+            <ul>
+              <li><a href="#">How to Shop</a></li>
+              <li><a href="#">Payment Methods</a></li>
+              <li><a href="#">Gift Cards</a></li>
+              <li><a href="#">Student Discount</a></li>
+              <li><a href="#">Refer a Friend</a></li>
+            </ul>
+          </div>
+          <div class="help-category">
+            <h4>About MANVUE</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Corporate Responsibility</a></li>
+              <li><a href="#">Investors</a></li>
+              <li><a href="#">Sustainability</a></li>
+            </ul>
+          </div>
+          <div class="help-category">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Cookie Policy</a></li>
+              <li><a href="#">Accessibility</a></li>
+              <li><a href="#">Modern Slavery Statement</a></li>
+            </ul>
+          </div>
         </div>
-        
+      </div>
+      
+      <!-- Main Footer Columns -->
+      <div class="footer-columns">
         <div class="footer-column">
-          <h3>HELP</h3>
-          <ul>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="shipping.html">Shipping Information</a></li>
-            <li><a href="returns.html">Returns & Exchanges</a></li>
-            <li><a href="faq.html">FAQs</a></li>
-            <li><a href="size-guide.html">Size Guide</a></li>
-          </ul>
+          <h3>ABOUT US</h3>
+          <p>MANVUE is a premium men's fashion brand dedicated to providing high-quality, stylish clothing for the modern man. Our mission is to help you express your unique style with confidence.</p>
         </div>
-        
         <div class="footer-column">
-          <h3>ABOUT</h3>
-          <ul>
-            <li><a href="our-story.html">Our Story</a></li>
-            <li><a href="sustainability.html">Sustainability</a></li>
-            <li><a href="careers.html">Careers</a></li>
-            <li><a href="press.html">Press</a></li>
-            <li><a href="affiliates.html">Affiliates</a></li>
-          </ul>
+          <h3>STORE LOCATOR</h3>
+          <p>Find your nearest MANVUE store with our interactive store locator. We have over 50 stores across the UK.</p>
+          <a href="#" class="btn-link">Find a Store</a>
         </div>
-        
         <div class="footer-column">
-          <h3>CONNECT</h3>
+          <h3>CONNECT WITH US</h3>
           <div class="social-icons">
             <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
             <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-            <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
           </div>
-          <div class="app-download">
-            <p>DOWNLOAD OUR APP</p>
-            <div class="app-buttons">
-              <a href="#"><img src="https://i.imgur.com/8G0Mujr.png" alt="Download on the App Store"></a>
-              <a href="#"><img src="https://i.imgur.com/ZjWA9Hk.png" alt="Get it on Google Play"></a>
-            </div>
-          </div>
+          <h3>NEWSLETTER</h3>
+          <p>Subscribe for exclusive offers and updates</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Email Address" aria-label="Email for newsletter" required>
+            <button type="submit" aria-label="Subscribe">SUBSCRIBE</button>
+          </form>
         </div>
       </div>
       
@@ -737,136 +839,140 @@
     </div>
   </footer>
 
-  <!-- QUICK VIEW MODAL -->
-  <div id="quick-view-modal" class="modal">
-    <div class="modal-content">
-      <span class="close-modal">&times;</span>
-      <div class="quick-view-container">
-        <div class="qv-product-image">
-          <img id="qv-image" src="" alt="Product Image">
-        </div>
-        <div class="qv-product-details">
-          <h2 id="qv-title"></h2>
-          <div class="qv-price">
-            <span id="qv-price"></span>
-          </div>
-          <div class="qv-rating">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-            <span>(42 reviews)</span>
-          </div>
-          <p class="qv-description">This versatile piece is perfect for your weekend adventures. Made with premium materials for comfort and durability.</p>
-          
-          <div class="qv-options">
-            <div class="qv-colors">
-              <h3>Color</h3>
-              <div id="qv-color-options" class="color-options">
-                <!-- Color options will be added dynamically -->
-              </div>
-            </div>
-            
-            <div class="qv-sizes">
-              <h3>Size</h3>
-              <div id="qv-size-options" class="size-options">
-                <div class="size-option" data-size="S">S</div>
-                <div class="size-option" data-size="M">M</div>
-                <div class="size-option" data-size="L">L</div>
-                <div class="size-option" data-size="XL">XL</div>
-                <div class="size-option" data-size="XXL">XXL</div>
-              </div>
-            </div>
-            
-            <div class="qv-quantity">
-              <h3>Quantity</h3>
-              <div class="quantity-selector">
-                <button class="quantity-btn minus">-</button>
-                <input type="number" id="qv-quantity" value="1" min="1" max="10">
-                <button class="quantity-btn plus">+</button>
-              </div>
-            </div>
-          </div>
-          
-          <div class="qv-actions">
-            <button id="qv-add-to-cart" class="qv-add-to-cart-btn">Add to Cart</button>
-            <button id="qv-add-to-wishlist" class="qv-add-to-wishlist-btn"><i class="far fa-heart"></i></button>
-          </div>
-          
-          <div class="qv-meta">
-            <p><strong>SKU:</strong> <span id="qv-sku">WW-2025-123</span></p>
-            <p><strong>Category:</strong> <span id="qv-category">Weekend Warrior</span></p>
-            <p><strong>Tags:</strong> <span id="qv-tags">Casual, Weekend, Summer</span></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- PRODUCT OPTIONS MODAL -->
-  <div id="product-options-modal" class="modal">
-    <div class="modal-content">
-      <span class="close-modal">&times;</span>
-      <div class="options-container">
-        <div class="options-header">
-          <div class="options-product-image">
-            <img id="option-product-image" src="" alt="Product Image">
-          </div>
-          <div class="options-product-info">
-            <h3 id="option-product-title"></h3>
-            <div class="options-price">
-              <span id="option-product-price"></span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="options-body">
-          <div class="option-section">
-            <h4>Select Size</h4>
-            <div id="option-size-options" class="size-options">
-              <div class="size-option" data-size="S">S</div>
-              <div class="size-option" data-size="M">M</div>
-              <div class="size-option" data-size="L">L</div>
-              <div class="size-option" data-size="XL">XL</div>
-              <div class="size-option" data-size="XXL">XXL</div>
-            </div>
-          </div>
-          
-          <div class="option-section">
-            <h4>Select Color</h4>
-            <div id="option-color-options" class="color-options">
-              <!-- Color options will be added dynamically -->
-            </div>
-          </div>
-          
-          <div class="option-section">
-            <h4>Quantity</h4>
-            <div class="quantity-selector">
-              <button class="quantity-btn minus">-</button>
-              <input type="number" id="option-quantity" value="1" min="1" max="10">
-              <button class="quantity-btn plus">+</button>
-            </div>
-          </div>
-        </div>
-        
-        <div class="options-footer">
-          <button id="confirm-add-to-cart" class="confirm-add-btn">Add to Cart</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- NOTIFICATION TOAST -->
-  <div id="notification-toast" class="notification-toast">
-    <div class="notification-content">
-      <i class="fas fa-check-circle"></i>
-      <span id="notification-message"></span>
-    </div>
-  </div>
-
   <script src="script.js"></script>
   <script src="product-interactions.js"></script>
-  <script src="weekend-warrior.js"></script>
 </body>
-            <img src="https://images.unsplash.com/photo-1550246140-5119ae4790b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+</html>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script src="product-interactions.js"></script>
+  <script>
+    // Weekend Warrior specific scripts
+    document.addEventListener('DOMContentLoaded', function() {
+      // Outfit detail view functionality
+      const outfitCards = document.querySelectorAll('.outfit-card');
+      const outfitDetail = document.getElementById('outfit-detail');
+      const outfitDetailTitle = document.getElementById('outfit-detail-title');
+      const outfitDetailDescription = document.getElementById('outfit-detail-description');
+      const outfitMainImage = document.getElementById('outfit-main-image');
+      const outfitFeaturesList = document.getElementById('outfit-features-list');
+      const outfitTotalPrice = document.getElementById('outfit-total-price');
+      const outfitProductsGrid = document.getElementById('outfit-products-grid');
+      
+      // Outfit data
+      const outfitData = [
+        {
+          id: 'outfit-1',
+          title: 'BEACH DAY',
+          description: 'The perfect ensemble for a day by the water. Comfortable, stylish, and ready for sun-soaked adventures with quick-drying fabrics and UV protection.',
+          image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+          features: [
+            'Quick-drying fabrics',
+            'UPF 50+ sun protection',
+            'Breathable materials',
+            'Versatile for beach to bar',
+            'Lightweight and packable'
+          ],
+          price: '£189.97',
+          products: [
+            {
+              name: 'Men\'s Linen Beach Shirt',
+              price: '£59.99',
+              image: 'https://images.unsplash.com/photo-1565462905097-5e701c31dcdb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+            },
+            {
+              name: 'Men\'s Quick-Dry Swim Shorts',
+              price: '£49.99',
+              image: 'https://images.unsplash.com/photo-1565128939502-e6d5e4710dd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+            },
+            {
+              name: 'Men\'s Waterproof Sandals',
+              price: '£79.99',
+              image: 'https://images.unsplash.com/photo-1575428652377-a2d80e2277fc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+            }
+          ]
+        },
+        // Add data for other outfits here
+      ];
+      
+      // Show outfit detail when outfit card is clicked
+      outfitCards.forEach(card => {
+        card.addEventListener('click', function() {
+          const outfitId = this.id;
+          const outfit = outfitData.find(o => o.id === outfitId) || outfitData[0];
+          
+          // Update outfit detail content
+          outfitDetailTitle.textContent = outfit.title;
+          outfitDetailDescription.textContent = outfit.description;
+          outfitMainImage.src = outfit.image;
+          outfitMainImage.alt = outfit.title + ' Outfit';
+          outfitTotalPrice.textContent = outfit.price;
+          
+          // Update features list
+          outfitFeaturesList.innerHTML = '';
+          outfit.features.forEach(feature => {
+            const li = document.createElement('li');
+            li.innerHTML = `<i class="fas fa-check"></i> ${feature}`;
+            outfitFeaturesList.appendChild(li);
+          });
+          
+          // Scroll to outfit detail section
+          outfitDetail.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+      
+      // Product filter functionality
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const products = document.querySelectorAll('.product-card[data-category]');
+      
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Update active button
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+          
+          // Filter products
+          const filterValue = this.dataset.filter;
+          
+          products.forEach(product => {
+            if (filterValue === 'all' || product.dataset.category === filterValue) {
+              product.style.display = 'block';
+            } else {
+              product.style.display = 'none';
+            }
+          });
+        });
+      });
+      
+      // Initialize countdown timer
+      const timerElement = document.getElementById('timer');
+      let hours = 23;
+      let minutes = 59;
+      let seconds = 59;
+      
+      function updateTimer() {
+        seconds--;
+        
+        if (seconds < 0) {
+          seconds = 59;
+          minutes--;
+        }
+        
+        if (minutes < 0) {
+          minutes = 59;
+          hours--;
+        }
+        
+        if (hours < 0) {
+          hours = 23;
+        }
+        
+        timerElement.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+      }
+      
+      setInterval(updateTimer, 1000);
+    });
+  </script>
+</body>
+

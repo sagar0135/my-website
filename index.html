@@ -24,14 +24,17 @@
     <div class="logo"><a href="index.html">MANVUE</a></div>
 
     <div class="search-bar">
-      <input type="text" placeholder="Search for items, brands..." aria-label="Search" />
-      <button aria-label="Search"><i class="fas fa-search"></i></button>
+      <input type="text" id="search-input" placeholder="Search for items, brands..." aria-label="Search" />
+      <button id="search-button" aria-label="Search"><i class="fas fa-search"></i></button>
+      <div class="search-results" id="search-results">
+        <!-- Search results will appear here -->
+      </div>
     </div>
-8
+
     <div class="header-icons">
-      <span title="Account"><i class="fas fa-user"></i></span>
-      <span title="Wishlist"><i class="fas fa-heart"></i><span class="wishlist-count">0</span></span>
-      <span class="cart-icon" title="Cart"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></span>
+      <span title="Account" id="account-icon"><i class="fas fa-user"></i></span>
+      <span title="Wishlist" id="wishlist-icon"><i class="fas fa-heart"></i><span class="wishlist-count">0</span></span>
+      <span class="cart-icon" title="Cart" id="cart-icon"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></span>
     </div>
   </header>
 
@@ -103,40 +106,60 @@
         
         <!-- SALE -->
         <li class="nav-item sale">
-          <span tabindex="0">SALE</span>
+          <a href="sale.html">SALE</a>
         </li>
       </ul>
     </div>
   </nav>
 
   <!-- HERO BANNER -->
-   </section> <div class="hero-banner">
+  <div class="hero-banner">
     <div class="slideshow">
-      <div class="slideshow-item active" style="background-image: url('https://images.unsplash.com/photo-1503341504253-dff4815485f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')"></div>
-      <div class="slideshow-item" style="background-image: url('https://images.unsplash.com/photo-1536766820879-059fec98ec0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')"></div>
-      <div class="slideshow-item" style="background-image: url('https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')"></div>
-      <div class="slideshow-item" style="background-image: url('https://images.unsplash.com/photo-1550246140-29f40b909e5a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')"></div>
+      <div class="slideshow-item active" style="background-image: url('https://images.unsplash.com/photo-1603252109612-24fa03d145c8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')"></div>
+      <div class="slideshow-item" style="background-image: url('https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')"></div>
+      <div class="slideshow-item" style="background-image: url('https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')"></div>
+      <div class="slideshow-item" style="background-image: url('https://images.unsplash.com/photo-1611312449408-fcece27cdbb7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')"></div>
     </div>
     <div class="hero-content">
-      <h1>SUMMER COLLECTION</h1>
-      <p>Elevate your style with our exclusive summer pieces</p>
-            <button class="shop-now-btn" onclick="window.location.href='summer-collection.html'">Shop Now</button>
+      <h1>SUMMER COLLECTION 2025</h1>
+      <p>Beat the heat with our exclusive summer styles for men</p>
+      <button class="shop-now-btn" onclick="window.location.href='summer-collection.html'">Shop Now</button>
     </div>
     <div class="slideshow-controls">
       <button class="prev-slide" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
       <div class="slide-indicators">
-        <span class="indicator active"></span>
-        <span class="indicator"></span>
-        <span class="indicator"></span>
-        <span class="indicator"></span>
+        <span class="indicator active" data-slide="0"></span>
+        <span class="indicator" data-slide="1"></span>
+        <span class="indicator" data-slide="2"></span>
+        <span class="indicator" data-slide="3"></span>
       </div>
       <button class="next-slide" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
     </div>
   </div>
 
+    <!-- FEATURED COLLECTION -->
+  <section class="featured-collection">
+    <div class="container">
+      <div class="featured-content">
+        <div class="featured-text">
+          <h2>SUMMER <span>ESSENTIALS</span></h2>
+          <p>Discover our curated collection of lightweight, breathable pieces perfect for the summer heat.</p>
+          <a href="summer-collection.html" class="shop-now-btn">SHOP THE COLLECTION</a>
+        </div>
+        <div class="featured-image">
+          <img src="https://images.unsplash.com/photo-1503341733017-1901578f9f1e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Summer Essentials Collection">
+        </div>
+        <div class="slideshow">
+      <div class="slideshow-item active" style="background-image: url('https://images.unsplash.com/photo-1603252109612-24fa03d145c8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')"></div>
+      <div class="slideshow-item" style="background-image: url('https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')"></div>
+      <div class="slideshow-item" style="background-image: url('https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')"></div>
+      <div class="slideshow-item" style="background-image: url('https://images.unsplash.com/photo-1611312449408-fcece27cdbb7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')"></div>
+    </div>
+      </div>
+    </div>
+  </section>
 
   <!-- EXPLORE CATEGORIES -->
- </section>
   <section class="explore-products">
     <div class="container">
       <h2 class="section-title">EXPLORE OUR CATEGORIES</h2>
@@ -163,12 +186,12 @@
           <div class="shortcut-label">SHIRTS</div>
         </a>
         
-        <!-- Bottoms -->
-        <a href="bottomwear.html" class="shortcut-item">
+        <!-- Footwear (Changed from Bottoms) -->
+        <a href="footwear.html" class="shortcut-item">
           <div class="shortcut-image">
-            <img src="https://images.unsplash.com/photo-1552331704-0c6e30a62f9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Bottoms">
+            <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Footwear">
           </div>
-          <div class="shortcut-label">BOTTOMWEAR</div>
+          <div class="shortcut-label">FOOTWEAR</div>
         </a>
         
         <!-- Jackets -->
@@ -204,24 +227,15 @@
     <div class="container">
       <h2 class="section-title">TRENDING NOW</h2>
       <div class="product-grid" id="product-list">
-
-
-  
-  <!-- NEWSLETTER -->
-  <section class="newsletter">
-    <div class="container">
-      <div class="newsletter-content">
-        <div class="newsletter-text">
-          <h2>JOIN THE CLUB</h2>
-          <p>Subscribe to our newsletter for exclusive offers, style tips, and early access to new drops.</p>
-        </div>
-        <form class="newsletter-form">
-          <input type="email" placeholder="Your email address" required aria-label="Email address">
-          <button type="submit">SUBSCRIBE</button>
-        </form>
+        <!-- Products will be loaded here via JavaScript -->
+      </div>
+      <div class="view-more-container">
+        <button class="view-more-btn">VIEW MORE</button>
       </div>
     </div>
   </section>
+
+
 
   <!-- FOOTER -->
   <footer class="modern-footer">
@@ -294,7 +308,7 @@
           </div>
           <h3>NEWSLETTER</h3>
           <p>Subscribe for exclusive offers and updates</p>
-          <form class="newsletter-form">
+          <form class="newsletter-form" id="newsletter-form">
             <input type="email" placeholder="Email Address" aria-label="Email for newsletter" required>
             <button type="submit" aria-label="Subscribe">SUBSCRIBE</button>
           </form>
@@ -319,9 +333,50 @@
     </div>
   </footer>
 
+  <!-- Modal for account login -->
+  <div class="modal" id="login-modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2>Sign In</h2>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" required>
+        </div>
+        <button type="submit" class="btn-primary">Sign In</button>
+      </form>
+      <div class="modal-footer">
+        <p>Don't have an account? <a href="#" id="register-link">Register</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart sidebar -->
+  <div class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="close-cart">&times;</button>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <!-- Cart items will be loaded here -->
+      <div class="empty-cart-message">Your cart is empty</div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cart-total-amount">£0.00</span>
+      </div>
+      <button class="checkout-btn">Checkout</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
   <script src="script.js"></script>
   <script src="product-interactions.js"></script>
+  <script src="search.js"></script>
 </body>
-</html>
-
 

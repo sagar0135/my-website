@@ -34,7 +34,7 @@
     </div>
   </header>
 
-  <!-- NAVIGATION MENU -->
+
  <!-- NAVIGATION MENU -->
   <nav class="nav-bar" aria-label="Main Navigation">
     <div class="nav-container">
@@ -59,6 +59,94 @@
       <p>From formal to casual - shirts for every occasion</p>
     </div>
   </div>
+
+  <!-- COLLECTION FILTERS -->
+  <section class="collection-filters">
+    <div class="container">
+      <div class="filter-bar">
+        <div class="filter-toggle">
+          <button id="filter-toggle-btn"><i class="fas fa-sliders-h"></i> Filter Products</button>
+        </div>
+        <div class="filter-options">
+          <div class="filter-group">
+            <label for="sort-by">Sort By:</label>
+            <select id="sort-by" class="filter-select">
+              <option value="newest">Newest</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="bestselling">Bestselling</option>
+              <option value="rating">Top Rated</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label for="filter-category">Category:</label>
+            <select id="filter-category" class="filter-select">
+              <option value="all">All Shirts</option>
+              <option value="casual">Casual Shirts</option>
+              <option value="formal">Formal Shirts</option>
+              <option value="printed">Printed Shirts</option>
+              <option value="linen">Linen Shirts</option>
+              <option value="denim">Denim Shirts</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label for="filter-size">Size:</label>
+            <div class="size-options">
+              <label class="size-option"><input type="checkbox" name="size" value="s"> S</label>
+              <label class="size-option"><input type="checkbox" name="size" value="m"> M</label>
+              <label class="size-option"><input type="checkbox" name="size" value="l"> L</label>
+              <label class="size-option"><input type="checkbox" name="size" value="xl"> XL</label>
+              <label class="size-option"><input type="checkbox" name="size" value="xxl"> XXL</label>
+            </div>
+          </div>
+          
+          <div class="filter-group">
+            <label>Color:</label>
+            <div class="color-options">
+              <label class="color-option" title="Black">
+                <input type="checkbox" name="color" value="black">
+                <span class="color-swatch" style="background-color: #000;"></span>
+              </label>
+              <label class="color-option" title="White">
+                <input type="checkbox" name="color" value="white">
+                <span class="color-swatch" style="background-color: #fff; border: 1px solid #ddd;"></span>
+              </label>
+              <label class="color-option" title="Blue">
+                <input type="checkbox" name="color" value="blue">
+                <span class="color-swatch" style="background-color: #3498db;"></span>
+              </label>
+              <label class="color-option" title="Red">
+                <input type="checkbox" name="color" value="red">
+                <span class="color-swatch" style="background-color: #e74c3c;"></span>
+              </label>
+              <label class="color-option" title="Green">
+                <input type="checkbox" name="color" value="green">
+                <span class="color-swatch" style="background-color: #2ecc71;"></span>
+              </label>
+            </div>
+          </div>
+          
+          <div class="filter-group">
+            <label>Price Range:</label>
+            <div class="price-range">
+              <div class="price-inputs">
+                <input type="number" id="min-price" placeholder="Min" min="0" max="500">
+                <span>to</span>
+                <input type="number" id="max-price" placeholder="Max" min="0" max="500">
+              </div>
+            </div>
+          </div>
+          
+          <div class="filter-actions">
+            <button id="apply-filters" class="btn-apply">Apply Filters</button>
+            <button id="reset-filters" class="btn-reset">Reset</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- CATEGORY PRODUCTS -->
   <section class="category-products">
@@ -346,6 +434,17 @@
 
   <script src="script.js"></script>
   <script src="product-interactions.js"></script>
+  <script src="filter.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize product filter
+      if (typeof ProductFilter !== 'undefined') {
+        const productFilter = new ProductFilter();
+      }
+    });
+  </script>
 </body>
 </html>
+
+
 

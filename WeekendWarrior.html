@@ -301,7 +301,7 @@
       
       <div class="product-grid" id="weekend-products">
         <!-- Casual Wear 1 -->
-        <div class="product-card" data-category="casual">
+        <div class="product-card" data-category="casual" data-price="29.99" data-color="black" data-size="s,m,l,xl">
           <div class="product-badge bestseller">BESTSELLER</div>
           <div class="product-image">
             <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Relaxed Fit Tee">
@@ -320,7 +320,7 @@
         </div>
         
         <!-- Casual Wear 2 -->
-        <div class="product-card" data-category="casual">
+        <div class="product-card" data-category="casual" data-price="39.99" data-color="navy" data-size="s,m,l,xl">
           <div class="product-image">
             <img src="https://images.unsplash.com/photo-1604006852748-903fccbc4019?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Comfort Chino Shorts">
             <div class="product-actions">
@@ -338,7 +338,7 @@
         </div>
         
         <!-- Co-ords 1 -->
-        <div class="product-card" data-category="coords">
+        <div class="product-card" data-category="coords" data-price="89.99" data-color="beige" data-size="s,m,l,xl">
           <div class="product-badge">NEW</div>
           <div class="product-image">
             <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Linen Co-ord Set">
@@ -357,7 +357,7 @@
         </div>
         
         <!-- Co-ords 2 -->
-        <div class="product-card" data-category="coords">
+        <div class="product-card" data-category="coords" data-price="79.99" data-color="gray" data-size="s,m,l,xl">
           <div class="product-image">
             <img src="https://images.unsplash.com/photo-1550246140-29f40b909e5a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Terry Cloth Co-ord">
             <div class="product-actions">
@@ -375,7 +375,7 @@
         </div>
         
         <!-- Swimwear 1 -->
-        <div class="product-card" data-category="swim">
+        <div class="product-card" data-category="swim" data-price="49.99" data-color="blue" data-size="s,m,l,xl">
           <div class="product-image">
             <img src="https://images.unsplash.com/photo-1565128939502-e6d5e4710dd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Quick-Dry Swim Shorts">
             <div class="product-actions">
@@ -393,7 +393,7 @@
         </div>
         
         <!-- Swimwear 2 -->
-        <div class="product-card" data-category="swim">
+        <div class="product-card" data-category="swim" data-price="54.99" data-color="green" data-size="s,m,l,xl">
           <div class="product-badge">NEW</div>
           <div class="product-image">
             <img src="https://images.unsplash.com/photo-1571689936114-b16146c9570a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Printed Swim Shorts">
@@ -412,7 +412,7 @@
         </div>
         
         <!-- Accessories 1 -->
-        <div class="product-card" data-category="accessories">
+        <div class="product-card" data-category="accessories" data-price="89.99" data-color="black" data-size="one-size">
           <div class="product-badge bestseller">BESTSELLER</div>
           <div class="product-image">
             <img src="https://images.unsplash.com/photo-1556306535-0f09a537f0a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Weekend Duffle Bag">
@@ -431,7 +431,7 @@
         </div>
         
         <!-- Accessories 2 -->
-        <div class="product-card" data-category="accessories">
+        <div class="product-card" data-category="accessories" data-price="24.99" data-color="black" data-size="one-size">
           <div class="product-image">
             <img src="https://images.unsplash.com/photo-1523779105320-d1cd346ff52b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Weekend Cap">
             <div class="product-actions">
@@ -449,7 +449,7 @@
         </div>
         
         <!-- Accessories 3 -->
-        <div class="product-card" data-category="accessories">
+        <div class="product-card" data-category="accessories" data-price="59.99" data-color="black" data-size="one-size">
           <div class="product-image">
             <img src="https://images.unsplash.com/photo-1511389026070-a14ae610a1be?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Polarized Sunglasses">
             <div class="product-actions">
@@ -841,12 +841,14 @@
 
   <script src="script.js"></script>
   <script src="product-interactions.js"></script>
+  <script src="filter.js"></script>
 </body>
 </html>
 
   <!-- Scripts -->
   <script src="script.js"></script>
   <script src="product-interactions.js"></script>
+  <script src="filter.js"></script>
   <script>
     // Weekend Warrior specific scripts
     document.addEventListener('DOMContentLoaded', function() {

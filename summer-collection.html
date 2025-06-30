@@ -181,103 +181,12 @@
     </div>
   </section>
 
+  <script src="filter.js"></script>
   <script>
-    // Filter functionality
     document.addEventListener('DOMContentLoaded', function() {
-      // Toggle filter options on mobile
-      const filterToggleBtn = document.getElementById('filter-toggle-btn');
-      const filterOptions = document.querySelector('.filter-options');
-      
-      if (filterToggleBtn) {
-        filterToggleBtn.addEventListener('click', function() {
-          filterOptions.classList.toggle('show');
-        });
-      }
-      
-      // Apply filters button
-      const applyBtn = document.getElementById('apply-filters');
-      if (applyBtn) {
-        applyBtn.addEventListener('click', function() {
-          applyFilters();
-        });
-      }
-      
-      // Reset filters button
-      const resetBtn = document.getElementById('reset-filters');
-      if (resetBtn) {
-        resetBtn.addEventListener('click', function() {
-          resetFilters();
-        });
-      }
-      
-      function applyFilters() {
-        const products = document.querySelectorAll('.product-card');
-        const sortBy = document.getElementById('sort-by').value;
-        const category = document.getElementById('filter-category').value;
-        const selectedSizes = Array.from(document.querySelectorAll('input[name="size"]:checked')).map(el => el.value);
-        const selectedColors = Array.from(document.querySelectorAll('input[name="color"]:checked')).map(el => el.value);
-        
-        // Show all products initially
-        products.forEach(product => {
-          product.style.display = 'block';
-        });
-        
-        // Filter by category
-        if (category !== 'all') {
-          products.forEach(product => {
-            const productName = product.querySelector('h3').textContent.toLowerCase();
-            if (!productName.includes(category.slice(0, -1).toLowerCase())) {
-              product.style.display = 'none';
-            }
-          });
-        }
-        
-        // Filter by size (this is simulated since we don't have actual size data)
-        if (selectedSizes.length > 0) {
-          // In a real implementation, you would check product sizes
-          // This is just a simulation
-          const filteredProducts = Array.from(products).filter((_, index) => index % 2 === 0);
-          products.forEach(product => {
-            if (!filteredProducts.includes(product)) {
-              product.style.display = 'none';
-            }
-          });
-        }
-        
-        // Filter by color (this is simulated since we don't have actual color data)
-        if (selectedColors.length > 0) {
-          // In a real implementation, you would check product colors
-          // This is just a simulation
-          const filteredProducts = Array.from(products).filter((_, index) => index % 3 === 0);
-          products.forEach(product => {
-            if (!filteredProducts.includes(product) && product.style.display !== 'none') {
-              product.style.display = 'none';
-            }
-          });
-        }
-        
-        // Show message if no products match filters
-        const visibleProducts = document.querySelectorAll('.product-card[style="display: block"]');
-        if (visibleProducts.length === 0) {
-          alert('No products match your selected filters. Try different criteria.');
-          resetFilters();
-        }
-      }
-      
-      function resetFilters() {
-        // Reset all form elements
-        document.getElementById('sort-by').value = 'newest';
-        document.getElementById('filter-category').value = 'all';
-        
-        // Uncheck all checkboxes
-        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-          checkbox.checked = false;
-        });
-        
-        // Show all products
-        document.querySelectorAll('.product-card').forEach(product => {
-          product.style.display = 'block';
-        });
+      // Initialize product filter
+      if (typeof ProductFilter !== 'undefined') {
+        const productFilter = new ProductFilter();
       }
     });
   </script>
@@ -829,6 +738,7 @@
   <script src="product-interactions.js"></script>
 </body>
 </html>
+
 
 
 

@@ -233,4 +233,19 @@ class ProductFilter {
     });
     
     // Clear active filters
-    this.
+    this.activeFiltersContainer.innerHTML = '';
+  }
+  
+  updateActiveFilters(category, selectedSizes, selectedColors, minPrice, maxPrice) 
+    // Clear existing filters
+    this.activeFiltersContainer.innerHTML = '';
+    
+    // Add category filter
+    if (category !== 'all') 
+      const filterEl = document.createElement('div');
+      filterEl.className = 'active-filter';
+      filterEl.innerHTML = `
+        <span>${category}</span>
+        <span class="remove-filter" data-filter="category" data-value="${category}">x</span>
+        
+

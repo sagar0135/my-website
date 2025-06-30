@@ -236,16 +236,91 @@ class ProductFilter {
     this.activeFiltersContainer.innerHTML = '';
   }
   
-  updateActiveFilters(category, selectedSizes, selectedColors, minPrice, maxPrice) 
+  updateActiveFilters(category, selectedSizes, selectedColors, minPrice, maxPrice) {
     // Clear existing filters
     this.activeFiltersContainer.innerHTML = '';
     
     // Add category filter
-    if (category !== 'all') 
+    if (category !== 'all') {
       const filterEl = document.createElement('div');
       filterEl.className = 'active-filter';
       filterEl.innerHTML = `
         <span>${category}</span>
         <span class="remove-filter" data-filter="category" data-value="${category}">x</span>
-        
+      `;
+      this.activeFiltersContainer.appendChild(filterEl);
+    }
+    
+    // Add size filters
+    selectedSizes.forEach(size => {
+      const filterEl = document.createElement('div');
+      filterEl.className = 'active-filter';
+      filterEl.innerHTML = `
+        <span>Size: ${size.toUpperCase()}</span>
+        <span class="remove-filter" data-filter="size" data-value="${size}">x</span>
+      `;
+      this.activeFiltersContainer.appendChild(filterEl);
+    });
+    
+    // Add color filters
+    selectedColors.forEach(color => {
+      const filterEl = document.createElement('div');
+      filterEl.className = 'active-filter';
+      filterEl.innerHTML = `
+        <span>Color: ${color.charAt(0).toUpperCase() + color.slice(1)}</span>
+        <span class="remove-filter" data-filter="color" data-value="${color}">x</span>
+      `;
+      this.activeFiltersContainer.appendChild(filterEl);
+    });
+    
+    // Add price range filter
+    if (minPrice > 0 || maxPrice < 1000) {
+      const filterEl = document.createElement('div');
+      filterEl.className = 'active-filter';
+      filterEl.innerHTML = `
+        <span>Price: ${minPrice ? '£' + minPrice : '£0'} - ${maxPrice ? '£' + maxPrice : '£1000'}</span>
+        <span class="remove-filter" data-filter="price" data-value="all">x</span>
+      `;
+      this.activeFiltersContainer.appendChild(filterEl);
+    }
+    
+    // Add event listeners to remove filter buttons
+    const removeButtons = document.querySelectorAll('.remove-filter');
+    removeButtons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        const filterType = e.target.dataset.filter;
+        const filterValue = e.target.dataset.value;
+        this.removeFilter(filterType, filterValue);
+      });
+    });
+  }
+  removeFilter(filterType, filterValue) {
+    // Remove the filter and re-apply
+    if (filterType === 'category') {
+      this.categorySelect.value = 'all';
+    } else if (filterType === 'size') {
+      const checkbox = document.querySelector(`input[name="size"][value="${filterValue}"]`);
+      if (checkbox) checkbox.checked = false;
+    } else if (filterType === 'color') {
+      const checkbox = document.querySelector(`input[name="color"][value="${filterValue}"]`);
+      if (checkbox) checkbox.checked = false;
+    } else if (filterType === 'price') {
+      this.minPriceInput.value = '';
+      this.maxPriceInput.value = '';
+    }
+    
+    // Re-apply filters
+    this.applyFilters();
+  }
+}
+
+// Initialize the filter when the DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // Check if we're on a page with filters
+  if (document.querySelector('.collection-filters')) {
+    const productFilter = new ProductFilter();
+  }
+});
+
+
 

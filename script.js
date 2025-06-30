@@ -2,43 +2,158 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Mobile navigation toggle
   const navItems = document.querySelectorAll('.nav-item.dropdown');
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mainNav = document.querySelector('.main-nav');
   
-  if (window.innerWidth <= 768) {
-    navItems.forEach(item => {
-      item.addEventListener('click', function(e) {
-        // Prevent immediate closing when clicking dropdown items
-        if (e.target === this || e.target === this.querySelector('span')) {
-          e.preventDefault();
-          this.classList.toggle('active');
-          
-          // Close other open dropdowns
-          navItems.forEach(otherItem => {
-            if (otherItem !== this && otherItem.classList.contains('active')) {
-              otherItem.classList.remove('active');
-            }
-          });
-        }
-      });
+  // Add menu toggle functionality
+  if (menuToggle) {
+    menuToggle.addEventListener('click', function() {
+      mainNav.classList.toggle('active');
+      this.classList.toggle('active');
     });
   }
+  
+  // Handle dropdown behavior based on screen size
+  function setupNavigation() {
+    if (window.innerWidth <= 768) {
+      navItems.forEach(item => {
+        // Remove any existing event listeners first
+        const newItem = item.cloneNode(true);
+        item.parentNode.replaceChild(newItem, item);
+        
+        newItem.addEventListener('click', function(e) {
+          // Prevent immediate closing when clicking dropdown items
+          if (e.target === this || e.target.closest('.dropdown-toggle')) {
+            e.preventDefault();
+            this.classList.toggle('active');
+            
+            // Close other open dropdowns
+            navItems.forEach(otherItem => {
+              if (otherItem !== this && otherItem.classList.contains('active')) {
+                otherItem.classList.remove('active');
+              }
+            });
+          }
+        });
+      });
+    } else {
+      // Desktop behavior - hover instead of click
+      navItems.forEach(item => {
+        // Remove any existing event listeners first
+        const newItem = item.cloneNode(true);
+        item.parentNode.replaceChild(newItem, item);
+        
+        newItem.addEventListener('mouseenter', function() {
+          this.classList.add('active');
+        });
+        
+        newItem.addEventListener('mouseleave', function() {
+          this.classList.remove('active');
+        });
+      });
+    }
+  }
+  
+  // Initial setup
+  setupNavigation();
+  
+  // Update on window resize
+  let resizeTimer;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(setupNavigation, 250);
+  });
   
   // Handle navigation links
   const dropdownLinks = document.querySelectorAll('.dropdown-menu a');
   
   dropdownLinks.forEach(link => {
     link.addEventListener('click', function(e) {
-      // Remove the preventDefault to allow normal navigation
-      // e.preventDefault();
-      
       // Get the href attribute
       const href = this.getAttribute('href');
       
       // Navigate to the page
-      if (href) {
+      if (href && href !== '#') {
         window.location.href = href;
       }
     });
   });
+  
+  // Hero banner slideshow
+  const slideshowItems = document.querySelectorAll('.slideshow-item');
+  const indicators = document.querySelectorAll('.indicator');
+  const prevBtn = document.querySelector('.prev-slide');
+  const nextBtn = document.querySelector('.next-slide');
+  
+  if (slideshowItems.length > 0) {
+    let currentSlide = 0;
+    
+    function showSlide(index) {
+      // Hide all slides
+      slideshowItems.forEach(item => {
+        item.classList.remove('active');
+      });
+      
+      // Update indicators
+      indicators.forEach(indicator => {
+        indicator.classList.remove('active');
+      });
+      
+      // Show the selected slide
+      slideshowItems[index].classList.add('active');
+      indicators[index].classList.add('active');
+      
+      // Update current slide index
+      currentSlide = index;
+    }
+    
+    // Next slide
+    function nextSlide() {
+      let next = currentSlide + 1;
+      if (next >= slideshowItems.length) {
+        next = 0;
+      }
+      showSlide(next);
+    }
+    
+    // Previous slide
+    function prevSlide() {
+      let prev = currentSlide - 1;
+      if (prev < 0) {
+        prev = slideshowItems.length - 1;
+      }
+      showSlide(prev);
+    }
+    
+    // Auto advance slides
+    let slideInterval = setInterval(nextSlide, 5000);
+    
+    // Add event listeners to controls
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function() {
+        clearInterval(slideInterval);
+        nextSlide();
+        slideInterval = setInterval(nextSlide, 5000);
+      });
+    }
+    
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function() {
+        clearInterval(slideInterval);
+        prevSlide();
+        slideInterval = setInterval(nextSlide, 5000);
+      });
+    }
+    
+    // Add event listeners to indicators
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', function() {
+        clearInterval(slideInterval);
+        showSlide(index);
+        slideInterval = setInterval(nextSlide, 5000);
+      });
+    });
+  }
 });
 
 // Hoodie-specific functionality
@@ -65,6 +180,8 @@ function initHoodieFeatures() {
     
     // Add event listeners to quick filter buttons
     const filterButtons = document.querySelectorAll('.quick-filter-btn');
+    const products = document.querySelectorAll('.product-card[data-category="hoodies"]');
+    
     filterButtons.forEach(button => {
       button.addEventListener('click', function() {
         // Update active button
@@ -73,7 +190,6 @@ function initHoodieFeatures() {
         
         // Filter products
         const filterValue = this.dataset.filter;
-        const products = document.querySelectorAll('.product-card[data-category="hoodies"]');
         
         if (filterValue === 'all') {
           products.forEach(product => {
@@ -96,7 +212,7 @@ function initHoodieFeatures() {
 
 // Initialize hoodie features when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-  // Check if we're on the jackets page
+  // Check if we're on the hoodies page
   if (document.querySelector('.featured-hoodies')) {
     initHoodieFeatures();
   }
@@ -147,4 +263,34 @@ document.addEventListener('DOMContentLoaded', function() {
       this.style.color = '';
     });
   });
+  
+  // Cart sidebar functionality
+  const cartToggle = document.querySelector('.cart-toggle');
+  const cartSidebar = document.getElementById('cart-sidebar');
+  const closeCart = document.querySelector('.close-cart');
+  
+  if (cartToggle && cartSidebar) {
+    cartToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      cartSidebar.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent scrolling when cart is open
+    });
+    
+    if (closeCart) {
+      closeCart.addEventListener('click', function() {
+        cartSidebar.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+      });
+    }
+    
+    // Close cart when clicking outside
+    document.addEventListener('click', function(e) {
+      if (cartSidebar.classList.contains('active') && 
+          !cartSidebar.contains(e.target) && 
+          e.target !== cartToggle) {
+        cartSidebar.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
 });

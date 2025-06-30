@@ -112,11 +112,126 @@
   <!-- CATEGORY BANNER -->
   <div class="category-banner fresh-drops-banner">
     <div class="category-banner-content">
-      
       <h1>FRESH DROPS</h1>
       <p>The latest trending styles just landed</p>
     </div>
   </div>
+
+  <!-- COLLECTION FILTERS -->
+  <section class="collection-filters">
+    <div class="container">
+      <div class="filter-bar">
+        <div class="filter-toggle">
+          <button id="filter-toggle-btn"><i class="fas fa-sliders-h"></i> Filter Products</button>
+        </div>
+        <div class="filter-options">
+          <div class="filter-group">
+            <label for="sort-by">Sort By:</label>
+            <select id="sort-by" class="filter-select">
+              <option value="newest">Newest</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="bestselling">Bestselling</option>
+              <option value="rating">Top Rated</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label for="filter-category">Category:</label>
+            <select id="filter-category" class="filter-select">
+              <option value="all">All Categories</option>
+              <option value="tshirts">T-Shirts</option>
+              <option value="shirts">Shirts</option>
+              <option value="jackets">Jackets</option>
+              <option value="hoodies">Hoodies</option>
+              <option value="pants">Pants</option>
+              <option value="shorts">Shorts</option>
+              <option value="accessories">Accessories</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label>Size:</label>
+            <div class="size-options">
+              <label class="size-option">
+                <input type="checkbox" name="size" value="s">
+                <span>S</span>
+              </label>
+              <label class="size-option">
+                <input type="checkbox" name="size" value="m">
+                <span>M</span>
+              </label>
+              <label class="size-option">
+                <input type="checkbox" name="size" value="l">
+                <span>L</span>
+              </label>
+              <label class="size-option">
+                <input type="checkbox" name="size" value="xl">
+                <span>XL</span>
+              </label>
+              <label class="size-option">
+                <input type="checkbox" name="size" value="xxl">
+                <span>XXL</span>
+              </label>
+            </div>
+          </div>
+          
+          <div class="filter-group">
+            <label>Color:</label>
+            <div class="color-options">
+              <label class="color-option" title="Black">
+                <input type="checkbox" name="color" value="black">
+                <span class="color-swatch" style="background-color: #000000;"></span>
+              </label>
+              <label class="color-option" title="White">
+                <input type="checkbox" name="color" value="white">
+                <span class="color-swatch" style="background-color: #FFFFFF; border: 1px solid #ddd;"></span>
+              </label>
+              <label class="color-option" title="Blue">
+                <input type="checkbox" name="color" value="blue">
+                <span class="color-swatch" style="background-color: #3498db;"></span>
+              </label>
+              <label class="color-option" title="Red">
+                <input type="checkbox" name="color" value="red">
+                <span class="color-swatch" style="background-color: #e74c3c;"></span>
+              </label>
+              <label class="color-option" title="Green">
+                <input type="checkbox" name="color" value="green">
+                <span class="color-swatch" style="background-color: #2ecc71;"></span>
+              </label>
+              <label class="color-option" title="Navy">
+                <input type="checkbox" name="color" value="navy">
+                <span class="color-swatch" style="background-color: #192841;"></span>
+              </label>
+              <label class="color-option" title="Beige">
+                <input type="checkbox" name="color" value="beige">
+                <span class="color-swatch" style="background-color: #F5F5DC;"></span>
+              </label>
+            </div>
+          </div>
+          
+          <div class="filter-group">
+            <label>Price Range:</label>
+            <div class="price-range">
+              <div class="price-inputs">
+                <input type="number" id="min-price" placeholder="Min" min="0" max="500">
+                <span>to</span>
+                <input type="number" id="max-price" placeholder="Max" min="0" max="500">
+              </div>
+            </div>
+          </div>
+          
+          <div class="filter-actions">
+            <button id="apply-filters" class="btn-apply">Apply Filters</button>
+            <button id="reset-filters" class="btn-reset">Reset</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Active filters display -->
+      <div id="active-filters" class="active-filters"></div>
+    </div>
+  </section>
 
   <!-- TRENDING NOW SECTION -->
   <section class="trending-now">
@@ -124,7 +239,7 @@
       <h2 class="section-title">TRENDING THIS WEEK</h2>
       <div class="product-grid">
         <!-- Oversized Tee - trending in streetwear -->
-        <div class="product-card">
+        <div class="product-card" data-category="tshirts" data-price="29.99" data-color="black" data-size="s,m,l,xl" data-rating="95">
           <div class="product-badge">NEW</div>
           <div class="product-image">
             <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Oversized Graphic Tee">
@@ -148,7 +263,7 @@
         </div>
 
         <!-- Cargo Pants - trending in menswear -->
-        <div class="product-card">
+        <div class="product-card" data-category="pants" data-price="49.99" data-color="khaki" data-size="m,l,xl" data-rating="87">
           <div class="product-badge">NEW</div>
           <div class="product-image"> 
             <img src="https://media.istockphoto.com/id/1585580149/photo/young-man-posing-looking-at-camera.jpg?s=612x612&w=0&k=20&c=27XjD7sKpcXAvAuGq3MSWyfKFAaw8ww-BUFBAdSObv8=" alt="Utility Cargo Pants">
@@ -172,7 +287,7 @@
         </div>
 
         <!-- Varsity Jacket - trending in outerwear -->
-        <div class="product-card">
+        <div class="product-card" data-category="jackets" data-price="89.99" data-color="navy" data-size="m,l,xl,xxl" data-rating="92">
           <div class="product-badge">NEW</div>
           <div class="product-image">
             <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Varsity Bomber Jacket">
@@ -196,7 +311,7 @@
         </div>
 
         <!-- Chunky Sneakers - trending in footwear -->
-        <div class="product-card">
+        <div class="product-card" data-category="accessories" data-price="69.99" data-color="white" data-size="s,m,l" data-rating="89">
           <div class="product-badge">NEW</div>
           <div class="product-image">
             <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Chunky Platform Sneakers">
@@ -445,5 +560,54 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="filter.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize product filter
+      if (typeof ProductFilter !== 'undefined') {
+        const productFilter = new ProductFilter();
+      }
+      
+      // Add data attributes to products if they don't already have them
+      const productCards = document.querySelectorAll('.product-card');
+      productCards.forEach((card, index) => {
+        // Set default categories if not already set
+        if (!card.dataset.category) {
+          const categories = ['tshirts', 'shirts', 'jackets', 'hoodies', 'pants', 'shorts', 'accessories'];
+          card.dataset.category = categories[index % categories.length];
+        }
+        
+        // Set default price if not already set
+        if (!card.dataset.price) {
+          const priceEl = card.querySelector('.current-price');
+          if (priceEl) {
+            const price = parseFloat(priceEl.textContent.replace(/[^0-9.]/g, ''));
+            card.dataset.price = price;
+          }
+        }
+        
+        // Set default sizes if not already set
+        if (!card.dataset.size) {
+          const sizes = ['s', 'm', 'l', 'xl', 'xxl'];
+          const availableSizes = [];
+          for (let i = 0; i < 3; i++) {
+            availableSizes.push(sizes[Math.floor(Math.random() * sizes.length)]);
+          }
+          card.dataset.size = [...new Set(availableSizes)].join(',');
+        }
+        
+        // Set default color if not already set
+        if (!card.dataset.color) {
+          const colorDots = card.querySelectorAll('.color-dot');
+          if (colorDots.length > 0) {
+            const firstColorTitle = colorDots[0].getAttribute('title');
+            if (firstColorTitle) {
+              card.dataset.color = firstColorTitle.toLowerCase();
+            }
+          }
+        }
+      });
+    });
+  </script>
 </body>
 </html>

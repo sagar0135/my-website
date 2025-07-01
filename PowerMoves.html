@@ -61,27 +61,11 @@
             </a>
             <a href="WeekendWarrior.html">Weekend Warrior 
             </a>
-            <a href="LayerGame.html">Layer Game 
-            </a>
+           
           </div>
         </li>
         
-        <!-- LIFESTYLE -->
-        <li class="nav-item dropdown">
-          <span tabindex="0">LIFESTYLE</span>
-          <div class="dropdown-menu">
-            <a href="BoardroomReady.html">Boardroom Ready 
-            </a>
-            <a href="GymToStreet.html">Gym to Street 
-            </a>
-            <a href="DateNight.html">Date Night 
-            </a>
-            <a href="VacationMode.html">Vacation Mode 
-            </a>
-            <a href="WorkFromHome.html">Work From Home 
-            </a>
-          </div>
-        </li>
+    
         
         <!-- INTERACTIVE FEATURES -->
         <li class="nav-item dropdown">
@@ -111,36 +95,153 @@
   </nav>
 
   <!-- HERO BANNER -->
-  <section class="power-moves-banner">
-    <div class="container">
-      <div class="hero-content">
-        <h1>POWER MOVES</h1>
-        <p>Command the room with confidence in our premium formal and business attire</p>
-        <a href="#collections" class="btn-primary">EXPLORE COLLECTIONS</a>
-      </div>
-      
+  <section class="category-banner power-moves-banner">
+    <div class="category-banner-content">
+      <h1>POWER MOVES</h1>
+      <p>Command the room with confidence in our premium formal and business attire</p>
     </div>
   </section>
 
-  <!-- INTRO SECTION -->
-  <section class="power-moves-intro">
+  <!-- COLLECTION FILTERS -->
+  <section class="collection-filters">
     <div class="container">
-      <div class="intro-content">
-        <h2>DRESS FOR SUCCESS</h2>
-        <p>Our Power Moves collection features premium suits, shirts, and business attire designed to make a statement. From boardroom meetings to formal events, these pieces are crafted to help you project confidence and authority.</p>
+      <div class="filter-bar">
+        <div class="filter-toggle">
+          <button id="filter-toggle-btn"><i class="fas fa-sliders-h"></i> Filter Products</button>
+        </div>
+        <div class="filter-options">
+          <div class="filter-group">
+            <label for="sort-by">Sort By:</label>
+            <select id="sort-by" class="filter-select">
+              <option value="newest">Newest</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="bestselling">Bestselling</option>
+              <option value="rating">Top Rated</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label for="filter-category">Category:</label>
+            <select id="filter-category" class="filter-select">
+              <option value="all">All Categories</option>
+              <option value="suits">Suits</option>
+              <option value="shirts">Shirts</option>
+              <option value="accessories">Accessories</option>
+              <option value="footwear">Footwear</option>
+              <option value="vests">Vests</option>
+              <option value="pants">Pants</option>
+              <option value="premium">Premium</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label>Size:</label>
+            <div class="size-options">
+              <label class="size-option">
+                <input type="checkbox" name="size" value="s">
+                <span>S</span>
+              </label>
+              <label class="size-option">
+                <input type="checkbox" name="size" value="m">
+                <span>M</span>
+              </label>
+              <label class="size-option">
+                <input type="checkbox" name="size" value="l">
+                <span>L</span>
+              </label>
+              <label class="size-option">
+                <input type="checkbox" name="size" value="xl">
+                <span>XL</span>
+              </label>
+              <label class="size-option">
+                <input type="checkbox" name="size" value="xxl">
+                <span>XXL</span>
+              </label>
+            </div>
+          </div>
+          
+          <div class="filter-group">
+            <label>Color:</label>
+            <div class="color-options">
+              <label class="color-option" title="Black">
+                <input type="checkbox" name="color" value="black">
+                <span class="color-swatch" style="background-color: #000000;"></span>
+              </label>
+              <label class="color-option" title="Navy">
+                <input type="checkbox" name="color" value="navy">
+                <span class="color-swatch" style="background-color: #192841;"></span>
+              </label>
+              <label class="color-option" title="Grey">
+                <input type="checkbox" name="color" value="grey">
+                <span class="color-swatch" style="background-color: #7D7D7D;"></span>
+              </label>
+              <label class="color-option" title="Charcoal">
+                <input type="checkbox" name="color" value="charcoal">
+                <span class="color-swatch" style="background-color: #36454F;"></span>
+              </label>
+              <label class="color-option" title="Brown">
+                <input type="checkbox" name="color" value="brown">
+                <span class="color-swatch" style="background-color: #5D4037;"></span>
+              </label>
+              <label class="color-option" title="White">
+                <input type="checkbox" name="color" value="white">
+                <span class="color-swatch" style="background-color: #FFFFFF; border: 1px solid #ddd;"></span>
+              </label>
+              <label class="color-option" title="Burgundy">
+                <input type="checkbox" name="color" value="burgundy">
+                <span class="color-swatch" style="background-color: #800020;"></span>
+              </label>
+              <label class="color-option" title="Tan">
+                <input type="checkbox" name="color" value="tan">
+                <span class="color-swatch" style="background-color: #D2B48C;"></span>
+              </label>
+            </div>
+          </div>
+          
+          <div class="filter-group">
+            <label>Price Range:</label>
+            <div class="price-range">
+              <div class="price-inputs">
+                <input type="number" id="min-price" placeholder="Min" min="0" max="1000">
+                <span>to</span>
+                <input type="number" id="max-price" placeholder="Max" min="0" max="1000">
+              </div>
+            </div>
+          </div>
+          
+          <div class="filter-actions">
+            <button id="apply-filters" class="btn-apply">Apply Filters</button>
+            <button id="reset-filters" class="btn-reset">Reset</button>
+          </div>
+        </div>
       </div>
+      
+      <!-- Active filters display -->
+      <div id="active-filters" class="active-filters"></div>
     </div>
   </section>
 
-  <!-- COMPLETE LOOKS SECTION -->
-  <section class="complete-looks" id="collections">
+  <!-- TRENDING PRODUCTS SECTION -->
+  <section class="trending-products" id="collections">
     <div class="container">
-      <h2 class="section-title">COMPLETE POWER LOOKS</h2>
-      <p class="section-subtitle">Curated head-to-toe ensembles for the modern professional</p>
+      <h2 class="section-title">PREMIUM BUSINESS ATTIRE</h2>
+      <p class="section-subtitle">Curated formal wear for the modern professional</p>
       
-      <div class="looks-grid">
+      <!-- Category Tabs -->
+      <div class="category-tabs">
+        <button class="tab-btn active" data-category="suits">Suits</button>
+        <button class="tab-btn" data-category="shirts">Shirts</button>
+        <button class="tab-btn" data-category="accessories">Accessories</button>
+        <button class="tab-btn" data-category="footwear">Footwear</button>
+        <button class="tab-btn" data-category="vests">Vests</button>
+        <button class="tab-btn" data-category="pants">Pants</button>
+        <button class="tab-btn" data-category="premium">Premium</button>
+      </div>
+      
+      <div class="product-grid">
         <!-- Look 1: The Executive -->
-        <div class="look-card">
+        <div class="look-card" data-category="suits" data-price="399" data-color="navy" data-rating="98">
           <div class="look-image">
             <img src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="The Executive Look">
             <div class="look-badge">BESTSELLER</div>
@@ -166,7 +267,7 @@
         </div>
         
         <!-- Look 2: The Diplomat -->
-        <div class="look-card">
+        <div class="look-card" data-category="suits" data-price="429" data-color="charcoal" data-rating="95">
           <div class="look-image">
             <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="The Diplomat Look">
           </div>
@@ -191,7 +292,7 @@
         </div>
         
         <!-- Look 3: The Innovator -->
-        <div class="look-card">
+        <div class="look-card" data-category="suits" data-price="449" data-color="grey" data-rating="92">
           <div class="look-image">
             <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="The Innovator Look">
             <div class="look-badge">NEW</div>
@@ -208,6 +309,161 @@
             <div class="look-price">
               <span class="price-from">From</span>
               <span class="price-amount">£449</span>
+            </div>
+            <div class="look-actions">
+              <a href="#" class="btn-secondary">SHOP THIS LOOK</a>
+              <button class="btn-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+        
+
+        
+        <!-- Look 5: The Connoisseur -->
+        <div class="look-card" data-category="suits" data-price="599" data-color="brown" data-rating="97">
+          <div class="look-image">
+            <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="The Connoisseur Look">
+            <div class="look-badge">LUXURY</div>
+          </div>
+          <div class="look-content">
+            <h3>THE CONNOISSEUR</h3>
+            <p>Exquisite Italian craftsmanship in a rich brown suit that exudes sophistication and timeless style.</p>
+            <div class="look-items">
+              <span>Italian Brown Wool Suit</span>
+              <span>Cream Herringbone Shirt</span>
+              <span>Gold & Navy Silk Tie</span>
+              <span>Burnished Leather Brogues</span>
+            </div>
+            <div class="look-price">
+              <span class="price-from">From</span>
+              <span class="price-amount">£599</span>
+            </div>
+            <div class="look-actions">
+              <a href="#" class="btn-secondary">SHOP THIS LOOK</a>
+              <button class="btn-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Look 6: The Strategist -->
+        <div class="look-card" data-category="suits" data-price="379" data-color="black" data-rating="91">
+          <div class="look-image">
+            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="The Strategist Look">
+          </div>
+          <div class="look-content">
+            <h3>THE STRATEGIST</h3>
+            <p>A versatile black suit ensemble that transitions seamlessly from day meetings to evening events.</p>
+            <div class="look-items">
+              <span>Black Wool-Blend Suit</span>
+              <span>Light Grey Shirt</span>
+              <span>Silver Dotted Tie</span>
+              <span>Black Cap-Toe Oxfords</span>
+            </div>
+            <div class="look-price">
+              <span class="price-from">From</span>
+              <span class="price-amount">£379</span>
+            </div>
+            <div class="look-actions">
+              <a href="#" class="btn-secondary">SHOP THIS LOOK</a>
+              <button class="btn-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Look 7: The Maverick -->
+        <div class="look-card" data-category="suits" data-price="469" data-color="green" data-rating="89">
+          <div class="look-image">
+            <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="The Maverick Look">
+            <div class="look-badge">NEW</div>
+          </div>
+          <div class="look-content">
+            <h3>THE MAVERICK</h3>
+            <p>Stand out with confidence in this distinctive forest green suit that balances boldness with professionalism.</p>
+            <div class="look-items">
+              <span>Forest Green Suit</span>
+              <span>White Poplin Shirt</span>
+              <span>Textured Navy Tie</span>
+              <span>Dark Brown Derbies</span>
+            </div>
+            <div class="look-price">
+              <span class="price-from">From</span>
+              <span class="price-amount">£469</span>
+            </div>
+            <div class="look-actions">
+              <a href="#" class="btn-secondary">SHOP THIS LOOK</a>
+              <button class="btn-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Look 8: The Traditionalist -->
+        <div class="look-card" data-category="suits" data-price="419" data-color="navy" data-rating="93">
+          <div class="look-image">
+            <img src="https://images.unsplash.com/photo-1548454782-15b189d129ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="The Traditionalist Look">
+          </div>
+          <div class="look-content">
+            <h3>THE TRADITIONALIST</h3>
+            <p>Classic pinstripe suit with timeless details for the professional who values heritage and proven style.</p>
+            <div class="look-items">
+              <span>Navy Pinstripe Suit</span>
+              <span>Sky Blue Shirt</span>
+              <span>Burgundy Striped Tie</span>
+              <span>Black Wingtip Shoes</span>
+            </div>
+            <div class="look-price">
+              <span class="price-from">From</span>
+              <span class="price-amount">£419</span>
+            </div>
+            <div class="look-actions">
+              <a href="#" class="btn-secondary">SHOP THIS LOOK</a>
+              <button class="btn-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Look 9: The Minimalist -->
+        <div class="look-card" data-category="suits" data-price="359" data-color="grey" data-rating="90">
+          <div class="look-image">
+            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="The Minimalist Look">
+          </div>
+          <div class="look-content">
+            <h3>THE MINIMALIST</h3>
+            <p>Clean lines and understated elegance define this modern grey suit with minimalist accessories.</p>
+            <div class="look-items">
+              <span>Light Grey Suit</span>
+              <span>White Shirt</span>
+              <span>Slim Black Tie</span>
+              <span>Black Leather Loafers</span>
+            </div>
+            <div class="look-price">
+              <span class="price-from">From</span>
+              <span class="price-amount">£359</span>
+            </div>
+            <div class="look-actions">
+              <a href="#" class="btn-secondary">SHOP THIS LOOK</a>
+              <button class="btn-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Look 10: The Luxe -->
+        <div class="look-card" data-category="suits" data-price="699" data-color="burgundy" data-rating="96">
+          <div class="look-image">
+            <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="The Luxe Look">
+            <div class="look-badge">PREMIUM</div>
+          </div>
+          <div class="look-content">
+            <h3>THE LUXE</h3>
+            <p>Our most luxurious offering featuring a rich burgundy suit in premium Italian wool with bespoke details.</p>
+            <div class="look-items">
+              <span>Burgundy Italian Wool Suit</span>
+              <span>Egyptian Cotton Shirt</span>
+              <span>Handcrafted Silk Tie</span>
+              <span>Italian Leather Oxfords</span>
+            </div>
+            <div class="look-price">
+              <span class="price-from">From</span>
+              <span class="price-amount">£699</span>
             </div>
             <div class="look-actions">
               <a href="#" class="btn-secondary">SHOP THIS LOOK</a>
@@ -234,7 +490,7 @@
       
       <div class="product-grid" id="suits">
         <!-- Suit 1 -->
-        <div class="product-card">
+        <div class="product-card" data-category="suits" data-price="299.99" data-color="navy" data-rating="92">
           <div class="product-badge bestseller">BESTSELLER</div>
           <div class="product-image">
             <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Premium Navy Suit">
@@ -261,7 +517,7 @@
         </div>
         
         <!-- Suit 2 -->
-        <div class="product-card">
+        <div class="product-card" data-category="suits" data-price="329.99" data-color="grey" data-rating="88">
           <div class="product-image">
             <img src="https://images.unsplash.com/photo-1598808503746-f34cfb6e1688?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Charcoal Pinstripe Suit">
             <div class="product-actions">
@@ -281,13 +537,13 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="far fa-star"></i>
-              <span>(62)</span>
+              <span>(64)</span>
             </div>
           </div>
         </div>
         
         <!-- Suit 3 -->
-        <div class="product-card">
+        <div class="product-card" data-category="suits" data-price="349.99" data-color="grey" data-rating="90">
           <div class="product-badge">NEW</div>
           <div class="product-image">
             <img src="https://images.unsplash.com/photo-1593032534613-075f7d37a5da?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Light Grey Check Suit">
@@ -308,13 +564,13 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
-              <span>(34)</span>
+              <span>(42)</span>
             </div>
           </div>
         </div>
         
         <!-- Suit 4 -->
-        <div class="product-card">
+        <div class="product-card" data-category="suits" data-price="399.99" data-color="black" data-rating="94">
           <div class="product-image">
             <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Black Tuxedo">
             <div class="product-actions">
@@ -335,6 +591,715 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star-half-alt"></i>
               <span>(48)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="product-grid" id="shirts" style="display: none;">
+        <!-- Shirt 1 -->
+        <div class="product-card" data-category="shirts" data-price="59.99" data-color="white" data-rating="95">
+          <div class="product-badge bestseller">BESTSELLER</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Premium White Shirt">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Premium White Oxford Shirt</h3>
+            <div class="product-price">
+              <span class="current-price">£59.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(124)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Shirt 2 -->
+        <div class="product-card" data-category="shirts" data-price="64.99" data-color="blue" data-rating="91">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Light Blue Shirt">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Light Blue Twill Shirt</h3>
+            <div class="product-price">
+              <span class="current-price">£64.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(86)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Shirt 3 -->
+        <div class="product-card" data-category="shirts" data-price="79.99" data-color="pink" data-rating="88">
+          <div class="product-badge">NEW</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1598961942613-ba897716405b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Pink Dress Shirt">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Pink Egyptian Cotton Shirt</h3>
+            <div class="product-price">
+              <span class="current-price">£79.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(52)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Shirt 4 -->
+        <div class="product-card" data-category="shirts" data-price="69.99" data-color="purple" data-rating="89">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1588359348347-9bc6cbbb689e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Purple Striped Shirt">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Purple Striped Dress Shirt</h3>
+            <div class="product-price">
+              <span class="current-price">£69.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(67)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="product-grid" id="accessories" style="display: none;">
+        <!-- Accessory 1: Premium Tie -->
+        <div class="product-card" data-category="accessories" data-price="89.99" data-color="navy" data-rating="95">
+          <div class="product-badge bestseller">BESTSELLER</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1598879445546-5c1f72a8afb7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Premium Silk Tie">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Italian Silk Woven Tie</h3>
+            <div class="product-price">
+              <span class="current-price">£89.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(95)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Accessory 2: Executive Watch -->
+        <div class="product-card" data-category="accessories" data-price="299.99" data-color="silver" data-rating="97">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Executive Watch">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Executive Chronograph Watch</h3>
+            <div class="product-price">
+              <span class="current-price">£299.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(97)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Accessory 3: Leather Belt -->
+        <div class="product-card" data-category="accessories" data-price="79.99" data-color="brown" data-rating="94">
+          <div class="product-badge">NEW</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1624005340901-e6cffc4e3a32?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Premium Leather Belt">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Full-Grain Leather Belt</h3>
+            <div class="product-price">
+              <span class="current-price">£79.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(94)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Accessory 4: Cufflinks -->
+        <div class="product-card" data-category="accessories" data-price="69.99" data-color="silver" data-rating="92">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1590548784585-643d2b9f2925?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Silver Cufflinks">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Sterling Silver Cufflinks</h3>
+            <div class="product-price">
+              <span class="current-price">£69.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(92)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Accessory 5: Pocket Square -->
+        <div class="product-card" data-category="accessories" data-price="39.99" data-color="burgundy" data-rating="91">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1598879445546-5c1f72a8afb7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Silk Pocket Square">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Silk Pocket Square</h3>
+            <div class="product-price">
+              <span class="current-price">£39.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(91)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="product-grid" id="footwear" style="display: none;">
+        <!-- Footwear 1: Oxford Shoes -->
+        <div class="product-card" data-category="footwear" data-price="199.99" data-color="black" data-rating="96">
+          <div class="product-badge bestseller">BESTSELLER</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Oxford Shoes">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Classic Oxford Leather Shoes</h3>
+            <div class="product-price">
+              <span class="current-price">£199.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(96)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Footwear 2: Derby Shoes -->
+        <div class="product-card" data-category="footwear" data-price="189.99" data-color="brown" data-rating="94">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1605812860427-4024433a70fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Derby Shoes">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Premium Derby Shoes</h3>
+            <div class="product-price">
+              <span class="current-price">£189.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(94)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Footwear 3: Loafers -->
+        <div class="product-card" data-category="footwear" data-price="169.99" data-color="tan" data-rating="93">
+          <div class="product-badge">NEW</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1614252369475-531eba835eb1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Leather Loafers">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Italian Leather Loafers</h3>
+            <div class="product-price">
+              <span class="current-price">£169.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(93)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Footwear 4: Brogue Shoes -->
+        <div class="product-card" data-category="footwear" data-price="209.99" data-color="burgundy" data-rating="95">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1614252369475-531eba835eb1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Brogue Shoes">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Handcrafted Brogue Shoes</h3>
+            <div class="product-price">
+              <span class="current-price">£209.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(95)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Footwear 5: Chelsea Boots -->
+        <div class="product-card" data-category="footwear" data-price="229.99" data-color="black" data-rating="97">
+          <div class="product-badge sale">-15%</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1638247025967-b4e38f787b76?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Chelsea Boots">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Premium Leather Chelsea Boots</h3>
+            <div class="product-price">
+              <span class="current-price">£229.99</span>
+              <span class="original-price">£269.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(97)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="category-tabs">
+        <button class="tab-btn" data-category="vests">Vests</button>
+        <button class="tab-btn" data-category="pants">Pants</button>
+        <button class="tab-btn" data-category="premium">Premium Collection</button>
+      </div>
+      
+      <div class="product-grid" id="vests" style="display: none;">
+        <!-- Vest 1 -->
+        <div class="product-card" data-category="vests" data-price="89.99" data-color="grey" data-rating="91">
+          <div class="product-badge bestseller">BESTSELLER</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Grey Suit Vest">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Grey Wool Suit Vest</h3>
+            <div class="product-price">
+              <span class="current-price">£89.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(76)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Vest 2 -->
+        <div class="product-card" data-category="vests" data-price="99.99" data-color="navy" data-rating="89">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Navy Pinstripe Vest">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Navy Pinstripe Vest</h3>
+            <div class="product-price">
+              <span class="current-price">£99.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(52)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Vest 3 -->
+        <div class="product-card" data-category="vests" data-price="109.99" data-color="black" data-rating="92">
+          <div class="product-badge">PREMIUM</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Black Tuxedo Vest">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Black Tuxedo Vest</h3>
+            <div class="product-price">
+              <span class="current-price">£109.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(38)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="product-grid" id="pants" style="display: none;">
+        <!-- Pants 1 -->
+        <div class="product-card" data-category="pants" data-price="119.99" data-color="navy" data-rating="94">
+          <div class="product-badge bestseller">BESTSELLER</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1584865288642-42078afe6942?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Navy Dress Pants">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Navy Wool Dress Pants</h3>
+            <div class="product-price">
+              <span class="current-price">£119.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(94)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Pants 2 -->
+        <div class="product-card" data-category="pants" data-price="129.99" data-color="grey" data-rating="91">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Grey Dress Pants">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Grey Tailored Dress Pants</h3>
+            <div class="product-price">
+              <span class="current-price">£129.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(68)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Pants 3 -->
+        <div class="product-card" data-category="pants" data-price="149.99" data-color="black" data-rating="93">
+          <div class="product-badge">PREMIUM</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Black Tuxedo Pants">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Black Tuxedo Pants</h3>
+            <div class="product-price">
+              <span class="current-price">£149.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(46)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Pants 4 -->
+        <div class="product-card" data-category="pants" data-price="139.99" data-color="brown" data-rating="89">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Brown Dress Pants">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Brown Wool Dress Pants</h3>
+            <div class="product-price">
+              <span class="current-price">£139.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(37)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="product-grid" id="premium" style="display: none;">
+        <!-- Premium 1: Luxury Watch -->
+        <div class="product-card" data-category="premium" data-price="499.99" data-color="gold" data-rating="97">
+          <div class="product-badge">LUXURY</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Luxury Watch">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Gold Automatic Chronograph Watch</h3>
+            <div class="product-price">
+              <span class="current-price">£499.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(97)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Premium 2: Leather Briefcase -->
+        <div class="product-card" data-category="premium" data-price="349.99" data-color="brown" data-rating="95">
+          <div class="product-badge">LUXURY</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Leather Briefcase">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Italian Leather Briefcase</h3>
+            <div class="product-price">
+              <span class="current-price">£349.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(95)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Premium 3: Cashmere Scarf -->
+        <div class="product-card" data-category="premium" data-price="199.99" data-color="navy" data-rating="94">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Cashmere Scarf">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Pure Cashmere Scarf</h3>
+            <div class="product-price">
+              <span class="current-price">£199.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(94)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Premium 4: Fountain Pen -->
+        <div class="product-card" data-category="premium" data-price="249.99" data-color="silver" data-rating="93">
+          <div class="product-badge">LUXURY</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Fountain Pen">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Sterling Silver Fountain Pen</h3>
+            <div class="product-price">
+              <span class="current-price">£249.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(93)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Premium 5: Silk Pocket Square Set -->
+        <div class="product-card" data-category="premium" data-price="129.99" data-color="multicolor" data-rating="91">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1598879445546-5c1f72a8afb7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Silk Pocket Square Set">
+            <div class="product-actions">
+              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Luxury Silk Pocket Square Set</h3>
+            <div class="product-price">
+              <span class="current-price">£129.99</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(91)</span>
             </div>
           </div>
         </div>
@@ -504,5 +1469,136 @@
   <script src="script.js"></script>
   <script src="product-interactions.js"></script>
   <script src="search.js"></script>
+  <script src="filter.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize product filter
+      if (typeof ProductFilter !== 'undefined') {
+        const productFilter = new ProductFilter();
+      }
+      
+      // Category tabs functionality
+      const tabButtons = document.querySelectorAll('.category-tabs .tab-btn');
+      const productGrids = document.querySelectorAll('.product-grid');
+      
+      // Set the first tab as active by default
+      if (tabButtons.length > 0 && !document.querySelector('.tab-btn.active')) {
+        tabButtons[0].classList.add('active');
+        const firstCategory = tabButtons[0].dataset.category;
+        document.getElementById(firstCategory).style.display = 'grid';
+      }
+      
+      tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Remove active class from all buttons
+          tabButtons.forEach(btn => btn.classList.remove('active'));
+          // Add active class to clicked button
+          this.classList.add('active');
+          
+          // Hide all product grids
+          productGrids.forEach(grid => {
+            grid.style.display = 'none';
+          });
+          
+          // Show the selected product grid
+          const category = this.dataset.category;
+          const selectedGrid = document.getElementById(category);
+          if (selectedGrid) {
+            selectedGrid.style.display = 'grid';
+          }
+        });
+      });
+      
+      // Quick view functionality
+      const quickViewButtons = document.querySelectorAll('.quick-view');
+      quickViewButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          // Get product data
+          const productCard = this.closest('.product-card');
+          const productTitle = productCard.querySelector('h3').textContent;
+          const productImage = productCard.querySelector('.product-image img').src;
+          const productPrice = productCard.querySelector('.current-price').textContent;
+          
+          // Show quick view modal with product data
+          if (typeof showQuickView === 'function') {
+            showQuickView(productTitle, productImage, productPrice);
+          }
+        });
+      });
+      
+      // Wishlist functionality
+      const wishlistButtons = document.querySelectorAll('.add-to-wishlist');
+      wishlistButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          // Toggle heart icon
+          const heartIcon = this.querySelector('i');
+          if (heartIcon.classList.contains('far')) {
+            heartIcon.classList.remove('far');
+            heartIcon.classList.add('fas');
+          } else {
+            heartIcon.classList.remove('fas');
+            heartIcon.classList.add('far');
+          }
+          
+          // Update wishlist count
+          const wishlistCount = document.querySelector('.wishlist-count');
+          let count = parseInt(wishlistCount.textContent);
+          
+          if (heartIcon.classList.contains('fas')) {
+            count++;
+          } else {
+            count = Math.max(0, count - 1);
+          }
+          
+          wishlistCount.textContent = count;
+        });
+      });
+      
+      // Add to cart functionality
+      const addToCartButtons = document.querySelectorAll('.add-to-cart');
+      addToCartButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          // Get product data
+          const productCard = this.closest('.product-card');
+          const productTitle = productCard.querySelector('h3').textContent;
+          const productPrice = productCard.querySelector('.current-price').textContent;
+          
+          // Update cart count
+          const cartCount = document.querySelector('.cart-count');
+          let count = parseInt(cartCount.textContent);
+          count++;
+          cartCount.textContent = count;
+          
+          // Show confirmation message
+          const confirmMessage = document.createElement('div');
+          confirmMessage.className = 'cart-confirmation';
+          confirmMessage.innerHTML = `
+            <div class="cart-confirm-content">
+              <i class="fas fa-check-circle"></i>
+              <p>${productTitle} added to cart</p>
+            </div>
+          `;
+          document.body.appendChild(confirmMessage);
+          
+          // Remove confirmation after 3 seconds
+          setTimeout(() => {
+            confirmMessage.classList.add('fade-out');
+            setTimeout(() => {
+              confirmMessage.remove();
+            }, 300);
+          }, 3000);
+        });
+      });
+    });
+  </script>
 </body>
 </html>

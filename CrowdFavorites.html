@@ -63,27 +63,10 @@
             </a>
             <a href="WeekendWarrior.html">Weekend Warrior 
             </a>
-            <a href="LayerGame.html">Layer Game 
-            </a>
+
           </div>
         </li>
         
-        <!-- LIFESTYLE -->
-        <li class="nav-item dropdown">
-          <span tabindex="0">LIFESTYLE</span>
-          <div class="dropdown-menu">
-            <a href="BoardroomReady.html">Boardroom Ready 
-            </a>
-            <a href="GymToStreet.html">Gym to Street 
-            </a>
-            <a href="DateNight.html">Date Night 
-            </a>
-            <a href="VacationMode.html">Vacation Mode 
-            </a>
-            <a href="WorkFromHome.html">Work From Home 
-            </a>
-          </div>
-        </li>
         
         <!-- INTERACTIVE FEATURES -->
         <li class="nav-item dropdown">
@@ -117,6 +100,117 @@
       <p>Our most popular and highly-rated items</p>
     </div>
   </div>
+
+  <!-- COLLECTION FILTERS -->
+  <section class="collection-filters">
+    <div class="container">
+      <div class="filter-bar">
+        <div class="filter-toggle">
+          <button id="filter-toggle-btn"><i class="fas fa-sliders-h"></i> Filter Products</button>
+        </div>
+        <div class="filter-options">
+          <div class="filter-group">
+            <label for="sort-by">Sort By:</label>
+            <select id="sort-by" class="filter-select">
+              <option value="newest">Newest</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="bestselling">Bestselling</option>
+              <option value="rating">Top Rated</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label for="filter-category">Category:</label>
+            <select id="filter-category" class="filter-select">
+              <option value="all">All Categories</option>
+              <option value="tshirts">T-Shirts</option>
+              <option value="shirts">Shirts</option>
+              <option value="jackets">Jackets</option>
+              <option value="hoodies">Hoodies</option>
+              <option value="pants">Pants</option>
+              <option value="shorts">Shorts</option>
+              <option value="accessories">Accessories</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label>Size:</label>
+            <div class="checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" name="size" value="s"> S
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="size" value="m"> M
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="size" value="l"> L
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="size" value="xl"> XL
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="size" value="xxl"> XXL
+              </label>
+            </div>
+          </div>
+          
+          <div class="filter-group">
+            <label>Color:</label>
+            <div class="color-options">
+              <label class="color-option" title="Black">
+                <input type="checkbox" name="color" value="black">
+                <span class="color-swatch" style="background-color: #000000;"></span>
+              </label>
+              <label class="color-option" title="White">
+                <input type="checkbox" name="color" value="white">
+                <span class="color-swatch" style="background-color: #FFFFFF; border: 1px solid #ddd;"></span>
+              </label>
+              <label class="color-option" title="Blue">
+                <input type="checkbox" name="color" value="blue">
+                <span class="color-swatch" style="background-color: #3498db;"></span>
+              </label>
+              <label class="color-option" title="Red">
+                <input type="checkbox" name="color" value="red">
+                <span class="color-swatch" style="background-color: #e74c3c;"></span>
+              </label>
+              <label class="color-option" title="Green">
+                <input type="checkbox" name="color" value="green">
+                <span class="color-swatch" style="background-color: #2ecc71;"></span>
+              </label>
+              <label class="color-option" title="Navy">
+                <input type="checkbox" name="color" value="navy">
+                <span class="color-swatch" style="background-color: #192841;"></span>
+              </label>
+              <label class="color-option" title="Beige">
+                <input type="checkbox" name="color" value="beige">
+                <span class="color-swatch" style="background-color: #F5F5DC;"></span>
+              </label>
+            </div>
+          </div>
+          
+          <div class="filter-group">
+            <label>Price Range:</label>
+            <div class="price-range">
+              <div class="price-inputs">
+                <input type="number" id="min-price" placeholder="Min" min="0" max="500">
+                <span>to</span>
+                <input type="number" id="max-price" placeholder="Max" min="0" max="500">
+              </div>
+            </div>
+          </div>
+          
+          <div class="filter-actions">
+            <button id="apply-filters" class="btn-apply">Apply Filters</button>
+            <button id="reset-filters" class="btn-reset">Reset</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Active filters display -->
+      <div id="active-filters" class="active-filters"></div>
+    </div>
+  </section>
 
   <!-- BEST SELLERS SECTION -->
   <section class="best-sellers">
@@ -460,22 +554,6 @@
 
 
 
-<!-- NEWSLETTER -->
-  <section class="newsletter">
-    <div class="container">
-      <div class="newsletter-content">
-        <div class="newsletter-text">
-          <h2>JOIN THE CLUB</h2>
-          <p>Subscribe to our newsletter for exclusive offers, style tips, and early access to new drops.</p>
-        </div>
-        <form class="newsletter-form">
-          <input type="email" placeholder="Your email address" required aria-label="Email address">
-          <button type="submit">SUBSCRIBE</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
   <!-- FOOTER -->
   <footer class="modern-footer">
     <div class="container">
@@ -572,6 +650,53 @@
     </div>
   </footer>
 
+ 
+
   <script src="script.js"></script>
+  <script src="product-interactions.js"></script>
+  <script src="filter.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize product filter
+      if (typeof ProductFilter !== 'undefined') {
+        const productFilter = new ProductFilter();
+      }
+      
+      // Quick view functionality
+      const quickViewButtons = document.querySelectorAll('.quick-view');
+      const quickViewModal = document.getElementById('quick-view-modal');
+      
+      quickViewButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          // Get product details
+          const productCard = this.closest('.product-card');
+          const productImage = productCard.querySelector('.product-image img').src;
+          const productName = productCard.querySelector('h3').textContent;
+          const productPrice = productCard.querySelector('.current-price').textContent;
+          
+          // Populate quick view modal
+          document.getElementById('quick-view-image').src = productImage;
+          document.getElementById('quick-view-title').textContent = productName;
+          document.getElementById('quick-view-price').textContent = productPrice;
+          
+          // Show modal
+          quickViewModal.style.display = 'flex';
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      
+      // Close quick view modal
+      const closeQuickView = document.querySelector('.close-quick-view');
+      if (closeQuickView) {
+        closeQuickView.addEventListener('click', function() {
+          quickViewModal.style.display = 'none';
+          document.body.style.overflow = 'auto';
+        });
+      }
+    });
+  </script>
 </body>
 </html>

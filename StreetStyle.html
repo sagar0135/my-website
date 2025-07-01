@@ -58,21 +58,11 @@
             <a href="PowerMoves.html">Power Moves</a>
             <a href="StreetStyle.html">Street Style</a>
             <a href="WeekendWarrior.html">Weekend Warrior</a>
-            <a href="LayerGame.html">Layer Game</a>
+            
           </div>
         </li>
         
-        <!-- LIFESTYLE -->
-        <li class="nav-item dropdown">
-          <span tabindex="0">LIFESTYLE</span>
-          <div class="dropdown-menu">
-            <a href="BoardroomReady.html">Boardroom Ready</a>
-            <a href="GymToStreet.html">Gym to Street</a>
-            <a href="DateNight.html">Date Night</a>
-            <a href="VacationMode.html">Vacation Mode</a>
-            <a href="WorkFromHome.html">Work From Home</a>
-          </div>
-        </li>
+       
         
         <!-- INTERACTIVE FEATURES -->
         <li class="nav-item dropdown">
@@ -109,6 +99,125 @@
         <h2>URBAN EDGE, EVERYDAY COMFORT</h2>
         <p>Our Street Style collection brings together urban aesthetics with practical comfort. Each outfit is carefully curated to help you express your individuality while navigating city life with confidence.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- COLLECTION FILTERS -->
+  <section class="collection-filters">
+    <div class="container">
+      <div class="filter-bar">
+        <div class="filter-toggle">
+          <button id="filter-toggle-btn"><i class="fas fa-sliders-h"></i> Filter Products</button>
+        </div>
+        <div class="filter-options">
+          <div class="filter-group">
+            <label for="sort-by">Sort By:</label>
+            <select id="sort-by" class="filter-select">
+              <option value="newest">Newest</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="bestselling">Bestselling</option>
+              <option value="rating">Top Rated</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label for="filter-category">Category:</label>
+            <select id="filter-category" class="filter-select">
+              <option value="all">All Categories</option>
+              <option value="hoodies">Hoodies & Sweatshirts</option>
+              <option value="denim">Denim</option>
+              <option value="sneakers">Sneakers</option>
+              <option value="tshirts">T-Shirts</option>
+              <option value="jackets">Jackets</option>
+              <option value="accessories">Accessories</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label>Size:</label>
+            <div class="size-options">
+              <label class="size-option">
+                <input type="checkbox" name="size" value="s">
+                <span>S</span>
+              </label>
+              <label class="size-option">
+                <input type="checkbox" name="size" value="m">
+                <span>M</span>
+              </label>
+              <label class="size-option">
+                <input type="checkbox" name="size" value="l">
+                <span>L</span>
+              </label>
+              <label class="size-option">
+                <input type="checkbox" name="size" value="xl">
+                <span>XL</span>
+              </label>
+              <label class="size-option">
+                <input type="checkbox" name="size" value="xxl">
+                <span>XXL</span>
+              </label>
+            </div>
+          </div>
+          
+          <div class="filter-group">
+            <label>Color:</label>
+            <div class="color-options">
+              <label class="color-option" title="Black">
+                <input type="checkbox" name="color" value="black">
+                <span class="color-swatch" style="background-color: #000000;"></span>
+              </label>
+              <label class="color-option" title="White">
+                <input type="checkbox" name="color" value="white">
+                <span class="color-swatch" style="background-color: #FFFFFF; border: 1px solid #ddd;"></span>
+              </label>
+              <label class="color-option" title="Grey">
+                <input type="checkbox" name="color" value="grey">
+                <span class="color-swatch" style="background-color: #7D7D7D;"></span>
+              </label>
+              <label class="color-option" title="Blue">
+                <input type="checkbox" name="color" value="blue">
+                <span class="color-swatch" style="background-color: #1E3A8A;"></span>
+              </label>
+              <label class="color-option" title="Green">
+                <input type="checkbox" name="color" value="green">
+                <span class="color-swatch" style="background-color: #2F4F4F;"></span>
+              </label>
+              <label class="color-option" title="Red">
+                <input type="checkbox" name="color" value="red">
+                <span class="color-swatch" style="background-color: #8B0000;"></span>
+              </label>
+              <label class="color-option" title="Beige">
+                <input type="checkbox" name="color" value="beige">
+                <span class="color-swatch" style="background-color: #F5F5DC;"></span>
+              </label>
+              <label class="color-option" title="Khaki">
+                <input type="checkbox" name="color" value="khaki">
+                <span class="color-swatch" style="background-color: #C3B091;"></span>
+              </label>
+            </div>
+          </div>
+          
+          <div class="filter-group">
+            <label>Price Range:</label>
+            <div class="price-range">
+              <div class="price-inputs">
+                <input type="number" id="min-price" placeholder="Min" min="0" max="500">
+                <span>to</span>
+                <input type="number" id="max-price" placeholder="Max" min="0" max="500">
+              </div>
+            </div>
+          </div>
+          
+          <div class="filter-actions">
+            <button id="apply-filters" class="btn-apply">Apply Filters</button>
+            <button id="reset-filters" class="btn-reset">Reset</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Active filters display -->
+      <div id="active-filters" class="active-filters"></div>
     </div>
   </section>
 
@@ -267,7 +376,7 @@
       
       <div class="product-grid" id="street-style-products">
         <!-- Hoodie 1 -->
-        <div class="product-card" data-category="hoodies">
+        <div class="product-card" data-category="hoodies" data-price="59.99" data-color="black" data-size="s,m,l,xl" data-rating="87">
           <div class="product-badge bestseller">BESTSELLER</div>
           <div class="product-image">
             <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Oversized Streetwear Hoodie">
@@ -288,7 +397,7 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star-half-alt"></i>
-              <span class="rating-count">(142)</span>
+              <span>(87)</span>
             </div>
           </div>
         </div>
@@ -750,6 +859,124 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="filter.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize product filter
+      if (typeof ProductFilter !== 'undefined') {
+        const productFilter = new ProductFilter();
+      }
+      
+      // Outfit card click functionality
+      const outfitCards = document.querySelectorAll('.outfit-card');
+      const outfitDetail = document.getElementById('outfit-detail');
+      const outfitDetailTitle = document.getElementById('outfit-detail-title');
+      const outfitDetailDescription = document.getElementById('outfit-detail-description');
+      const outfitMainImage = document.getElementById('outfit-main-image');
+      const outfitFeaturesList = document.getElementById('outfit-features-list');
+      const outfitTotalPrice = document.getElementById('outfit-total-price');
+      const outfitProductsGrid = document.getElementById('outfit-products-grid');
+      
+      // Outfit data
+      const outfitData = [
+        {
+          id: 'outfit-1',
+          title: 'URBAN EXPLORER',
+          description: 'A versatile street-ready look that combines comfort with urban edge. Perfect for city exploration and casual hangouts.',
+          image: 'https://images.unsplash.com/photo-1536766820879-059fec98ec0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+          features: [
+            'Layered urban aesthetic',
+            'Weather-adaptable pieces',
+            'Comfortable for all-day wear',
+            'Versatile for various occasions',
+            'Easy to mix and match'
+          ],
+          price: '£219.97'
+        },
+        {
+          id: 'outfit-2',
+          title: 'STREET ESSENTIALS',
+          description: 'The foundation of any street style wardrobe. These core pieces work together to create a bold yet effortless urban look.',
+          image: 'https://images.unsplash.com/photo-1550246140-29f40b909e5a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+          features: [
+            'Timeless street style pieces',
+            'Premium quality materials',
+            'Relaxed, comfortable fit',
+            'Streetwear-inspired details',
+            'Perfect for layering'
+          ],
+          price: '£189.99'
+        },
+        {
+          id: 'outfit-3',
+          title: 'URBAN MINIMALIST',
+          description: 'Clean lines and monochromatic tones define this minimalist approach to street style. Less is more with this carefully curated look.',
+          image: 'https://images.unsplash.com/photo-1516826957135-700dedea698c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+          features: [
+            'Minimalist aesthetic',
+            'Monochromatic color palette',
+            'Clean silhouettes',
+            'Premium fabrics',
+            'Subtle branding details'
+          ],
+          price: '£249.99'
+        }
+      ];
+      
+      outfitCards.forEach(card => {
+        card.addEventListener('click', function() {
+          const outfitId = this.id;
+          const outfit = outfitData.find(o => o.id === outfitId);
+          
+          if (outfit) {
+            // Update outfit detail content
+            outfitDetailTitle.textContent = outfit.title;
+            outfitDetailDescription.textContent = outfit.description;
+            outfitMainImage.src = outfit.image;
+            outfitMainImage.alt = outfit.title;
+            outfitTotalPrice.textContent = outfit.price;
+            
+            // Update features list
+            outfitFeaturesList.innerHTML = '';
+            outfit.features.forEach(feature => {
+              const li = document.createElement('li');
+              li.innerHTML = `<i class="fas fa-check"></i> ${feature}`;
+              outfitFeaturesList.appendChild(li);
+            });
+            
+            // Show outfit detail section
+            outfitDetail.style.display = 'block';
+            
+            // Scroll to outfit detail section
+            outfitDetail.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+      
+      // Simple filter functionality for quick filter buttons
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const products = document.querySelectorAll('.product-card[data-category]');
+      
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Update active button
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+          
+          // Filter products
+          const filterValue = this.dataset.filter;
+          
+          products.forEach(product => {
+            if (filterValue === 'all' || product.dataset.category === filterValue) {
+              product.style.display = 'block';
+            } else {
+              product.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
 
 </body>
 </html>

@@ -59,21 +59,11 @@
             <a href="PowerMoves.html">Power Moves</a>
             <a href="StreetStyle.html">Street Style</a>
             <a href="WeekendWarrior.html">Weekend Warrior</a>
-            <a href="LayerGame.html">Layer Game</a>
+          
           </div>
         </li>
         
-        <!-- LIFESTYLE -->
-        <li class="nav-item dropdown">
-          <span tabindex="0">LIFESTYLE</span>
-          <div class="dropdown-menu">
-            <a href="BoardroomReady.html">Boardroom Ready</a>
-            <a href="GymToStreet.html">Gym to Street</a>
-            <a href="DateNight.html">Date Night</a>
-            <a href="VacationMode.html">Vacation Mode</a>
-            <a href="WorkFromHome.html">Work From Home</a>
-          </div>
-        </li>
+     
         
         <!-- INTERACTIVE FEATURES -->
         <li class="nav-item dropdown">
@@ -110,6 +100,124 @@
         <h2>EMBRACE YOUR WEEKEND FREEDOM</h2>
         <p>From casual brunches to beach getaways, our Weekend Warrior collection offers versatile pieces that transition seamlessly from one adventure to the next. Discover comfortable co-ords, relaxed casual wear, and stylish swimwear designed for the modern man who makes the most of his downtime.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- COLLECTION FILTERS -->
+  <section class="collection-filters">
+    <div class="container">
+      <div class="filter-bar">
+        <div class="filter-toggle">
+          <button id="filter-toggle-btn"><i class="fas fa-sliders-h"></i> Filter Products</button>
+        </div>
+        <div class="filter-options">
+          <div class="filter-group">
+            <label for="sort-by">Sort By:</label>
+            <select id="sort-by" class="filter-select">
+              <option value="newest">Newest</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="bestselling">Bestselling</option>
+              <option value="rating">Top Rated</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label for="filter-category">Category:</label>
+            <select id="filter-category" class="filter-select">
+              <option value="all">All Categories</option>
+              <option value="casual">Casual Wear</option>
+              <option value="coords">Co-ords</option>
+              <option value="swim">Swimwear</option>
+              <option value="accessories">Accessories</option>
+              <option value="footwear">Footwear</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label>Size:</label>
+            <div class="size-options">
+              <label class="size-option">
+                <input type="checkbox" name="size" value="s">
+                <span>S</span>
+              </label>
+              <label class="size-option">
+                <input type="checkbox" name="size" value="m">
+                <span>M</span>
+              </label>
+              <label class="size-option">
+                <input type="checkbox" name="size" value="l">
+                <span>L</span>
+              </label>
+              <label class="size-option">
+                <input type="checkbox" name="size" value="xl">
+                <span>XL</span>
+              </label>
+              <label class="size-option">
+                <input type="checkbox" name="size" value="xxl">
+                <span>XXL</span>
+              </label>
+            </div>
+          </div>
+          
+          <div class="filter-group">
+            <label>Color:</label>
+            <div class="color-options">
+              <label class="color-option" title="Black">
+                <input type="checkbox" name="color" value="black">
+                <span class="color-swatch" style="background-color: #000000;"></span>
+              </label>
+              <label class="color-option" title="White">
+                <input type="checkbox" name="color" value="white">
+                <span class="color-swatch" style="background-color: #FFFFFF; border: 1px solid #ddd;"></span>
+              </label>
+              <label class="color-option" title="Blue">
+                <input type="checkbox" name="color" value="blue">
+                <span class="color-swatch" style="background-color: #1E3A8A;"></span>
+              </label>
+              <label class="color-option" title="Beige">
+                <input type="checkbox" name="color" value="beige">
+                <span class="color-swatch" style="background-color: #F5F5DC;"></span>
+              </label>
+              <label class="color-option" title="Gray">
+                <input type="checkbox" name="color" value="gray">
+                <span class="color-swatch" style="background-color: #808080;"></span>
+              </label>
+              <label class="color-option" title="Green">
+                <input type="checkbox" name="color" value="green">
+                <span class="color-swatch" style="background-color: #2F4F4F;"></span>
+              </label>
+              <label class="color-option" title="Khaki">
+                <input type="checkbox" name="color" value="khaki">
+                <span class="color-swatch" style="background-color: #C3B091;"></span>
+              </label>
+              <label class="color-option" title="Navy">
+                <input type="checkbox" name="color" value="navy">
+                <span class="color-swatch" style="background-color: #000080;"></span>
+              </label>
+            </div>
+          </div>
+          
+          <div class="filter-group">
+            <label>Price Range:</label>
+            <div class="price-range">
+              <div class="price-inputs">
+                <input type="number" id="min-price" placeholder="Min" min="0" max="500">
+                <span>to</span>
+                <input type="number" id="max-price" placeholder="Max" min="0" max="500">
+              </div>
+            </div>
+          </div>
+          
+          <div class="filter-actions">
+            <button id="apply-filters" class="btn-apply">Apply Filters</button>
+            <button id="reset-filters" class="btn-reset">Reset</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Active filters display -->
+      <div id="active-filters" class="active-filters"></div>
     </div>
   </section>
 
@@ -852,6 +960,11 @@
   <script>
     // Weekend Warrior specific scripts
     document.addEventListener('DOMContentLoaded', function() {
+      // Initialize product filter
+      if (typeof ProductFilter !== 'undefined') {
+        const productFilter = new ProductFilter();
+      }
+      
       // Outfit detail view functionality
       const outfitCards = document.querySelectorAll('.outfit-card');
       const outfitDetail = document.getElementById('outfit-detail');
@@ -946,34 +1059,6 @@
           });
         });
       });
-      
-      // Initialize countdown timer
-      const timerElement = document.getElementById('timer');
-      let hours = 23;
-      let minutes = 59;
-      let seconds = 59;
-      
-      function updateTimer() {
-        seconds--;
-        
-        if (seconds < 0) {
-          seconds = 59;
-          minutes--;
-        }
-        
-        if (minutes < 0) {
-          minutes = 59;
-          hours--;
-        }
-        
-        if (hours < 0) {
-          hours = 23;
-        }
-        
-        timerElement.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-      }
-      
-      setInterval(updateTimer, 1000);
     });
   </script>
 </body>

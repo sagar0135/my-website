@@ -2,221 +2,517 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="MANVUE - Premium men's fashion and apparel" />
-  <title>MANVUE | Premium Men's Fashion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MANVUE - Premium men's fashion and apparel. Discover the latest trends in men's clothing, shoes, and accessories. Free shipping on orders over £49." />
+  <meta name="keywords" content="men's fashion, men's clothing, t-shirts, shirts, jeans, jackets, footwear, accessories, UK fashion, online shopping" />
+  <meta name="author" content="MANVUE" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://manvue.com/" />
+  <meta property="og:title" content="MANVUE | Premium Men's Fashion" />
+  <meta property="og:description" content="Discover the latest trends in men's fashion. Premium clothing, shoes, and accessories with free shipping on orders over £49." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://manvue.com/" />
+  <meta property="twitter:title" content="MANVUE | Premium Men's Fashion" />
+  <meta property="twitter:description" content="Discover the latest trends in men's fashion. Premium clothing, shoes, and accessories." />
+  <meta property="twitter:image" content="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" />
+  
+  <title>MANVUE | Premium Men's Fashion - Latest Trends & Styles</title>
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="style.css" as="style" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" as="style" />
+  
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-</head>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "MANVUE",
+    "url": "https://manvue.com",
+    "logo": "https://manvue.com/logo.png",
+    "description": "Premium men's fashion and apparel retailer",
+    "sameAs": [
+      "https://facebook.com/manvue",
+      "https://instagram.com/manvue",
+      "https://twitter.com/manvue"
+    ]
+  }
+  </script>
+</head> 
 
 <body>
+  <!-- Loading Screen -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loading-spinner"></div>
+    <p>Loading MANVUE...</p>
+  </div>
+
   <!-- TOP PROMO BANNER -->
-  <div class="promo-banner">
-    <span class="promo-text">FREE SHIPPING ON ORDERS GBP49+ ⚡ NEW DROPS EVERY WEEK</span>
-    <span class="promo-countdown" id="countdown">FLASH SALE ENDS IN: <span id="timer">23:59:59</span></span>
+  <div class="promo-banner" id="promo-banner">
+    <div class="promo-content">
+      <span class="promo-text">
+        <i class="fas fa-shipping-fast"></i>
+        FREE SHIPPING ON ORDERS £49+ 
+        <span class="promo-highlight">⚡ NEW DROPS EVERY WEEK</span>
+      </span>
+      <span class="promo-countdown" id="countdown">
+        <i class="fas fa-clock"></i>
+        FLASH SALE ENDS IN: <span id="timer">23:59:59</span>
+      </span>
+    </div>
+    <button class="promo-close" id="close-promo" aria-label="Close promo banner">
+      <i class="fas fa-times"></i>
+    </button>
   </div>
 
   <!-- MAIN HEADER -->
-  <header class="main-header">
-    <div class="logo"><a href="index.html">MANVUE</a></div>
-
-    <div class="search-bar">
-      <input type="text" id="search-input" placeholder="Search for items, brands..." aria-label="Search" />
-      <button id="search-button" aria-label="Search"><i class="fas fa-search"></i></button>
-      <div class="search-results" id="search-results">
-        <!-- Search results will appear here -->
+  <header class="main-header" id="main-header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html" aria-label="MANVUE Homepage">
+          <span class="logo-text">MANVUE</span>
+        </a>
       </div>
-    </div>
-
-    <div class="header-icons">
-      <span title="Account" id="account-icon"><i class="fas fa-user"></i></span>
-      <span title="Wishlist" id="wishlist-icon"><i class="fas fa-heart"></i><span class="wishlist-count">0</span></span>
-      <span class="cart-icon" title="Cart" id="cart-icon"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></span>
+      
+      <div class="search-bar">
+        <div class="search-input-wrapper">
+          <input type="text" id="search-input" placeholder="Search for items, brands, styles..." aria-label="Search products" />
+          <button id="search-button" aria-label="Search">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+        <div class="search-results" id="search-results">
+          <!-- Search results will appear here -->
+        </div>
+        <div class="search-suggestions" id="search-suggestions">
+          <!-- Search suggestions will appear here -->
+        </div>
+      </div>
+      
+      <div class="header-icons">
+        <div class="header-icon-group">
+          <button class="icon-btn" id="account-icon" title="Account" aria-label="Account">
+            <i class="fas fa-user"></i>
+            <span class="icon-label">Account</span>
+          </button>
+          
+          <button class="icon-btn" id="wishlist-icon" title="Wishlist" aria-label="Wishlist">
+            <i class="fas fa-heart"></i>
+            <span class="wishlist-count" id="wishlist-count">0</span>
+            <span class="icon-label">Wishlist</span>
+          </button>
+          
+          <button class="icon-btn cart-icon" id="cart-icon" title="Cart" aria-label="Shopping Cart">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-count" id="cart-count">0</span>
+            <span class="icon-label">Cart</span>
+          </button>
+        </div>
+        
+        <!-- Mobile menu toggle -->
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle mobile menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
     </div>
   </header>
 
   <!-- NAVIGATION MENU -->
-  <nav class="nav-bar" aria-label="Main Navigation">
+  <nav class="nav-bar" aria-label="Main Navigation" id="main-nav">
     <div class="nav-container">
-      
       <ul class="main-nav">
         <!-- CORE COLLECTIONS -->
         <li class="nav-item dropdown">
-          <span tabindex="0">CORE COLLECTIONS</span>
+          <button class="nav-link" tabindex="0" aria-expanded="false">
+            CORE COLLECTIONS
+            <i class="fas fa-chevron-down"></i>
+          </button>
           <div class="dropdown-menu">
-            <a href="FreshDrops.html">Fresh Drops</a>
-            <a href="CrowdFavorites.html">Crowd Favorites</a>
-            <a href="ExtendedFits.html">Extended Fits</a>
+            <div class="dropdown-content">
+              <a href="FreshDrops.html" class="dropdown-link">
+                <i class="fas fa-fire"></i>
+                <span>Fresh Drops</span>
+                <small>Latest arrivals</small>
+              </a>
+              <a href="CrowdFavorites.html" class="dropdown-link">
+                <i class="fas fa-star"></i>
+                <span>Crowd Favorites</span>
+                <small>Most loved</small>
+              </a>
+              <a href="ExtendedFits.html" class="dropdown-link">
+                <i class="fas fa-ruler"></i>
+                <span>Extended Fits</span>
+                <small>All sizes available</small>
+              </a>
+            </div>
           </div>
         </li>
         
         <!-- SMART GROUPINGS -->
         <li class="nav-item dropdown">
-          <span tabindex="0">SMART GROUPINGS</span>
+          <button class="nav-link" tabindex="0" aria-expanded="false">
+            SMART GROUPINGS
+            <i class="fas fa-chevron-down"></i>
+          </button>
           <div class="dropdown-menu">
-            <a href="TheFundamentals.html">The Fundamentals 
-            </a>
-            <a href="PowerMoves.html">Power Moves 
-            </a>
-            <a href="StreetStyle.html">Street Style 
-            </a>
-            <a href="WeekendWarrior.html">Weekend Warrior 
-            </a>
-            
+            <div class="dropdown-content">
+              <a href="TheFundamentals.html" class="dropdown-link">
+                <i class="fas fa-tshirt"></i>
+                <span>The Fundamentals</span>
+                <small>Essential basics</small>
+              </a>
+              <a href="PowerMoves.html" class="dropdown-link">
+                <i class="fas fa-briefcase"></i>
+                <span>Power Moves</span>
+                <small>Work & formal</small>
+              </a>
+              <a href="StreetStyle.html" class="dropdown-link">
+                <i class="fas fa-music"></i>
+                <span>Street Style</span>
+                <small>Urban fashion</small>
+              </a>
+              <a href="WeekendWarrior.html" class="dropdown-link">
+                <i class="fas fa-coffee"></i>
+                <span>Weekend Warrior</span>
+                <small>Casual comfort</small>
+              </a>
+            </div>
           </div>
         </li>
-       
         
         <!-- INTERACTIVE FEATURES -->
         <li class="nav-item dropdown">
-          <span tabindex="0">FEATURES</span>
+          <button class="nav-link" tabindex="0" aria-expanded="false">
+            FEATURES
+            <i class="fas fa-chevron-down"></i>
+          </button>
           <div class="dropdown-menu">
-            <a href="StyleQuiz.html">Style Quiz 
-            </a>
-            <a href="OccasionBuilder.html">Occasion Builder 
-            </a>
-            <a href="YourSizeYourStyle.html">Your Size, Your Style 
-            </a>
-            <a href="StaffPicks.html">Staff Picks 
-            </a>
-            <a href="CompleteTheLook.html">Complete the Look 
-            </a>
+            <div class="dropdown-content">
+              <a href="StyleQuiz.html" class="dropdown-link">
+                <i class="fas fa-question-circle"></i>
+                <span>Style Quiz</span>
+                <small>Find your style</small>
+              </a>
+              <a href="OccasionBuilder.html" class="dropdown-link">
+                <i class="fas fa-calendar"></i>
+                <span>Occasion Builder</span>
+                <small>Perfect outfits</small>
+              </a>
+              <a href="YourSizeYourStyle.html" class="dropdown-link">
+                <i class="fas fa-user-ruler"></i>
+                <span>Your Size, Your Style</span>
+                <small>Size guide</small>
+              </a>
+              <a href="StaffPicks.html" class="dropdown-link">
+                <i class="fas fa-thumbs-up"></i>
+                <span>Staff Picks</span>
+                <small>Curated selection</small>
+              </a>
+              <a href="CompleteTheLook.html" class="dropdown-link">
+                <i class="fas fa-magic"></i>
+                <span>Complete the Look</span>
+                <small>Outfit inspiration</small>
+              </a>
+            </div>
           </div>
         </li>
         
         <!-- SALE -->
         <li class="nav-item sale">
-          <a href="sale.html">SALE</a>
+          <a href="sale.html" class="nav-link sale-link">
+            <span class="sale-badge">SALE</span>
+            <span class="sale-text">UP TO 70% OFF</span>
+          </a>
         </li>
       </ul>
     </div>
   </nav>
 
   <!-- HERO BANNER -->
-  <div class="hero-banner">
-    <div class="slideshow">
-      <div class="slideshow-item active" style="background-image: url('https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')"></div>
-      <div class="slideshow-item" style="background-image: url('https://images.unsplash.com/photo-1503341504253-dff4815485f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')"></div>
-      <div class="slideshow-item" style="background-image: url('https://images.unsplash.com/photo-1506634572416-48cdfe530110?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')"></div>
-      <div class="slideshow-item" style="background-image: url('https://images.unsplash.com/photo-1503341733017-1901578f9f1e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')"></div>
-    </div>
-    <div class="hero-content">
-      <h1>SUMMER COLLECTION 2025</h1>
-      <p>Beat the heat with our exclusive summer styles for men</p>
-      <button class="shop-now-btn" onclick="window.location.href='summer-collection.html'">Shop Now</button>
-    </div>
-    <div class="slideshow-controls">
-      <button class="prev-slide" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
-      <div class="slide-indicators">
-        <span class="indicator active" data-slide="0"></span>
-        <span class="indicator" data-slide="1"></span>
-        <span class="indicator" data-slide="2"></span>
-        <span class="indicator" data-slide="3"></span>
+  <section class="hero-banner" aria-label="Hero Banner">
+    <div class="slideshow" id="hero-slideshow">
+      <div class="slideshow-item active" style="background-image: url('https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')">
+        <div class="slide-overlay"></div>
       </div>
-      <button class="next-slide" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
+      <div class="slideshow-item" style="background-image: url('https://images.unsplash.com/photo-1503341504253-dff4815485f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')">
+        <div class="slide-overlay"></div>
+      </div>
+      <div class="slideshow-item" style="background-image: url('https://images.unsplash.com/photo-1506634572416-48cdfe530110?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')">
+        <div class="slide-overlay"></div>
+      </div>
+      <div class="slideshow-item" style="background-image: url('https://images.unsplash.com/photo-1503341733017-1901578f9f1e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')">
+        <div class="slide-overlay"></div>
+      </div>
     </div>
-  </div>
+    
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          <span class="hero-subtitle">SUMMER COLLECTION 2025</span>
+          <span class="hero-main-title">ELEVATE YOUR STYLE</span>
+        </h1>
+        <p class="hero-description">Beat the heat with our exclusive summer styles for men. Premium quality meets contemporary design.</p>
+        <div class="hero-actions">
+          <button class="shop-now-btn primary" onclick="window.location.href='summer-collection.html'">
+            <span>Shop Now</span>
+            <i class="fas fa-arrow-right"></i>
+          </button>
+          <button class="shop-now-btn secondary" onclick="window.location.href='TheFundamentals.html'">
+            <span>Explore Basics</span>
+            <i class="fas fa-tshirt"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="slideshow-controls">
+      <button class="prev-slide" aria-label="Previous slide" id="prev-slide">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <div class="slide-indicators" id="slide-indicators">
+        <span class="indicator active" data-slide="0" aria-label="Go to slide 1"></span>
+        <span class="indicator" data-slide="1" aria-label="Go to slide 2"></span>
+        <span class="indicator" data-slide="2" aria-label="Go to slide 3"></span>
+        <span class="indicator" data-slide="3" aria-label="Go to slide 4"></span>
+      </div>
+      <button class="next-slide" aria-label="Next slide" id="next-slide">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </section>
 
-    <!-- FEATURED COLLECTION -->
-  <section class="featured-collection">
+  <!-- FEATURED COLLECTION -->
+  <section class="featured-collection" aria-label="Featured Collection">
     <div class="container">
       <div class="featured-content">
         <div class="featured-text">
-          <h2>SUMMER <span>ESSENTIALS</span></h2>
-          <p>Discover our curated collection of lightweight, breathable pieces perfect for the summer heat.</p>
-          <a href="summer-collection.html" class="shop-now-btn">SHOP THE COLLECTION</a>
+          <h2 class="featured-title">
+            SUMMER
+            <span class="featured-highlight">ESSENTIALS</span>
+          </h2>
+          <p class="featured-description">Discover our curated collection of lightweight, breathable pieces perfect for the summer heat. Premium fabrics and contemporary cuts.</p>
+          <div class="featured-stats">
+            <div class="stat-item">
+              <span class="stat-number">50+</span>
+              <span class="stat-label">Styles</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Cotton</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">Free</span>
+              <span class="stat-label">Shipping</span>
+            </div>
+          </div>
+          <a href="summer-collection.html" class="shop-now-btn featured">
+            <span>SHOP THE COLLECTION</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
         </div>
         <div class="featured-image">
-          <img src="https://images.unsplash.com/photo-1503341733017-1901578f9f1e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Summer Essentials Collection">
+          <img src="https://images.unsplash.com/photo-1503341733017-1901578f9f1e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Summer Essentials Collection" loading="lazy" />
+          <div class="featured-overlay">
+            <div class="overlay-content">
+              <span class="overlay-badge">NEW ARRIVALS</span>
+              <h3 class="overlay-title">Summer Vibes</h3>
+              <p class="overlay-text">Lightweight & breathable</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- EXPLORE CATEGORIES -->
-  <section class="explore-products">
+  <section class="explore-products" aria-label="Explore Categories">
     <div class="container">
-      <h2 class="section-title">EXPLORE OUR CATEGORIES</h2>
+      <div class="section-header">
+        <h2 class="section-title">EXPLORE OUR CATEGORIES</h2>
+        <p class="section-subtitle">Find your perfect style across our comprehensive range</p>
+      </div>
     </div>
   </section>
 
   <!-- CATEGORY SHORTCUTS -->
-  <section class="category-shortcuts">
+  <section class="category-shortcuts" aria-label="Category Shortcuts">
     <div class="container">
       <div class="shortcut-grid">
         <!-- T-shirts -->
-        <a href="t-shirts.html" class="shortcut-item">
+        <a href="t-shirts.html" class="shortcut-item" aria-label="Browse T-shirts">
           <div class="shortcut-image">
-            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="T-shirts">
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="T-shirts" loading="lazy" />
+            <div class="shortcut-overlay">
+              <span class="overlay-text">Essential Basics</span>
+            </div>
           </div>
-          <div class="shortcut-label">T-SHIRTS</div>
+          <div class="shortcut-label">
+            <span class="label-text">T-SHIRTS</span>
+            <span class="label-count">150+ Styles</span>
+          </div>
         </a>
         
         <!-- Shirts -->
-        <a href="shirts.html" class="shortcut-item">
+        <a href="shirts.html" class="shortcut-item" aria-label="Browse Shirts">
           <div class="shortcut-image">
-            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Shirts">
+            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Shirts" loading="lazy" />
+            <div class="shortcut-overlay">
+              <span class="overlay-text">Formal & Casual</span>
+            </div>
           </div>
-          <div class="shortcut-label">SHIRTS</div>
+          <div class="shortcut-label">
+            <span class="label-text">SHIRTS</span>
+            <span class="label-count">200+ Styles</span>
+          </div>
         </a>
         
-           
         <!-- Jeans & Cargo -->
-        <a href="bottomwear.html" class="shortcut-item">
+        <a href="bottomwear.html" class="shortcut-item" aria-label="Browse Jeans & Cargo">
           <div class="shortcut-image">
-            <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Jeans & Cargo">
+            <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Jeans & Cargo" loading="lazy" />
+            <div class="shortcut-overlay">
+              <span class="overlay-text">Comfort & Style</span>
+            </div>
           </div>
-          <div class="shortcut-label">JEANS & CARGO</div>
+          <div class="shortcut-label">
+            <span class="label-text">JEANS & CARGO</span>
+            <span class="label-count">100+ Styles</span>
+          </div>
         </a>
-        
         
         <!-- Jackets -->
-        <a href="jackets.html" class="shortcut-item">
+        <a href="jackets.html" class="shortcut-item" aria-label="Browse Jackets">
           <div class="shortcut-image">
-            <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Jackets">
+            <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Jackets" loading="lazy" />
+            <div class="shortcut-overlay">
+              <span class="overlay-text">Outerwear</span>
+            </div>
           </div>
-          <div class="shortcut-label">JACKETS</div>
+          <div class="shortcut-label">
+            <span class="label-text">JACKETS</span>
+            <span class="label-count">80+ Styles</span>
+          </div>
         </a>
-     
-        <!-- Footwear (Changed from Bottoms) -->
-        <a href="footwear.html" class="shortcut-item">
+        
+        <!-- Footwear -->
+        <a href="footwear.html" class="shortcut-item" aria-label="Browse Footwear">
           <div class="shortcut-image">
-            <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Footwear">
+            <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Footwear" loading="lazy" />
+            <div class="shortcut-overlay">
+              <span class="overlay-text">Step in Style</span>
+            </div>
           </div>
-          <div class="shortcut-label">FOOTWEAR</div>
+          <div class="shortcut-label">
+            <span class="label-text">FOOTWEAR</span>
+            <span class="label-count">120+ Styles</span>
+          </div>
         </a>
+        
         <!-- Deals -->
-        <a href="sale.html" class="shortcut-item deals">
+        <a href="sale.html" class="shortcut-item deals" aria-label="Browse Deals">
           <div class="shortcut-image">
-            <div class="deals-text">EVERYTHING UNDER</div>
-            <div class="deals-price">₹699</div>
+            <div class="deals-content">
+              <div class="deals-text">EVERYTHING UNDER</div>
+              <div class="deals-price">£49</div>
+              <div class="deals-subtitle">Limited Time</div>
+            </div>
+            <div class="deals-overlay">
+              <span class="overlay-text">Flash Sale</span>
+            </div>
           </div>
-          <div class="shortcut-label">SUPER DEALS</div>
+          <div class="shortcut-label">
+            <span class="label-text">SUPER DEALS</span>
+            <span class="label-count">Up to 70% Off</span>
+          </div>
         </a>
       </div>
     </div>
   </section>
 
   <!-- TRENDING PRODUCTS -->
-  <section class="trending-products">
+  <section class="trending-products" aria-label="Trending Products">
     <div class="container">
-      <h2 class="section-title">TRENDING NOW</h2>
+      <div class="section-header">
+        <h2 class="section-title">TRENDING NOW</h2>
+        <p class="section-subtitle">Most popular styles this week</p>
+      </div>
       <div class="product-grid" id="product-list">
         <!-- Products will be loaded here via JavaScript -->
       </div>
       <div class="view-more-container">
-        <button class="view-more-btn">VIEW MORE</button>
+        <button class="view-more-btn" id="view-more-btn">
+          <span>VIEW MORE</span>
+          <i class="fas fa-arrow-down"></i>
+        </button>
       </div>
     </div>
   </section>
 
-
+  <!-- NEWSLETTER SECTION -->
+  <section class="newsletter-section" aria-label="Newsletter Signup">
+    <div class="container">
+      <div class="newsletter-content">
+        <div class="newsletter-text">
+          <h2>STAY IN THE LOOP</h2>
+          <p>Subscribe for exclusive offers, new arrivals, and style inspiration</p>
+          <div class="newsletter-benefits">
+            <div class="benefit-item">
+              <i class="fas fa-gift"></i>
+              <span>Exclusive Offers</span>
+            </div>
+            <div class="benefit-item">
+              <i class="fas fa-shipping-fast"></i>
+              <span>Free Shipping</span>
+            </div>
+            <div class="benefit-item">
+              <i class="fas fa-fire"></i>
+              <span>Early Access</span>
+            </div>
+          </div>
+        </div>
+        <form class="newsletter-form" id="newsletter-form">
+          <div class="form-group">
+            <input type="email" placeholder="Enter your email address" aria-label="Email for newsletter" required />
+            <button type="submit" aria-label="Subscribe to newsletter">
+              <span>SUBSCRIBE</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+          <div class="form-footer">
+            <label class="checkbox-label">
+              <input type="checkbox" required />
+              <span class="checkmark"></span>
+              I agree to receive marketing communications from MANVUE
+            </label>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
 
   <!-- FOOTER -->
-  <footer class="modern-footer">
+  <footer class="modern-footer" aria-label="Footer">
     <div class="container">
       <!-- Help & Information Section -->
       <div class="footer-help-section">
@@ -225,41 +521,41 @@
           <div class="help-category">
             <h4>Customer Service</h4>
             <ul>
-              <li><a href="#">Help Center</a></li>
-              <li><a href="#">Track Order</a></li>
-              <li><a href="#">Delivery & Returns</a></li>
-              <li><a href="#">Size Guide</a></li>
-              <li><a href="#">Contact Us</a></li>
+              <li><a href="#" aria-label="Help Center">Help Center</a></li>
+              <li><a href="#" aria-label="Track Order">Track Order</a></li>
+              <li><a href="#" aria-label="Delivery & Returns">Delivery & Returns</a></li>
+              <li><a href="#" aria-label="Size Guide">Size Guide</a></li>
+              <li><a href="#" aria-label="Contact Us">Contact Us</a></li>
             </ul>
           </div>
           <div class="help-category">
             <h4>Shopping</h4>
             <ul>
-              <li><a href="#">How to Shop</a></li>
-              <li><a href="#">Payment Methods</a></li>
-              <li><a href="#">Gift Cards</a></li>
-              <li><a href="#">Student Discount</a></li>
-              <li><a href="#">Refer a Friend</a></li>
+              <li><a href="#" aria-label="How to Shop">How to Shop</a></li>
+              <li><a href="#" aria-label="Payment Methods">Payment Methods</a></li>
+              <li><a href="#" aria-label="Gift Cards">Gift Cards</a></li>
+              <li><a href="#" aria-label="Student Discount">Student Discount</a></li>
+              <li><a href="#" aria-label="Refer a Friend">Refer a Friend</a></li>
             </ul>
           </div>
           <div class="help-category">
             <h4>About MANVUE</h4>
             <ul>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Corporate Responsibility</a></li>
-              <li><a href="#">Investors</a></li>
-              <li><a href="#">Sustainability</a></li>
+              <li><a href="#" aria-label="About Us">About Us</a></li>
+              <li><a href="#" aria-label="Careers">Careers</a></li>
+              <li><a href="#" aria-label="Corporate Responsibility">Corporate Responsibility</a></li>
+              <li><a href="#" aria-label="Investors">Investors</a></li>
+              <li><a href="#" aria-label="Sustainability">Sustainability</a></li>
             </ul>
           </div>
           <div class="help-category">
             <h4>Legal</h4>
             <ul>
-              <li><a href="#">Terms & Conditions</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Cookie Policy</a></li>
-              <li><a href="#">Accessibility</a></li>
-              <li><a href="#">Modern Slavery Statement</a></li>
+              <li><a href="#" aria-label="Terms & Conditions">Terms & Conditions</a></li>
+              <li><a href="#" aria-label="Privacy Policy">Privacy Policy</a></li>
+              <li><a href="#" aria-label="Cookie Policy">Cookie Policy</a></li>
+              <li><a href="#" aria-label="Accessibility">Accessibility</a></li>
+              <li><a href="#" aria-label="Modern Slavery Statement">Modern Slavery Statement</a></li>
             </ul>
           </div>
         </div>
@@ -270,25 +566,69 @@
         <div class="footer-column">
           <h3>ABOUT US</h3>
           <p>MANVUE is a premium men's fashion brand dedicated to providing high-quality, stylish clothing for the modern man. Our mission is to help you express your unique style with confidence.</p>
+          <div class="footer-stats">
+            <div class="stat">
+              <span class="stat-number">10K+</span>
+              <span class="stat-label">Happy Customers</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">500+</span>
+              <span class="stat-label">Products</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">24/7</span>
+              <span class="stat-label">Support</span>
+            </div>
+          </div>
         </div>
+        
         <div class="footer-column">
           <h3>STORE LOCATOR</h3>
           <p>Find your nearest MANVUE store with our interactive store locator. We have over 50 stores across the UK.</p>
-          <a href="#" class="btn-link">Find a Store</a>
+          <a href="#" class="btn-link" aria-label="Find a Store">
+            <span>Find a Store</span>
+            <i class="fas fa-map-marker-alt"></i>
+          </a>
+          
+          <h3>DOWNLOAD OUR APP</h3>
+          <p>Get exclusive app-only offers and faster checkout</p>
+          <div class="app-buttons">
+            <a href="#" class="app-btn" aria-label="Download on App Store">
+              <img src="https://i.imgur.com/example-appstore.png" alt="App Store" />
+            </a>
+            <a href="#" class="app-btn" aria-label="Get it on Google Play">
+              <img src="https://i.imgur.com/example-googleplay.png" alt="Google Play" />
+            </a>
+          </div>
         </div>
+        
         <div class="footer-column">
           <h3>CONNECT WITH US</h3>
           <div class="social-icons">
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram" class="social-icon">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" aria-label="TikTok" class="social-icon">
+              <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="#" aria-label="Facebook" class="social-icon">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="#" aria-label="Twitter" class="social-icon">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" aria-label="YouTube" class="social-icon">
+              <i class="fab fa-youtube"></i>
+            </a>
           </div>
+          
           <h3>NEWSLETTER</h3>
           <p>Subscribe for exclusive offers and updates</p>
-          <form class="newsletter-form" id="newsletter-form">
-            <input type="email" placeholder="Email Address" aria-label="Email for newsletter" required>
-            <button type="submit" aria-label="Subscribe">SUBSCRIBE</button>
+          <form class="newsletter-form" id="footer-newsletter-form">
+            <div class="form-group">
+              <input type="email" placeholder="Email Address" aria-label="Email for newsletter" required />
+              <button type="submit" aria-label="Subscribe">SUBSCRIBE</button>
+            </div>
           </form>
         </div>
       </div>
@@ -296,16 +636,21 @@
       <!-- Footer Bottom -->
       <div class="footer-bottom">
         <div class="payment-methods">
-          <img src="https://i.imgur.com/SHCoT7I.png" alt="Payment methods">
+          <span class="payment-label">We Accept:</span>
+          <div class="payment-icons">
+            <img src="https://i.imgur.com/SHCoT7I.png" alt="Payment methods" loading="lazy" />
+          </div>
         </div>
+        
         <div class="copyright">
           <p>© 2025 MANVUE. All Rights Reserved.</p>
         </div>
+        
         <div class="footer-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms & Conditions</a>
-          <a href="#">Accessibility</a>
-          <a href="#">Sitemap</a>
+          <a href="#" aria-label="Privacy Policy">Privacy Policy</a>
+          <a href="#" aria-label="Terms & Conditions">Terms & Conditions</a>
+          <a href="#" aria-label="Accessibility">Accessibility</a>
+          <a href="#" aria-label="Sitemap">Sitemap</a>
         </div>
       </div>
     </div>
@@ -319,42 +664,31 @@
       <form id="login-form">
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" id="email" required>
+          <input type="email" id="email" required />
         </div>
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" id="password" required>
+          <input type="password" id="password" required />
         </div>
         <button type="submit" class="btn-primary">Sign In</button>
       </form>
       <div class="modal-footer">
-        <p>Don't have an account? <a href="#" id="register-link">Register</a></p>
+        <p>Don't have an account?
+          <a href="#" id="register-link">Register</a>
+        </p>
       </div>
     </div>
   </div>
 
-  <!-- Cart sidebar -->
-  <div class="cart-sidebar" id="cart-sidebar">
-    <div class="cart-header">
-      <h3>Your Cart</h3>
-      <button class="close-cart">&times;</button>
-    </div>
-    <div class="cart-items" id="cart-items">
-      <!-- Cart items will be loaded here -->
-      <div class="empty-cart-message">Your cart is empty</div>
-    </div>
-    <div class="cart-footer">
-      <div class="cart-total">
-        <span>Total:</span>
-        <span id="cart-total-amount">£0.00</span>
-      </div>
-      <button class="checkout-btn">Checkout</button>
-    </div>
-  </div>
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
 
   <!-- Scripts -->
   <script src="script.js"></script>
   <script src="product-interactions.js"></script>
   <script src="search.js"></script>
+  <script src="performance.js"></script>
 </body>
-
+</html>

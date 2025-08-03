@@ -1,78 +1,78 @@
 /**
- * Product Filter System
- * This script handles filtering and sorting of product listings
+ * ProductFilter class to handle product filtering functionality
  */
-
 class ProductFilter {
   constructor() {
-    this.productCards = document.querySelectorAll('.product-card');
-    this.productGrid = document.querySelector('.product-grid');
-    this.activeFiltersContainer = document.getElementById('active-filters');
-    
-    // Initialize filter elements
+    // Filter elements
     this.filterToggleBtn = document.getElementById('filter-toggle-btn');
     this.filterOptions = document.querySelector('.filter-options');
-    this.applyBtn = document.getElementById('apply-filters');
-    this.resetBtn = document.getElementById('reset-filters');
-    
-    // Initialize filter values
     this.sortBySelect = document.getElementById('sort-by');
     this.categorySelect = document.getElementById('filter-category');
+    this.sizeCheckboxes = document.querySelectorAll('input[name="size"]');
+    this.colorCheckboxes = document.querySelectorAll('input[name="color"]');
     this.minPriceInput = document.getElementById('min-price');
     this.maxPriceInput = document.getElementById('max-price');
+    this.applyFiltersBtn = document.getElementById('apply-filters');
+    this.resetFiltersBtn = document.getElementById('reset-filters');
+    this.activeFiltersContainer = document.getElementById('active-filters');
     
+    // Product elements
+    this.productCards = document.querySelectorAll('.product-card');
+    
+    // Initialize
     this.init();
   }
   
   init() {
-    // Add data attributes to products if they don't exist
-    this.setupProductData();
+    // Add data attributes to products if they don't already have them
+    this.setupProductAttributes();
     
     // Setup event listeners
     this.setupEventListeners();
+    
+    // Initialize active filters
+    this.activeFilters = {
+      category: 'all',
+      sizes: [],
+      colors: [],
+      minPrice: null,
+      maxPrice: null,
+      sortBy: 'newest'
+    };
   }
   
-  setupProductData() {
+  setupProductAttributes() {
     this.productCards.forEach((card, index) => {
-      // For demo purposes, assign random attributes if they don't exist
+      // Set default categories if not already set
       if (!card.dataset.category) {
         const categories = ['tshirts', 'shirts', 'jackets', 'hoodies', 'pants', 'shorts', 'accessories'];
         card.dataset.category = categories[index % categories.length];
       }
       
+      // Set default price if not already set
       if (!card.dataset.price) {
-        // Extract price from the card
         const priceEl = card.querySelector('.current-price');
         if (priceEl) {
           const price = parseFloat(priceEl.textContent.replace(/[^0-9.]/g, ''));
           card.dataset.price = price;
-        } else {
-          card.dataset.price = Math.floor(Math.random() * 200) + 50;
         }
       }
       
-      if (!card.dataset.size) {
-        const sizes = ['s', 'm', 'l', 'xl', 'xxl'];
-        const availableSizes = [];
-        for (let i = 0; i < 3; i++) {
-          availableSizes.push(sizes[Math.floor(Math.random() * sizes.length)]);
-        }
-        card.dataset.size = [...new Set(availableSizes)].join(',');
+      // Set default sizes if not already set
+      if (!card.dataset.sizes) {
+        const sizes = ['s', 'm', 'l', 'xl'];
+        card.dataset.sizes = sizes.slice(0, Math.floor(Math.random() * sizes.length) + 1).join(',');
       }
       
-      if (!card.dataset.color) {
-        const colors = ['black', 'white', 'blue', 'red', 'green', 'yellow', 'brown', 'grey', 'navy', 'beige'];
-        card.dataset.color = colors[Math.floor(Math.random() * colors.length)];
+      // Set default colors if not already set
+      if (!card.dataset.colors) {
+        const colors = ['black', 'white', 'blue', 'red', 'green', 'grey'];
+        card.dataset.colors = colors.slice(0, Math.floor(Math.random() * 3) + 1).join(',');
       }
       
+      // Set default rating if not already set
       if (!card.dataset.rating) {
-        const ratingEl = card.querySelector('.product-rating span');
-        if (ratingEl) {
-          const ratingText = ratingEl.textContent.replace(/[()]/g, '');
-          card.dataset.rating = parseInt(ratingText);
-        } else {
-          card.dataset.rating = Math.floor(Math.random() * 100) + 10;
-        }
+        card.dataset.rating = (Math.random() * 2 + 3).toFixed(1); // Random rating between 3.0 and 5.0
       }
     });
   }
@@ -81,235 +81,266 @@ class ProductFilter {
     // Toggle filter options on mobile
     if (this.filterToggleBtn) {
       this.filterToggleBtn.addEventListener('click', () => {
-        this.filterOptions.classList.toggle('show');
+        this.filterOptions.classList.toggle('active');
       });
     }
     
     // Apply filters button
-    if (this.applyBtn) {
-      this.applyBtn.addEventListener('click', () => {
+    if (this.applyFiltersBtn) {
+      this.applyFiltersBtn.addEventListener('click', () => {
         this.applyFilters();
       });
     }
     
     // Reset filters button
-    if (this.resetBtn) {
-      this.resetBtn.addEventListener('click', () => {
+    if (this.resetFiltersBtn) {
+      this.resetFiltersBtn.addEventListener('click', () => {
         this.resetFilters();
+      });
+    }
+    
+    // Sort by change
+    if (this.sortBySelect) {
+      this.sortBySelect.addEventListener('change', () => {
+        this.activeFilters.sortBy = this.sortBySelect.value;
+        this.applyFilters();
       });
     }
   }
   
   applyFilters() {
-    // Add loading state
-    this.productGrid.classList.add('filter-loading');
+    // Update active filters
+    this.updateActiveFilters();
     
-    // Get filter values
-    const sortBy = this.sortBySelect.value;
-    const category = this.categorySelect.value;
-    const selectedSizes = Array.from(document.querySelectorAll('input[name="size"]:checked')).map(el => el.value);
-    const selectedColors = Array.from(document.querySelectorAll('input[name="color"]:checked')).map(el => el.value);
-    const minPrice = this.minPriceInput.value ? parseFloat(this.minPriceInput.value) : 0;
-    const maxPrice = this.maxPriceInput.value ? parseFloat(this.maxPriceInput.value) : 1000;
+    // Apply filters to products
+    this.filterProducts();
     
-    // Show all products initially
-    this.productCards.forEach(product => {
-      product.style.display = 'block';
-    });
-    
-    // Filter by category
-    if (category !== 'all') {
-      this.productCards.forEach(product => {
-        if (product.dataset.category !== category) {
-          product.style.display = 'none';
-        }
-      });
+    // Display active filters
+    this.displayActiveFilters();
+  }
+  
+  updateActiveFilters() {
+    // Update category filter
+    if (this.categorySelect) {
+      this.activeFilters.category = this.categorySelect.value;
     }
     
-    // Filter by size
-    if (selectedSizes.length > 0) {
-      this.productCards.forEach(product => {
-        if (product.style.display !== 'none') {
-          const productSizes = product.dataset.size.split(',');
-          const hasMatchingSize = selectedSizes.some(size => productSizes.includes(size));
-          if (!hasMatchingSize) {
-            product.style.display = 'none';
-          }
-        }
-      });
-    }
-    
-    // Filter by color
-    if (selectedColors.length > 0) {
-      this.productCards.forEach(product => {
-        if (product.style.display !== 'none') {
-          const productColor = product.dataset.color;
-          if (!selectedColors.includes(productColor)) {
-            product.style.display = 'none';
-          }
-        }
-      });
-    }
-    
-    // Filter by price range
-    this.productCards.forEach(product => {
-      if (product.style.display !== 'none') {
-        const productPrice = parseFloat(product.dataset.price);
-        if (productPrice < minPrice || productPrice > maxPrice) {
-          product.style.display = 'none';
-        }
+    // Update size filters
+    this.activeFilters.sizes = [];
+    this.sizeCheckboxes.forEach(checkbox => {
+      if (checkbox.checked) {
+        this.activeFilters.sizes.push(checkbox.value);
       }
     });
     
-    // Sort products
-    const visibleProducts = Array.from(this.productCards).filter(product => product.style.display !== 'none');
-    
-    visibleProducts.sort((a, b) => {
-      if (sortBy === 'price-low') {
-        return parseFloat(a.dataset.price) - parseFloat(b.dataset.price);
-      } else if (sortBy === 'price-high') {
-        return parseFloat(b.dataset.price) - parseFloat(a.dataset.price);
-      } else if (sortBy === 'rating') {
-        return parseInt(b.dataset.rating) - parseInt(a.dataset.rating);
-      } else if (sortBy === 'bestselling') {
-        return parseInt(b.dataset.rating) - parseInt(a.dataset.rating);
+    // Update color filters
+    this.activeFilters.colors = [];
+    this.colorCheckboxes.forEach(checkbox => {
+      if (checkbox.checked) {
+        this.activeFilters.colors.push(checkbox.value);
       }
-      // Default to newest (no change in order)
-      return 0;
     });
+    
+    // Update price range
+    this.activeFilters.minPrice = this.minPriceInput.value ? parseFloat(this.minPriceInput.value) : null;
+    this.activeFilters.maxPrice = this.maxPriceInput.value ? parseFloat(this.maxPriceInput.value) : null;
+    
+    // Update sort by
+    this.activeFilters.sortBy = this.sortBySelect.value;
+  }
+  
+  filterProducts() {
+    // First filter products
+    this.productCards.forEach(card => {
+      let visible = true;
+      
+      // Filter by category
+      if (this.activeFilters.category !== 'all' && card.dataset.category !== this.activeFilters.category) {
+        visible = false;
+      }
+      
+      // Filter by size
+      if (this.activeFilters.sizes.length > 0) {
+        const productSizes = card.dataset.sizes.split(',');
+        if (!this.activeFilters.sizes.some(size => productSizes.includes(size))) {
+          visible = false;
+        }
+      }
+      
+      // Filter by color
+      if (this.activeFilters.colors.length > 0) {
+        const productColors = card.dataset.colors.split(',');
+        if (!this.activeFilters.colors.some(color => productColors.includes(color))) {
+          visible = false;
+        }
+      }
+      
+      // Filter by price
+      const price = parseFloat(card.dataset.price);
+      if (this.activeFilters.minPrice !== null && price < this.activeFilters.minPrice) {
+        visible = false;
+      }
+      if (this.activeFilters.maxPrice !== null && price > this.activeFilters.maxPrice) {
+        visible = false;
+      }
+      
+      // Set visibility
+      card.style.display = visible ? 'block' : 'none';
+    });
+    
+    // Then sort visible products
+    this.sortProducts();
+  }
+  
+  sortProducts() {
+    const productGrid = document.querySelector('.product-grid');
+    if (!productGrid) return;
+    
+    const visibleProducts = Array.from(this.productCards).filter(card => card.style.display !== 'none');
+    
+    // Sort products based on selected option
+    switch (this.activeFilters.sortBy) {
+      case 'price-low':
+        visibleProducts.sort((a, b) => parseFloat(a.dataset.price) - parseFloat(b.dataset.price));
+        break;
+      case 'price-high':
+        visibleProducts.sort((a, b) => parseFloat(b.dataset.price) - parseFloat(a.dataset.price));
+        break;
+      case 'rating':
+        visibleProducts.sort((a, b) => parseFloat(b.dataset.rating) - parseFloat(a.dataset.rating));
+        break;
+      case 'bestselling':
+        // For demo purposes, we'll use a random sort for bestselling
+        visibleProducts.sort(() => Math.random() - 0.5);
+        break;
+      case 'newest':
+      default:
+        // For demo purposes, we'll keep the original order for newest
+        break;
+    }
     
     // Reorder products in the DOM
     visibleProducts.forEach(product => {
-      this.productGrid.appendChild(product);
+      productGrid.appendChild(product);
     });
-    
-    // Show message if no products match filters
-    if (visibleProducts.length === 0) {
-      let noResultsMsg = document.querySelector('.no-results-message');
-      if (!noResultsMsg) {
-        noResultsMsg = document.createElement('div');
-        noResultsMsg.className = 'no-results-message';
-        noResultsMsg.innerHTML = `
-          <h3>No products match your filters</h3>
-          <p>Try adjusting your filter criteria or <button id="clear-all-filters" class="btn-link">clear all filters</button></p>
-        `;
-        this.productGrid.appendChild(noResultsMsg);
-        
-        document.getElementById('clear-all-filters').addEventListener('click', () => {
-          this.resetFilters();
-        });
-      }
-    } else {
-      const noResultsMsg = document.querySelector('.no-results-message');
-      if (noResultsMsg) {
-        noResultsMsg.remove();
-      }
-    }
-    
-    // Update active filters display
-    this.updateActiveFilters(category, selectedSizes, selectedColors, minPrice, maxPrice);
-    
-    // Remove loading state after a short delay
-    setTimeout(() => {
-      this.productGrid.classList.remove('filter-loading');
-    }, 500);
   }
   
-  resetFilters() {
-    // Reset all form elements
-    this.sortBySelect.value = 'newest';
-    this.categorySelect.value = 'all';
-    this.minPriceInput.value = '';
-    this.maxPriceInput.value = '';
+  displayActiveFilters() {
+    if (!this.activeFiltersContainer) return;
     
-    // Uncheck all checkboxes
-    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-      checkbox.checked = false;
-    });
-    
-    // Show all products
-    this.productCards.forEach(product => {
-      product.style.display = 'block';
-    });
-    
-    // Clear active filters
-    this.activeFiltersContainer.innerHTML = '';
-  }
-  
-  updateActiveFilters(category, selectedSizes, selectedColors, minPrice, maxPrice) {
-    // Clear existing filters
+    // Clear current active filters
     this.activeFiltersContainer.innerHTML = '';
     
-    // Add category filter
-    if (category !== 'all') {
-      const filterEl = document.createElement('div');
-      filterEl.className = 'active-filter';
-      filterEl.innerHTML = `
-        <span>${category}</span>
-        <span class="remove-filter" data-filter="category" data-value="${category}">x</span>
-      `;
-      this.activeFiltersContainer.appendChild(filterEl);
+    // Add category filter if not 'all'
+    if (this.activeFilters.category !== 'all') {
+      this.addActiveFilterTag('Category', this.activeFilters.category);
     }
     
     // Add size filters
-    selectedSizes.forEach(size => {
-      const filterEl = document.createElement('div');
-      filterEl.className = 'active-filter';
-      filterEl.innerHTML = `
-        <span>Size: ${size.toUpperCase()}</span>
-        <span class="remove-filter" data-filter="size" data-value="${size}">x</span>
-      `;
-      this.activeFiltersContainer.appendChild(filterEl);
+    this.activeFilters.sizes.forEach(size => {
+      this.addActiveFilterTag('Size', size.toUpperCase());
     });
     
     // Add color filters
-    selectedColors.forEach(color => {
-      const filterEl = document.createElement('div');
-      filterEl.className = 'active-filter';
-      filterEl.innerHTML = `
-        <span>Color: ${color.charAt(0).toUpperCase() + color.slice(1)}</span>
-        <span class="remove-filter" data-filter="color" data-value="${color}">x</span>
-      `;
-      this.activeFiltersContainer.appendChild(filterEl);
+    this.activeFilters.colors.forEach(color => {
+      this.addActiveFilterTag('Color', color.charAt(0).toUpperCase() + color.slice(1));
     });
     
     // Add price range filter
-    if (minPrice > 0 || maxPrice < 1000) {
-      const filterEl = document.createElement('div');
-      filterEl.className = 'active-filter';
-      filterEl.innerHTML = `
-        <span>Price: ${minPrice ? '£' + minPrice : '£0'} - ${maxPrice ? '£' + maxPrice : '£1000'}</span>
-        <span class="remove-filter" data-filter="price" data-value="all">x</span>
-      `;
-      this.activeFiltersContainer.appendChild(filterEl);
+    if (this.activeFilters.minPrice !== null || this.activeFilters.maxPrice !== null) {
+      let priceText = 'Price: ';
+      if (this.activeFilters.minPrice !== null) {
+        priceText += `£${this.activeFilters.minPrice}`;
+      }
+      if (this.activeFilters.minPrice !== null && this.activeFilters.maxPrice !== null) {
+        priceText += ' - ';
+      }
+      if (this.activeFilters.maxPrice !== null) {
+        priceText += `£${this.activeFilters.maxPrice}`;
+      }
+      this.addActiveFilterTag('', priceText);
     }
-    
-    // Add event listeners to remove filter buttons
-    const removeButtons = document.querySelectorAll('.remove-filter');
-    removeButtons.forEach(button => {
-      button.addEventListener('click', (e) => {
-        const filterType = e.target.dataset.filter;
-        const filterValue = e.target.dataset.value;
-        this.removeFilter(filterType, filterValue);
-      });
-    });
   }
-  removeFilter(filterType, filterValue) {
-    // Remove the filter and re-apply
-    if (filterType === 'category') {
-      this.categorySelect.value = 'all';
-    } else if (filterType === 'size') {
-      const checkbox = document.querySelector(`input[name="size"][value="${filterValue}"]`);
-      if (checkbox) checkbox.checked = false;
-    } else if (filterType === 'color') {
-      const checkbox = document.querySelector(`input[name="color"][value="${filterValue}"]`);
-      if (checkbox) checkbox.checked = false;
-    } else if (filterType === 'price') {
-      this.minPriceInput.value = '';
-      this.maxPriceInput.value = '';
+  
+  addActiveFilterTag(type, value) {
+    const filterTag = document.createElement('div');
+    filterTag.className = 'active-filter';
+    
+    let displayText = type ? `${type}: ${value}` : value;
+    
+    filterTag.innerHTML = `
+      ${displayText}
+      <span class="remove-filter" data-type="${type.toLowerCase()}" data-value="${value.toLowerCase()}">
+        <i class="fas fa-times"></i>
+      </span>
+    `;
+    
+    // Add click event to remove filter
+    const removeBtn = filterTag.querySelector('.remove-filter');
+    removeBtn.addEventListener('click', () => {
+      this.removeFilter(type.toLowerCase(), value.toLowerCase());
+    });
+    
+    this.activeFiltersContainer.appendChild(filterTag);
+  }
+  
+  removeFilter(type, value) {
+    switch (type) {
+      case 'category':
+        if (this.categorySelect) {
+          this.categorySelect.value = 'all';
+        }
+        break;
+      case 'size':
+        this.sizeCheckboxes.forEach(checkbox => {
+          if (checkbox.value === value) {
+            checkbox.checked = false;
+          }
+        });
+        break;
+      case 'color':
+        this.colorCheckboxes.forEach(checkbox => {
+          if (checkbox.value === value) {
+            checkbox.checked = false;
+          }
+        });
+        break;
+      case '': // Price filter
+        this.minPriceInput.value = '';
+        this.maxPriceInput.value = '';
+        break;
     }
     
     // Re-apply filters
+    this.applyFilters();
+  }
+  
+  resetFilters() {
+    // Reset category
+    if (this.categorySelect) {
+      this.categorySelect.value = 'all';
+    }
+    
+    // Reset sizes
+    this.sizeCheckboxes.forEach(checkbox => {
+      checkbox.checked = false;
+    });
+    
+    // Reset colors
+    this.colorCheckboxes.forEach(checkbox => {
+      checkbox.checked = false;
+    });
+    
+    // Reset price range
+    if (this.minPriceInput) this.minPriceInput.value = '';
+    if (this.maxPriceInput) this.maxPriceInput.value = '';
+    
+    // Reset sort by
+    if (this.sortBySelect) {
+      this.sortBySelect.value = 'newest';
+    }
+    
+    // Apply reset filters
     this.applyFilters();
   }
 }
@@ -321,6 +352,5 @@ document.addEventListener('DOMContentLoaded', function() {
     const productFilter = new ProductFilter();
   }
 });
-
 
 

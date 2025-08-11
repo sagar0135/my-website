@@ -1,0 +1,20 @@
+/* Layout styles */
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding-top: 0;
+}
+
+/* Ensure proper spacing between sections */
+.main-content > * {
+  margin-bottom: 0;
+}
+
+.main-content > *:last-child {
+  margin-bottom: 0;
+} 

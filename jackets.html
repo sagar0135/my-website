@@ -2,699 +2,836 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="MANVUE - Premium men's jackets collection" />
-  <title>Men's Jackets & Hoodies | MANVUE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MANVUE - Premium men's jackets collection. Stylish outerwear for every season with free shipping on orders over £49." />
+  <meta name="keywords" content="men's jackets, leather jackets, denim jackets, bomber jackets, blazers, UK fashion, online shopping" />
+  
+  <meta name="author" content="MANVUE" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://manvue.com/jackets" />
+  <meta property="og:title" content="Jackets Collection | MANVUE" />
+  <meta property="og:description" content="Stylish outerwear for every season. Premium quality with free shipping on orders over £49." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://manvue.com/jackets" />
+  <meta property="twitter:title" content="Jackets Collection | MANVUE" />
+  <meta property="twitter:description" content="Stylish outerwear for every season." />
+  <meta property="twitter:image" content="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" />
+  
+  <title>Jackets Collection | MANVUE - Stylish Outerwear for Every Season</title>
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="style.css" as="style" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" as="style" />
+  
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Jackets Collection",
+    "description": "Stylish outerwear for every season",
+    "url": "https://manvue.com/jackets",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "Product",
+          "name": "Classic Leather Jacket",
+          "description": "Timeless leather jacket for ultimate style"
+        }
+      ]
+    }
+  }
+  </script>
 </head>
+
 <body>
+  <!-- Loading Screen -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loading-spinner"></div>
+    <p>Loading MANVUE...</p>
+  </div>
+
   <!-- TOP PROMO BANNER -->
-  <div class="promo-banner">
-    <span class="promo-text">FREE SHIPPING ON ORDERS GBP49+ ⚡ NEW DROPS EVERY WEEK</span>
-    <span class="promo-countdown" id="countdown">FLASH SALE ENDS IN: <span id="timer">23:59:59</span></span>
+  <div class="promo-banner" id="promo-banner">
+    <div class="promo-content">
+      <span class="promo-text">
+        <i class="fas fa-shipping-fast"></i>
+        FREE SHIPPING ON ORDERS £49+ 
+        <span class="promo-highlight">⚡ NEW DROPS EVERY WEEK</span>
+      </span>
+      <span class="promo-countdown" id="countdown">
+        <i class="fas fa-clock"></i>
+        FLASH SALE ENDS IN: <span id="timer">23:59:59</span>
+      </span>
+    </div>
+    <button class="promo-close" id="close-promo" aria-label="Close promo banner">
+      <i class="fas fa-times"></i>
+    </button>
   </div>
 
   <!-- MAIN HEADER -->
-  <header class="main-header">
-    <div class="logo"><a href="index.html">MANVUE</a></div>
-
-    <div class="search-bar">
-      <input type="text" placeholder="Search for items, brands..." aria-label="Search" />
-      <button aria-label="Search"><i class="fas fa-search"></i></button>
-    </div>
-
-    <div class="header-icons">
-      <span title="Account"><i class="fas fa-user"></i></span>
-      <span title="Wishlist"><i class="fas fa-heart"></i><span class="wishlist-count">0</span></span>
-      <span class="cart-icon" title="Cart"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></span>
+  <header class="main-header" id="main-header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html" aria-label="MANVUE Homepage">
+          <span class="logo-text">MANVUE</span>
+        </a>
+      </div>
+      
+      <div class="search-bar">
+        <div class="search-input-wrapper">
+          <input type="text" id="search-input" placeholder="Search for items, brands, styles..." aria-label="Search products" />
+          <button id="search-button" aria-label="Search">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+        <div class="search-results" id="search-results">
+          <!-- Search results will appear here -->
+        </div>
+        <div class="search-suggestions" id="search-suggestions">
+          <!-- Search suggestions will appear here -->
+        </div>
+      </div>
+      
+      <div class="header-icons">
+        <div class="header-icon-group">
+          <button class="icon-btn" id="account-icon" title="Account" aria-label="Account">
+            <i class="fas fa-user"></i>
+            <span class="icon-label">Account</span>
+          </button>
+          
+          <button class="icon-btn" id="wishlist-icon" title="Wishlist" aria-label="Wishlist">
+            <i class="fas fa-heart"></i>
+            <span class="wishlist-count" id="wishlist-count">0</span>
+            <span class="icon-label">Wishlist</span>
+          </button>
+          
+          <button class="icon-btn cart-icon" id="cart-icon" title="Cart" aria-label="Shopping Cart">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-count" id="cart-count">0</span>
+            <span class="icon-label">Cart</span>
+          </button>
+        </div>
+        
+        <!-- Mobile menu toggle -->
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle mobile menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
     </div>
   </header>
 
   <!-- NAVIGATION MENU -->
-  <nav class="nav-bar" aria-label="Main Navigation">
+  <nav class="nav-bar" aria-label="Main Navigation" id="main-nav">
     <div class="nav-container">
-     <ul class="main-nav">
-        <!-- Navigation items here -->
-        <li class="nav-item"><a href="index.html">HOME</a></li>
-        <li class="nav-item"><a href="t-shirts.html">T-SHIRTS</a></li>
-        <li class="nav-item"><a href="shirts.html">SHIRTS</a></li>
-        <li class="nav-item active"><a href="jackets.html">JACKETS</a></li>
-        <li class="nav-item"><a href="bottomwear.html">BOTTOMWEAR</a></li>
-        <li class="nav-item"><a href="footwear.html">FOOTWEAR</a></li>
-        <li class="nav-item"><a href="accessories.html">ACCESSORIES</a></li>
-        <li class="nav-item sale"><a href="sale.html">SALE</a></li>
+      <ul class="main-nav">
+        <!-- CORE COLLECTIONS -->
+        <li class="nav-item dropdown">
+          <button class="nav-link" tabindex="0" aria-expanded="false">
+            CORE COLLECTIONS
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="dropdown-menu">
+            <div class="dropdown-content">
+              <a href="t-shirts.html" class="dropdown-link">
+                <i class="fas fa-tshirt"></i>
+                <span>T-Shirts</span>
+                <small>Essential basics</small>
+              </a>
+              <a href="shirts.html" class="dropdown-link">
+                <i class="fas fa-user-tie"></i>
+                <span>Shirts</span>
+                <small>Formal & casual</small>
+              </a>
+              <a href="jackets.html" class="dropdown-link">
+                <i class="fas fa-vest"></i>
+                <span>Jackets</span>
+                <small>Outerwear</small>
+              </a>
+              <a href="bottomwear.html" class="dropdown-link">
+                <i class="fas fa-socks"></i>
+                <span>Bottomwear</span>
+                <small>Jeans & pants</small>
+              </a>
+              <a href="footwear.html" class="dropdown-link">
+                <i class="fas fa-shoe-prints"></i>
+                <span>Footwear</span>
+                <small>Shoes & boots</small>
+              </a>
+              <a href="accessories.html" class="dropdown-link">
+                <i class="fas fa-gem"></i>
+                <span>Accessories</span>
+                <small>Complete your look</small>
+              </a>
+            </div>
+          </div>
+        </li>
+        
+        <!-- STYLE COLLECTIONS -->
+        <li class="nav-item dropdown">
+          <button class="nav-link" tabindex="0" aria-expanded="false">
+            STYLE COLLECTIONS
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="dropdown-menu">
+            <div class="dropdown-content">
+              <a href="GymToStreet.html" class="dropdown-link">
+                <i class="fas fa-dumbbell"></i>
+                <span>Gym to Street</span>
+                <small>Athletic wear</small>
+              </a>
+              <a href="StreetStyle.html" class="dropdown-link">
+                <i class="fas fa-music"></i>
+                <span>Street Style</span>
+                <small>Urban fashion</small>
+              </a>
+              <a href="WeekendWarrior.html" class="dropdown-link">
+                <i class="fas fa-campground"></i>
+                <span>Weekend Warrior</span>
+                <small>Casual comfort</small>
+              </a>
+              <a href="PowerMoves.html" class="dropdown-link">
+                <i class="fas fa-briefcase"></i>
+                <span>Power Moves</span>
+                <small>Business casual</small>
+              </a>
+            </div>
+          </div>
+        </li>
+        
+        <!-- SEASONAL -->
+        <li class="nav-item dropdown">
+          <button class="nav-link" tabindex="0" aria-expanded="false">
+            SEASONAL
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="dropdown-menu">
+            <div class="dropdown-content">
+              <a href="summer-collection.html" class="dropdown-link">
+                <i class="fas fa-sun"></i>
+                <span>Summer Collection</span>
+                <small>Light & breathable</small>
+              </a>
+              <a href="FreshDrops.html" class="dropdown-link">
+                <i class="fas fa-star"></i>
+                <span>Fresh Drops</span>
+                <small>Latest arrivals</small>
+              </a>
+              <a href="CrowdFavorites.html" class="dropdown-link">
+                <i class="fas fa-heart"></i>
+                <span>Crowd Favorites</span>
+                <small>Most loved</small>
+              </a>
+            </div>
+          </div>
+        </li>
+        
+        <!-- SALE -->
+        <li class="nav-item sale">
+          <a href="sale.html" class="nav-link sale-link">
+            <span class="sale-badge">SALE</span>
+            <span class="sale-text">UP TO 70% OFF</span>
+          </a>
+        </li>
       </ul>
     </div>
   </nav>
 
-  <!-- CATEGORY BANNER -->
-  <div class="category-banner">
-    <div class="category-banner-content">
-      <h1>MEN'S JACKETS & HOODIES</h1>
-      <p>Premium outerwear for every season and occasion</p>
-    </div>
-  </div>
-
-  <!-- COLLECTION FILTERS -->
-  <section class="collection-filters">
+  <!-- PAGE HEADER -->
+  <section class="page-header">
     <div class="container">
-      <div class="filter-bar">
-        <div class="filter-toggle">
-          <button id="filter-toggle-btn"><i class="fas fa-sliders-h"></i> Filter Products</button>
-        </div>
-        <div class="filter-options">
-          <div class="filter-group">
-            <label for="sort-by">Sort By:</label>
-            <select id="sort-by" class="filter-select">
-              <option value="newest">Newest</option>
-              <option value="price-low">Price: Low to High</option>
-              <option value="price-high">Price: High to Low</option>
-              <option value="bestselling">Bestselling</option>
-              <option value="rating">Top Rated</option>
-            </select>
+      <div class="page-header-content">
+        <h1 class="page-title">Jackets Collection</h1>
+        <p class="page-subtitle">Stylish outerwear for every season</p>
+        <div class="page-stats">
+          <div class="stat-item">
+            <span class="stat-number">80+</span>
+            <span class="stat-label">Styles</span>
           </div>
-          
-          <div class="filter-group">
-            <label for="filter-category">Category:</label>
-            <select id="filter-category" class="filter-select">
-              <option value="all">All Jackets & Hoodies</option>
-              <option value="leather">Leather Jackets</option>
-              <option value="denim">Denim Jackets</option>
-              <option value="bomber">Bomber Jackets</option>
-              <option value="puffer">Puffer Jackets</option>
-              <option value="blazer">Blazers</option>
-              <option value="windbreaker">Windbreakers</option>
-              <option value="hoodies">Hoodies</option>
-              <option value="sweatshirts">Sweatshirts</option>
-            </select>
+          <div class="stat-item">
+            <span class="stat-number">Free</span>
+            <span class="stat-label">Shipping</span>
           </div>
-          
-          <div class="filter-group">
-            <label for="filter-size">Size:</label>
-            <div class="size-options">
-              <label class="size-option"><input type="checkbox" name="size" value="s"> S</label>
-              <label class="size-option"><input type="checkbox" name="size" value="m"> M</label>
-              <label class="size-option"><input type="checkbox" name="size" value="l"> L</label>
-              <label class="size-option"><input type="checkbox" name="size" value="xl"> XL</label>
-              <label class="size-option"><input type="checkbox" name="size" value="xxl"> XXL</label>
-            </div>
-          </div>
-          
-          <div class="filter-group">
-            <label>Color:</label>
-            <div class="color-options">
-              <label class="color-option" title="Black">
-                <input type="checkbox" name="color" value="black">
-                <span class="color-swatch" style="background-color: #000;"></span>
-              </label>
-              <label class="color-option" title="Brown">
-                <input type="checkbox" name="color" value="brown">
-                <span class="color-swatch" style="background-color: #964B00;"></span>
-              </label>
-              <label class="color-option" title="Navy">
-                <input type="checkbox" name="color" value="navy">
-                <span class="color-swatch" style="background-color: #000080;"></span>
-              </label>
-              <label class="color-option" title="Green">
-                <input type="checkbox" name="color" value="green">
-                <span class="color-swatch" style="background-color: #2ecc71;"></span>
-              </label>
-              <label class="color-option" title="Beige">
-                <input type="checkbox" name="color" value="beige">
-                <span class="color-swatch" style="background-color: #F5F5DC;"></span>
-              </label>
-              <label class="color-option" title="Grey">
-                <input type="checkbox" name="color" value="grey">
-                <span class="color-swatch" style="background-color: #808080;"></span>
-              </label>
-            </div>
-          </div>
-          
-          <div class="filter-group">
-            <label>Price Range:</label>
-            <div class="price-range">
-              <div class="price-inputs">
-                <input type="number" id="min-price" placeholder="Min" min="0" max="500">
-                <span>to</span>
-                <input type="number" id="max-price" placeholder="Max" min="0" max="500">
-              </div>
-            </div>
-          </div>
-          
-          <div class="filter-actions">
-            <button id="apply-filters" class="btn-apply">Apply Filters</button>
-            <button id="reset-filters" class="btn-reset">Reset</button>
+          <div class="stat-item">
+            <span class="stat-number">30</span>
+            <span class="stat-label">Day Returns</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CATEGORY PRODUCTS -->
-  <section class="category-products">
+  <!-- FILTERS SECTION -->
+  <section class="filters-section">
     <div class="container">
-      <h2 class="section-title">MEN'S JACKETS COLLECTION</h2>
-      
-      
-      
-      <div class="product-grid">
+      <div class="filters-content">
+        <div class="filter-group">
+          <label for="sort-by" class="filter-label">Sort By:</label>
+          <select id="sort-by" class="filter-select">
+            <option value="newest">Newest First</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="bestselling">Bestselling</option>
+            <option value="rating">Top Rated</option>
+          </select>
+        </div>
+        
+        <div class="filter-group">
+          <label for="filter-category" class="filter-label">Category:</label>
+          <select id="filter-category" class="filter-select">
+            <option value="all">All Jackets</option>
+            <option value="leather">Leather Jackets</option>
+            <option value="denim">Denim Jackets</option>
+            <option value="bomber">Bomber Jackets</option>
+            <option value="blazer">Blazers</option>
+            <option value="parka">Parkas</option>
+          </select>
+        </div>
+        
+        <div class="filter-group">
+          <label for="filter-size" class="filter-label">Size:</label>
+          <select id="filter-size" class="filter-select">
+            <option value="all">All Sizes</option>
+            <option value="xs">XS</option>
+            <option value="s">S</option>
+            <option value="m">M</option>
+            <option value="l">L</option>
+            <option value="xl">XL</option>
+            <option value="xxl">XXL</option>
+          </select>
+        </div>
+        
+        <div class="filter-group">
+          <label for="filter-price" class="filter-label">Price:</label>
+          <select id="filter-price" class="filter-select">
+            <option value="all">All Prices</option>
+            <option value="0-100">Under £100</option>
+            <option value="100-200">£100 - £200</option>
+            <option value="200-300">£200 - £300</option>
+            <option value="300+">Over £300</option>
+          </select>
+        </div>
+        
+        <button class="clear-filters-btn" id="clear-filters">
+          <i class="fas fa-times"></i>
+          Clear All Filters
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS SECTION -->
+  <section class="products-section">
+    <div class="container">
+      <div class="products-grid" id="products-grid">
         <!-- Product 1 -->
-        <div class="product-card">
-          <div class="product-badge">NEW</div>
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1520975954732-35dd22299614?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Leather Jacket">
+        <div class="product-card" data-category="leather" data-size="m" data-price="299.99">
+          <div class="product-image-container">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Classic Leather Jacket" class="product-image" loading="lazy" />
             <div class="product-actions">
-              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
-              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
-              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+              <button class="action-btn wishlist-btn" aria-label="Add to wishlist">
+                <i class="fas fa-heart"></i>
+              </button>
+              <button class="action-btn quick-view-btn" aria-label="Quick view">
+                <i class="fas fa-eye"></i>
+              </button>
             </div>
+            <div class="product-badge new">NEW</div>
           </div>
           <div class="product-info">
-            <h3>Men's Vintage Leather Jacket</h3>
+            <h3 class="product-title">Classic Leather Jacket</h3>
+            <p class="product-category">Leather Jackets</p>
             <div class="product-price">
-              <span class="current-price">£159.99</span>
+              <span class="original-price">£399.99</span>
+              <span class="sale-price">£299.99</span>
             </div>
-            <div class="product-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-              <span>(87)</span>
+            <div class="product-sizes">
+              <span class="size-option">S</span>
+              <span class="size-option">M</span>
+              <span class="size-option">L</span>
+              <span class="size-option">XL</span>
             </div>
           </div>
         </div>
-        
+
         <!-- Product 2 -->
-        <div class="product-card">
-          <div class="product-badge bestseller">BESTSELLER</div>
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Denim Jacket">
+        <div class="product-card" data-category="denim" data-size="l" data-price="89.99">
+          <div class="product-image-container">
+            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Vintage Denim Jacket" class="product-image" loading="lazy" />
             <div class="product-actions">
-              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
-              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
-              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+              <button class="action-btn wishlist-btn" aria-label="Add to wishlist">
+                <i class="fas fa-heart"></i>
+              </button>
+              <button class="action-btn quick-view-btn" aria-label="Quick view">
+                <i class="fas fa-eye"></i>
+              </button>
             </div>
+            <div class="product-badge bestseller">BESTSELLER</div>
           </div>
           <div class="product-info">
-            <h3>Men's Distressed Denim Jacket</h3>
+            <h3 class="product-title">Vintage Denim Jacket</h3>
+            <p class="product-category">Denim Jackets</p>
             <div class="product-price">
-              <span class="current-price">£64.99</span>
+              <span class="sale-price">£89.99</span>
             </div>
-            <div class="product-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <span>(156)</span>
+            <div class="product-sizes">
+              <span class="size-option">S</span>
+              <span class="size-option">M</span>
+              <span class="size-option">L</span>
+              <span class="size-option">XL</span>
             </div>
           </div>
         </div>
-        
+
         <!-- Product 3 -->
-        <div class="product-card">
-          <div class="product-badge sale">-25%</div>
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1592878904946-b3cd8ae243d0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Bomber Jacket">
+        <div class="product-card" data-category="bomber" data-size="m" data-price="149.99">
+          <div class="product-image-container">
+            <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Classic Bomber Jacket" class="product-image" loading="lazy" />
             <div class="product-actions">
-              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
-              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
-              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+              <button class="action-btn wishlist-btn" aria-label="Add to wishlist">
+                <i class="fas fa-heart"></i>
+              </button>
+              <button class="action-btn quick-view-btn" aria-label="Quick view">
+                <i class="fas fa-eye"></i>
+              </button>
             </div>
           </div>
           <div class="product-info">
-            <h3>Men's Military Bomber Jacket</h3>
+            <h3 class="product-title">Classic Bomber Jacket</h3>
+            <p class="product-category">Bomber Jackets</p>
             <div class="product-price">
-              <span class="current-price">£74.99</span>
-              <span class="original-price">£99.99</span>
+              <span class="sale-price">£149.99</span>
             </div>
-            <div class="product-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-              <span>(92)</span>
+            <div class="product-sizes">
+              <span class="size-option">S</span>
+              <span class="size-option">M</span>
+              <span class="size-option">L</span>
+              <span class="size-option">XL</span>
             </div>
           </div>
         </div>
-        
+
         <!-- Product 4 -->
-        <div class="product-card">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Puffer Jacket">
+        <div class="product-card" data-category="blazer" data-size="l" data-price="199.99">
+          <div class="product-image-container">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Slim Fit Blazer" class="product-image" loading="lazy" />
             <div class="product-actions">
-              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
-              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
-              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+              <button class="action-btn wishlist-btn" aria-label="Add to wishlist">
+                <i class="fas fa-heart"></i>
+              </button>
+              <button class="action-btn quick-view-btn" aria-label="Quick view">
+                <i class="fas fa-eye"></i>
+              </button>
             </div>
+            <div class="product-badge sale">SALE</div>
           </div>
           <div class="product-info">
-            <h3>Men's Quilted Puffer Jacket</h3>
+            <h3 class="product-title">Slim Fit Blazer</h3>
+            <p class="product-category">Blazers</p>
             <div class="product-price">
-              <span class="current-price">£84.99</span>
+              <span class="original-price">£249.99</span>
+              <span class="sale-price">£199.99</span>
             </div>
-            <div class="product-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-              <span>(78)</span>
+            <div class="product-sizes">
+              <span class="size-option">S</span>
+              <span class="size-option">M</span>
+              <span class="size-option">L</span>
+              <span class="size-option">XL</span>
             </div>
           </div>
         </div>
-        
+
         <!-- Product 5 -->
-        <div class="product-card">
-          <div class="product-badge">NEW</div>
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1559551409-dadc959f76b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Blazer">
+        <div class="product-card" data-category="parka" data-size="xl" data-price="179.99">
+          <div class="product-image-container">
+            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Waterproof Parka" class="product-image" loading="lazy" />
             <div class="product-actions">
-              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
-              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
-              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+              <button class="action-btn wishlist-btn" aria-label="Add to wishlist">
+                <i class="fas fa-heart"></i>
+              </button>
+              <button class="action-btn quick-view-btn" aria-label="Quick view">
+                <i class="fas fa-eye"></i>
+              </button>
             </div>
+            <div class="product-badge new">NEW</div>
           </div>
           <div class="product-info">
-            <h3>Men's Slim Fit Blazer</h3>
+            <h3 class="product-title">Waterproof Parka</h3>
+            <p class="product-category">Parkas</p>
             <div class="product-price">
-              <span class="current-price">£119.99</span>
+              <span class="sale-price">£179.99</span>
             </div>
-            <div class="product-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-              <span>(64)</span>
+            <div class="product-sizes">
+              <span class="size-option">L</span>
+              <span class="size-option">XL</span>
+              <span class="size-option">XXL</span>
             </div>
           </div>
         </div>
-        
+
         <!-- Product 6 -->
-        <div class="product-card">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1548883354-94bcfe321cbb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Windbreaker">
+        <div class="product-card" data-category="leather" data-size="s" data-price="249.99">
+          <div class="product-image-container">
+            <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Biker Leather Jacket" class="product-image" loading="lazy" />
             <div class="product-actions">
-              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
-              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
-              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+              <button class="action-btn wishlist-btn" aria-label="Add to wishlist">
+                <i class="fas fa-heart"></i>
+              </button>
+              <button class="action-btn quick-view-btn" aria-label="Quick view">
+                <i class="fas fa-eye"></i>
+              </button>
             </div>
           </div>
           <div class="product-info">
-            <h3>Men's Lightweight Windbreaker</h3>
+            <h3 class="product-title">Biker Leather Jacket</h3>
+            <p class="product-category">Leather Jackets</p>
             <div class="product-price">
-              <span class="current-price">£49.99</span>
+              <span class="sale-price">£249.99</span>
             </div>
-            <div class="product-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-              <i class="far fa-star"></i>
-              <span>(53)</span>
+            <div class="product-sizes">
+              <span class="size-option">S</span>
+              <span class="size-option">M</span>
+              <span class="size-option">L</span>
+              <span class="size-option">XL</span>
             </div>
           </div>
         </div>
-        
+
         <!-- Product 7 -->
-        <div class="product-card">
-          <div class="product-badge sale">-20%</div>
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Trucker Jacket">
+        <div class="product-card" data-category="denim" data-size="m" data-price="79.99">
+          <div class="product-image-container">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Distressed Denim Jacket" class="product-image" loading="lazy" />
             <div class="product-actions">
-              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
-              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
-              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+              <button class="action-btn wishlist-btn" aria-label="Add to wishlist">
+                <i class="fas fa-heart"></i>
+              </button>
+              <button class="action-btn quick-view-btn" aria-label="Quick view">
+                <i class="fas fa-eye"></i>
+              </button>
             </div>
+            <div class="product-badge bestseller">BESTSELLER</div>
           </div>
           <div class="product-info">
-            <h3>Men's Denim Trucker Jacket</h3>
+            <h3 class="product-title">Distressed Denim Jacket</h3>
+            <p class="product-category">Denim Jackets</p>
             <div class="product-price">
-              <span class="current-price">£55.99</span>
-              <span class="original-price">£69.99</span>
+              <span class="sale-price">£79.99</span>
             </div>
-            <div class="product-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-              <span>(71)</span>
+            <div class="product-sizes">
+              <span class="size-option">S</span>
+              <span class="size-option">M</span>
+              <span class="size-option">L</span>
+              <span class="size-option">XL</span>
             </div>
           </div>
         </div>
-        
+
         <!-- Product 8 -->
-        <div class="product-card">
-          <div class="product-badge bestseller">BESTSELLER</div>
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1544022613-e87ca75a784a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Varsity Jacket">
+        <div class="product-card" data-category="bomber" data-size="l" data-price="129.99">
+          <div class="product-image-container">
+            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Premium Bomber Jacket" class="product-image" loading="lazy" />
             <div class="product-actions">
-              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
-              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
-              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+              <button class="action-btn wishlist-btn" aria-label="Add to wishlist">
+                <i class="fas fa-heart"></i>
+              </button>
+              <button class="action-btn quick-view-btn" aria-label="Quick view">
+                <i class="fas fa-eye"></i>
+              </button>
             </div>
           </div>
           <div class="product-info">
-            <h3>Men's Varsity Jacket</h3>
+            <h3 class="product-title">Premium Bomber Jacket</h3>
+            <p class="product-category">Bomber Jackets</p>
             <div class="product-price">
-              <span class="current-price">£79.99</span>
+              <span class="sale-price">£129.99</span>
             </div>
-            <div class="product-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <span>(112)</span>
+            <div class="product-sizes">
+              <span class="size-option">S</span>
+              <span class="size-option">M</span>
+              <span class="size-option">L</span>
+              <span class="size-option">XL</span>
             </div>
           </div>
         </div>
-        
+
         <!-- Product 9 -->
-        <div class="product-card">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1548126032-079a0fb0099d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Parka">
+        <div class="product-card" data-category="blazer" data-size="m" data-price="169.99">
+          <div class="product-image-container">
+            <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Casual Blazer" class="product-image" loading="lazy" />
             <div class="product-actions">
-              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
-              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
-              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+              <button class="action-btn wishlist-btn" aria-label="Add to wishlist">
+                <i class="fas fa-heart"></i>
+              </button>
+              <button class="action-btn quick-view-btn" aria-label="Quick view">
+                <i class="fas fa-eye"></i>
+              </button>
             </div>
+            <div class="product-badge new">NEW</div>
           </div>
           <div class="product-info">
-            <h3>Men's Winter Parka</h3>
+            <h3 class="product-title">Casual Blazer</h3>
+            <p class="product-category">Blazers</p>
             <div class="product-price">
-              <span class="current-price">£129.99</span>
+              <span class="sale-price">£169.99</span>
             </div>
-            <div class="product-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-              <span>(89)</span>
+            <div class="product-sizes">
+              <span class="size-option">S</span>
+              <span class="size-option">M</span>
+              <span class="size-option">L</span>
+              <span class="size-option">XL</span>
             </div>
           </div>
         </div>
-        
+
         <!-- Product 10 -->
-        <div class="product-card">
-          <div class="product-badge sale">-15%</div>
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1611312449408-fcece27cdbb7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Harrington Jacket">
+        <div class="product-card" data-category="parka" data-size="l" data-price="159.99">
+          <div class="product-image-container">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Quilted Parka" class="product-image" loading="lazy" />
             <div class="product-actions">
-              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
-              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
-              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+              <button class="action-btn wishlist-btn" aria-label="Add to wishlist">
+                <i class="fas fa-heart"></i>
+              </button>
+              <button class="action-btn quick-view-btn" aria-label="Quick view">
+                <i class="fas fa-eye"></i>
+              </button>
             </div>
           </div>
           <div class="product-info">
-            <h3>Men's Classic Harrington Jacket</h3>
+            <h3 class="product-title">Quilted Parka</h3>
+            <p class="product-category">Parkas</p>
             <div class="product-price">
-              <span class="current-price">£67.99</span>
-              <span class="original-price">£79.99</span>
+              <span class="sale-price">£159.99</span>
             </div>
-            <div class="product-rating">
+            <div class="product-sizes">
+              <span class="size-option">L</span>
+              <span class="size-option">XL</span>
+              <span class="size-option">XXL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Load More Button -->
+      <div class="load-more-container">
+        <button class="load-more-btn" id="load-more-btn">
+          <i class="fas fa-plus"></i>
+          Load More Products
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER SECTION -->
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-content">
+        <div class="newsletter-text">
+          <h2>Stay in the Loop</h2>
+          <p>Get exclusive access to new drops, special offers, and style tips delivered straight to your inbox.</p>
+          <div class="newsletter-benefits">
+            <div class="benefit-item">
+              <i class="fas fa-tag"></i>
+              <span>Exclusive Offers</span>
+            </div>
+            <div class="benefit-item">
+              <i class="fas fa-shipping-fast"></i>
+              <span>Early Access</span>
+            </div>
+            <div class="benefit-item">
               <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-              <span>(76)</span>
+              <span>Style Tips</span>
             </div>
           </div>
         </div>
         
-        <!-- Hoodie 1 -->
-        <div class="product-card" data-product-id="h001" data-category="hoodies">
-          <div class="product-badge bestseller">BESTSELLER</div>
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Pullover Hoodie">
-            <div class="product-actions">
-              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
-              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
-              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
+        <div class="newsletter-form">
+          <form id="newsletter-form">
+            <div class="form-group">
+              <input type="email" id="newsletter-email" placeholder="Enter your email address" required />
+              <button type="submit">
+                <i class="fas fa-paper-plane"></i>
+                Subscribe
+              </button>
             </div>
-          </div>
-          <div class="product-info">
-            <h3>Essential Pullover Hoodie</h3>
-            <div class="product-price">
-              <span class="current-price">£49.99</span>
+            <div class="form-footer">
+              <label class="checkbox-label">
+                <input type="checkbox" required />
+                <span class="checkmark"></span>
+                I agree to receive marketing emails from MANVUE
+              </label>
             </div>
-            <div class="product-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <span>(142)</span>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Hoodie 2 -->
-        <div class="product-card" data-product-id="h002" data-category="hoodies">
-          <div class="product-badge">NEW</div>
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Zip-Up Hoodie">
-            <div class="product-actions">
-              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
-              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
-              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
-            </div>
-          </div>
-          <div class="product-info">
-            <h3>Premium Zip-Up Hoodie</h3>
-            <div class="product-price">
-              <span class="current-price">£59.99</span>
-            </div>
-            <div class="product-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-              <span>(78)</span>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Hoodie 3 -->
-        <div class="product-card" data-product-id="h003" data-category="hoodies">
-          <div class="product-badge sale">-30%</div>
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1578681994506-b8f463449011?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Oversized Hoodie">
-            <div class="product-actions">
-              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
-              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
-              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
-            </div>
-          </div>
-          <div class="product-info">
-            <h3>Oversized Streetwear Hoodie</h3>
-            <div class="product-price">
-              <span class="current-price">£41.99</span>
-              <span class="original-price">£59.99</span>
-            </div>
-            <div class="product-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-              <span>(63)</span>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Hoodie 4 -->
-        <div class="product-card" data-product-id="h004" data-category="hoodies">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1509942774463-acf339cf87d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Tech Fleece Hoodie">
-            <div class="product-actions">
-              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
-              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
-              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
-            </div>
-          </div>
-          <div class="product-info">
-            <h3>Tech Fleece Performance Hoodie</h3>
-            <div class="product-price">
-              <span class="current-price">£69.99</span>
-            </div>
-            <div class="product-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <span>(94)</span>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Hoodie 5 -->
-        <div class="product-card" data-product-id="h005" data-category="hoodies">
-          <div class="product-badge bestseller">BESTSELLER</div>
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1564557287817-3785e38ec1f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Graphic Hoodie">
-            <div class="product-actions">
-              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
-              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
-              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
-            </div>
-          </div>
-          <div class="product-info">
-            <h3>Urban Graphic Print Hoodie</h3>
-            <div class="product-price">
-              <span class="current-price">£54.99</span>
-            </div>
-            <div class="product-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-              <span>(118)</span>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Sweatshirt 1 -->
-        <div class="product-card" data-product-id="s001" data-category="sweatshirts">
-          <div class="product-badge">NEW</div>
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1572495641004-28421ae29ed4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Men's Crewneck Sweatshirt">
-            <div class="product-actions">
-              <button class="quick-view" aria-label="Quick view"><i class="fas fa-eye"></i></button>
-              <button class="add-to-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
-              <button class="add-to-cart" aria-label="Add to cart"><i class="fas fa-shopping-bag"></i></button>
-            </div>
-          </div>
-          <div class="product-info">
-            <h3>Classic Crewneck Sweatshirt</h3>
-            <div class="product-price">
-              <span class="current-price">£44.99</span>
-            </div>
-            <div class="product-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-              <span>(52)</span>
-            </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- MODERN FOOTER -->
   <footer class="modern-footer">
     <div class="container">
-      <!-- Help & Information Section -->
+      <!-- Help Section -->
       <div class="footer-help-section">
-        <h3>HELP & INFORMATION</h3>
+        <h3>Need Help?</h3>
         <div class="help-grid">
           <div class="help-category">
             <h4>Customer Service</h4>
             <ul>
-              <li><a href="#">Help Center</a></li>
-              <li><a href="#">Track Order</a></li>
-              <li><a href="#">Delivery & Returns</a></li>
-              <li><a href="#">Size Guide</a></li>
               <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Live Chat</a></li>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Size Guide</a></li>
             </ul>
           </div>
           <div class="help-category">
-            <h4>Shopping</h4>
+            <h4>Orders & Shipping</h4>
             <ul>
-              <li><a href="#">How to Shop</a></li>
-              <li><a href="#">Payment Methods</a></li>
-              <li><a href="#">Gift Cards</a></li>
-              <li><a href="#">Student Discount</a></li>
-              <li><a href="#">Refer a Friend</a></li>
+              <li><a href="#">Track Order</a></li>
+              <li><a href="#">Shipping Info</a></li>
+              <li><a href="#">Returns</a></li>
+              <li><a href="#">Exchanges</a></li>
             </ul>
           </div>
           <div class="help-category">
-            <h4>About MANVUE</h4>
+            <h4>Account</h4>
             <ul>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Corporate Responsibility</a></li>
-              <li><a href="#">Investors</a></li>
-              <li><a href="#">Sustainability</a></li>
-            </ul>
-          </div>
-          <div class="help-category">
-            <h4>Legal</h4>
-            <ul>
-              <li><a href="#">Terms & Conditions</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Cookie Policy</a></li>
-              <li><a href="#">Accessibility</a></li>
-              <li><a href="#">Modern Slavery Statement</a></li>
+              <li><a href="#">Sign In</a></li>
+              <li><a href="#">Create Account</a></li>
+              <li><a href="#">Order History</a></li>
+              <li><a href="#">Wishlist</a></li>
             </ul>
           </div>
         </div>
       </div>
-      
-      <!-- Main Footer Columns -->
+
+      <!-- Main Footer Content -->
       <div class="footer-columns">
         <div class="footer-column">
-          <h3>ABOUT US</h3>
-          <p>MANVUE is a premium men's fashion brand dedicated to providing high-quality, stylish clothing for the modern man. Our mission is to help you express your unique style with confidence.</p>
-        </div>
-        <div class="footer-column">
-          <h3>STORE LOCATOR</h3>
-          <p>Find your nearest MANVUE store with our interactive store locator. We have over 50 stores across the UK.</p>
-          <a href="#" class="btn-link">Find a Store</a>
-        </div>
-        <div class="footer-column">
-          <h3>CONNECT WITH US</h3>
-          <div class="social-icons">
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <h3>About MANVUE</h3>
+          <p>Premium men's fashion and apparel retailer, offering the latest trends in clothing, shoes, and accessories.</p>
+          <div class="footer-stats">
+            <div class="stat">
+              <span class="stat-number">10K+</span>
+              <span class="stat-label">Happy Customers</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">500+</span>
+              <span class="stat-label">Products</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">24/7</span>
+              <span class="stat-label">Support</span>
+            </div>
           </div>
-          <h3>NEWSLETTER</h3>
-          <p>Subscribe for exclusive offers and updates</p>
-          <form class="newsletter-form">
-            <input type="email" placeholder="Email Address" aria-label="Email for newsletter" required>
-            <button type="submit" aria-label="Subscribe">SUBSCRIBE</button>
-          </form>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <a href="index.html" class="btn-link">Home</a>
+          <a href="t-shirts.html" class="btn-link">T-Shirts</a>
+          <a href="shirts.html" class="btn-link">Shirts</a>
+          <a href="jackets.html" class="btn-link">Jackets</a>
+          <a href="bottomwear.html" class="btn-link">Bottomwear</a>
+          <a href="footwear.html" class="btn-link">Footwear</a>
+          <a href="accessories.html" class="btn-link">Accessories</a>
+          <a href="sale.html" class="btn-link">Sale</a>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Download Our App</h3>
+          <p>Shop on the go with our mobile app for iOS and Android.</p>
+          <div class="app-buttons">
+            <a href="#" class="app-btn">
+              <i class="fab fa-apple"></i>
+              App Store
+            </a>
+            <a href="#" class="app-btn">
+              <i class="fab fa-google-play"></i>
+              Google Play
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Follow Us</h3>
+          <p>Stay connected with us on social media for the latest updates and exclusive content.</p>
+          <div class="social-icons">
+            <a href="#" class="social-icon" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-icon" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-icon" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-icon" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="#" class="social-icon" aria-label="TikTok">
+              <i class="fab fa-tiktok"></i>
+            </a>
+          </div>
         </div>
       </div>
-      
+
       <!-- Footer Bottom -->
       <div class="footer-bottom">
         <div class="payment-methods">
-          <img src="https://i.imgur.com/SHCoT7I.png" alt="Payment methods">
+          <span class="payment-label">We Accept:</span>
+          <div class="payment-icons">
+            <img src="https://via.placeholder.com/40x25/333/fff?text=Visa" alt="Visa" />
+            <img src="https://via.placeholder.com/40x25/333/fff?text=MC" alt="Mastercard" />
+            <img src="https://via.placeholder.com/40x25/333/fff?text=PayPal" alt="PayPal" />
+            <img src="https://via.placeholder.com/40x25/333/fff?text=Apple" alt="Apple Pay" />
+          </div>
         </div>
+        
         <div class="copyright">
-          <p>© 2025 MANVUE. All Rights Reserved.</p>
+          <p>&copy; 2024 MANVUE. All rights reserved.</p>
         </div>
+        
         <div class="footer-links">
           <a href="#">Privacy Policy</a>
-          <a href="#">Terms & Conditions</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
           <a href="#">Accessibility</a>
-          <a href="#">Sitemap</a>
         </div>
       </div>
     </div>
   </footer>
 
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Scripts -->
   <script src="script.js"></script>
   <script src="product-interactions.js"></script>
+  <script src="search.js"></script>
+  <script src="filter.js"></script>
 </body>
 </html>
 

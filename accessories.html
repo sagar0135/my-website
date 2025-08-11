@@ -2,64 +2,259 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="MANVUE - Premium men's accessories collection" />
-  <title>Men's Accessories | MANVUE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MANVUE - Premium men's accessories collection. Discover stylish watches, belts, bags, and jewelry. Free shipping on orders over £49." />
+  <meta name="keywords" content="men's accessories, watches, belts, bags, jewelry, wallets, sunglasses, men's fashion accessories, UK fashion, online shopping" />
+  
+  <meta name="author" content="MANVUE" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://manvue.com/accessories" />
+  <meta property="og:title" content="Men's Accessories | MANVUE" />
+  <meta property="og:description" content="Discover stylish watches, belts, bags, and jewelry. Premium quality with free shipping on orders over £49." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://manvue.com/accessories" />
+  <meta property="twitter:title" content="Men's Accessories | MANVUE" />
+  <meta property="twitter:description" content="Discover stylish watches, belts, bags, and jewelry." />
+  <meta property="twitter:image" content="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" />
+  
+  <title>Men's Accessories | MANVUE - Premium Watches, Belts & Bags</title>
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="style.css" as="style" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" as="style" />
+  
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Men's Accessories",
+    "description": "Premium men's accessories collection including watches, belts, bags, and jewelry",
+    "url": "https://manvue.com/accessories",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "Product",
+          "name": "Premium Watches",
+          "description": "High-quality watches for men"
+        },
+        {
+          "@type": "Product", 
+          "name": "Leather Belts",
+          "description": "Versatile leather belts for any occasion"
+        }
+      ]
+    }
+  }
+  </script>
 </head>
+
 <body>
+  <!-- Loading Screen -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loading-spinner"></div>
+    <p>Loading MANVUE...</p>
+  </div>
+
   <!-- TOP PROMO BANNER -->
-  <div class="promo-banner">
-    <span class="promo-text">FREE SHIPPING ON ORDERS GBP49+ ⚡ NEW DROPS EVERY WEEK</span>
-    <span class="promo-countdown" id="countdown">FLASH SALE ENDS IN: <span id="timer">23:59:59</span></span>
+  <div class="promo-banner" id="promo-banner">
+    <div class="promo-content">
+      <span class="promo-text">
+        <i class="fas fa-shipping-fast"></i>
+        FREE SHIPPING ON ORDERS £49+ 
+        <span class="promo-highlight">⚡ NEW DROPS EVERY WEEK</span>
+      </span>
+      <span class="promo-countdown" id="countdown">
+        <i class="fas fa-clock"></i>
+        FLASH SALE ENDS IN: <span id="timer">23:59:59</span>
+      </span>
+    </div>
+    <button class="promo-close" id="close-promo" aria-label="Close promo banner">
+      <i class="fas fa-times"></i>
+    </button>
   </div>
 
   <!-- MAIN HEADER -->
-  <header class="main-header">
-    <div class="logo"><a href="index.html">MANVUE</a></div>
-
-    <div class="search-bar">
-      <input type="text" placeholder="Search for items, brands..." aria-label="Search" />
-      <button aria-label="Search"><i class="fas fa-search"></i></button>
-    </div>
-
-    <div class="header-icons">
-      <span title="Account"><i class="fas fa-user"></i></span>
-      <span title="Wishlist"><i class="fas fa-heart"></i><span class="wishlist-count">0</span></span>
-      <span class="cart-icon" title="Cart"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></span>
+  <header class="main-header" id="main-header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html" aria-label="MANVUE Homepage">
+          <span class="logo-text">MANVUE</span>
+        </a>
+      </div>
+      
+      <div class="search-bar">
+        <div class="search-input-wrapper">
+          <input type="text" id="search-input" placeholder="Search for items, brands, styles..." aria-label="Search products" />
+          <button id="search-button" aria-label="Search">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+        <div class="search-results" id="search-results">
+          <!-- Search results will appear here -->
+        </div>
+        <div class="search-suggestions" id="search-suggestions">
+          <!-- Search suggestions will appear here -->
+        </div>
+      </div>
+      
+      <div class="header-icons">
+        <div class="header-icon-group">
+          <button class="icon-btn" id="account-icon" title="Account" aria-label="Account">
+            <i class="fas fa-user"></i>
+            <span class="icon-label">Account</span>
+          </button>
+          
+          <button class="icon-btn" id="wishlist-icon" title="Wishlist" aria-label="Wishlist">
+            <i class="fas fa-heart"></i>
+            <span class="wishlist-count" id="wishlist-count">0</span>
+            <span class="icon-label">Wishlist</span>
+          </button>
+          
+          <button class="icon-btn cart-icon" id="cart-icon" title="Cart" aria-label="Shopping Cart">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-count" id="cart-count">0</span>
+            <span class="icon-label">Cart</span>
+          </button>
+        </div>
+        
+        <!-- Mobile menu toggle -->
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle mobile menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
     </div>
   </header>
 
   <!-- NAVIGATION MENU -->
-  <nav class="nav-bar" aria-label="Main Navigation">
+  <nav class="nav-bar" aria-label="Main Navigation" id="main-nav">
     <div class="nav-container">
-      <button class="mobile-menu-toggle" aria-label="Toggle menu">
-        <i class="fas fa-bars"></i>
-      </button>
       <ul class="main-nav">
-        <li class="nav-item"><a href="index.html">HOME</a></li>
-        <li class="nav-item"><a href="t-shirts.html">T-SHIRTS</a></li>
-        <li class="nav-item"><a href="shirts.html">SHIRTS</a></li>
-        <li class="nav-item"><a href="jackets.html">JACKETS</a></li>
-        <li class="nav-item"><a href="bottomwear.html">BOTTOMWEAR</a></li>
-        <li class="nav-item"><a href="footwear.html">FOOTWEAR</a></li>
-        <li class="nav-item active"><a href="accessories.html">ACCESSORIES</a></li>
-        <li class="nav-item sale"><a href="sale.html">SALE</a></li>
+        <!-- CORE COLLECTIONS -->
+        <li class="nav-item dropdown">
+          <button class="nav-link" tabindex="0" aria-expanded="false">
+            CORE COLLECTIONS
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="dropdown-menu">
+            <div class="dropdown-content">
+              <a href="FreshDrops.html" class="dropdown-link">
+                <i class="fas fa-fire"></i>
+                <span>Fresh Drops</span>
+                <small>Latest arrivals</small>
+              </a>
+              <a href="CrowdFavorites.html" class="dropdown-link">
+                <i class="fas fa-star"></i>
+                <span>Crowd Favorites</span>
+                <small>Most loved</small>
+              </a>
+              <a href="ExtendedFits.html" class="dropdown-link">
+                <i class="fas fa-ruler"></i>
+                <span>Extended Fits</span>
+                <small>All sizes available</small>
+              </a>
+            </div>
+          </div>
+        </li>
+        
+        <!-- SMART GROUPINGS -->
+        <li class="nav-item dropdown">
+          <button class="nav-link" tabindex="0" aria-expanded="false">
+            SMART GROUPINGS
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="dropdown-menu">
+            <div class="dropdown-content">
+              <a href="TheFundamentals.html" class="dropdown-link">
+                <i class="fas fa-tshirt"></i>
+                <span>The Fundamentals</span>
+                <small>Essential basics</small>
+              </a>
+              <a href="PowerMoves.html" class="dropdown-link">
+                <i class="fas fa-briefcase"></i>
+                <span>Power Moves</span>
+                <small>Work & formal</small>
+              </a>
+              <a href="StreetStyle.html" class="dropdown-link">
+                <i class="fas fa-music"></i>
+                <span>Street Style</span>
+                <small>Urban fashion</small>
+              </a>
+              <a href="WeekendWarrior.html" class="dropdown-link">
+                <i class="fas fa-coffee"></i>
+                <span>Weekend Warrior</span>
+                <small>Casual comfort</small>
+              </a>
+              <a href="YourSizeYourStyle.html" class="dropdown-link">
+                <i class="fas fa-user-ruler"></i>
+                <span>Your Size, Your Style</span>
+                <small>Size guide</small>
+              </a>
+            </div>
+          </div>
+        </li>
+        
+        <!-- SALE -->
+        <li class="nav-item sale">
+          <a href="sale.html" class="nav-link sale-link">
+            <span class="sale-badge">SALE</span>
+            <span class="sale-text">UP TO 70% OFF</span>
+          </a>
+        </li>
       </ul>
     </div>
   </nav>
 
   <!-- CATEGORY BANNER -->
-  <div class="category-banner">
-    <div class="category-banner-content">
-      <h1>MEN'S ACCESSORIES</h1>
-      <p>Complete your look with our premium accessories collection</p>
+  <section class="category-banner" aria-label="Accessories Category Banner">
+    <div class="banner-background" style="background-image: url('https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')">
+      <div class="banner-overlay"></div>
     </div>
-  </div>
+    <div class="banner-content">
+      <div class="container">
+        <div class="banner-text">
+          <h1 class="banner-title">MEN'S ACCESSORIES</h1>
+          <p class="banner-subtitle">Complete your look with our premium accessories collection</p>
+          <div class="banner-stats">
+            <div class="stat-item">
+              <span class="stat-number">80+</span>
+              <span class="stat-label">Styles</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">8</span>
+              <span class="stat-label">Categories</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">Free</span>
+              <span class="stat-label">Shipping</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- COLLECTION FILTERS -->
   <section class="collection-filters">

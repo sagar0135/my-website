@@ -10,19 +10,19 @@ const DYNAMIC_CACHE = 'manvue-dynamic-v1.0.0';
 
 // Files to cache immediately
 const STATIC_FILES = [
-  '/',
-  '/index.html',
-  '/style.css',
-  '/script.js',
-  '/product-interactions.js',
-  '/search.js',
-  '/t-shirts.html',
-  '/shirts.html',
-  '/jeans.html',
-  '/jackets.html',
-  '/hoodies.html',
-  '/footwear.html',
-  '/accessories.html',
+  './',
+  './index.html',
+  './style.css',
+  './script.js',
+  './product-interactions.js',
+  './search.js',
+  './t-shirts.html',
+  './shirts.html',
+  './jeans.html',
+  './jackets.html',
+  './hoodies.html',
+  './footwear.html',
+  './accessories.html',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css',
   'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap',
   'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80',
@@ -181,7 +181,7 @@ async function handleDocumentRequest(request) {
   }
 
   // Return offline page
-  return caches.match('/offline.html') || new Response(
+  return caches.match('./offline.html') || new Response(
     '<html><body><h1>Offline</h1><p>Please check your internet connection and try again.</p></body></html>',
     { headers: { 'Content-Type': 'text/html' } }
   );
@@ -200,23 +200,17 @@ async function handleApiRequest(request) {
       return networkResponse;
     }
   } catch (error) {
-    console.log('Service Worker: Network failed for API request');
+    console.log('Service Worker: Network failed for API');
   }
 
-  // Try cache for API requests
+  // Fallback to cache
   const cachedResponse = await caches.match(request);
   if (cachedResponse) {
     return cachedResponse;
   }
 
-  // Return error response
-  return new Response(
-    JSON.stringify({ error: 'Network error' }),
-    { 
-      status: 503,
-      headers: { 'Content-Type': 'application/json' }
-    }
-  );
+  // Return generic response
+  return new Response('', { status: 503 });
 }
 
 // Background sync for offline actions
@@ -427,10 +421,10 @@ async function handleRequest(request) {
 // Cache warming for critical resources
 async function warmCache() {
   const criticalResources = [
-    '/',
-    '/index.html',
-    '/style.css',
-    '/script.js'
+    './',
+    './index.html',
+    './style.css',
+    './script.js'
   ];
   
   const cache = await caches.open(STATIC_CACHE);

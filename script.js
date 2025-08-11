@@ -5,7 +5,7 @@
  */
 
 // Performance monitoring
-const performance = {
+const appPerformance = {
   start: (name) => {
     performance.mark(`${name}-start`);
   },
@@ -91,7 +91,7 @@ class MANVUEApp {
   }
 
   init() {
-    performance.start('app-init');
+    appPerformance.start('app-init');
     
     // Initialize all components
     this.initLoadingScreen();
@@ -110,7 +110,7 @@ class MANVUEApp {
     // Add event listeners
     this.addEventListeners();
     
-    performance.end('app-init');
+    appPerformance.end('app-init');
   }
 
   // Loading screen management
@@ -872,7 +872,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Service Worker registration for PWA features
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
+    navigator.serviceWorker.register('./sw.js')
       .then(registration => {
         console.log('SW registered: ', registration);
       })
